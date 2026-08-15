@@ -1,0 +1,256 @@
+{
+  "topic": "subtraction",
+  "notes": "Full question bank: 2-3 digit subtraction, word-problem heavy, per latest scope update",
+  "questions": [
+    {
+      "id": "sub_sch_001",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "Sneha had 68 crayons. She gave 24 to her classmate. How many crayons does she have left?",
+      "options": ["43", "44", "45", "42"],
+      "correct_answer": "44",
+      "explanation_hint": "68 - 24 = 44 crayons."
+    },
+    {
+      "id": "sub_sch_002",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "84 - 37 = ?",
+      "options": ["45", "46", "47", "48"],
+      "correct_answer": "47",
+      "explanation_hint": "84 - 37 = 47."
+    },
+    {
+      "id": "sub_sch_003",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "A box had 95 chocolates. 38 were eaten. How many chocolates are left?",
+      "options": ["55", "56", "57", "58"],
+      "correct_answer": "57",
+      "explanation_hint": "95 - 38 = 57 chocolates."
+    },
+    {
+      "id": "sub_sch_004",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "73 - 28 = ?",
+      "options": ["43", "44", "45", "46"],
+      "correct_answer": "45",
+      "explanation_hint": "73 - 28 = 45."
+    },
+    {
+      "id": "sub_sch_005",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "Dev had 88 balloons. 45 flew away. How many balloons does he have now?",
+      "options": ["41", "42", "43", "44"],
+      "correct_answer": "43",
+      "explanation_hint": "88 - 45 = 43 balloons."
+    },
+    {
+      "id": "sub_sch_006",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A shop had 320 pens. They sold 145 of them. How many pens are left?",
+      "options": ["165", "174", "175", "185"],
+      "correct_answer": "175",
+      "explanation_hint": "320 - 145 = 175 pens."
+    },
+    {
+      "id": "sub_sch_007",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "286 - 137 = ?",
+      "options": ["139", "148", "149", "159"],
+      "correct_answer": "149",
+      "explanation_hint": "286 - 137 = 149."
+    },
+    {
+      "id": "sub_sch_008",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A theatre had 275 seats booked. 118 people cancelled their booking. How many seats are still booked?",
+      "options": ["147", "156", "157", "167"],
+      "correct_answer": "157",
+      "explanation_hint": "275 - 118 = 157 seats."
+    },
+    {
+      "id": "sub_sch_009",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "354 - 176 = ?",
+      "options": ["168", "177", "178", "188"],
+      "correct_answer": "178",
+      "explanation_hint": "354 - 176 = 178."
+    },
+    {
+      "id": "sub_sch_010",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A farmer had 246 sacks of rice. He sold 168 sacks. How many sacks does he have left?",
+      "options": ["68", "77", "78", "88"],
+      "correct_answer": "78",
+      "explanation_hint": "246 - 168 = 78 sacks."
+    },
+    {
+      "id": "sub_sch_011",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A stadium had 528 people watching a match. By half-time, 259 people had left. How many people were still watching?",
+      "options": ["259", "268", "269", "279"],
+      "correct_answer": "269",
+      "explanation_hint": "528 - 259 = 269 people."
+    },
+    {
+      "id": "sub_sch_012",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "612 - 347 = ?",
+      "options": ["255", "264", "265", "275"],
+      "correct_answer": "265",
+      "explanation_hint": "612 - 347 = 265."
+    },
+    {
+      "id": "sub_sch_013",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A library had 745 books. They gave away 359 books to a school. How many books are left in the library?",
+      "options": ["376", "385", "386", "396"],
+      "correct_answer": "386",
+      "explanation_hint": "745 - 359 = 386 books."
+    },
+    {
+      "id": "sub_sch_014",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "In a fair, 850 tickets were printed. 493 tickets were sold. How many tickets remain unsold?",
+      "options": ["347", "356", "357", "367"],
+      "correct_answer": "357",
+      "explanation_hint": "850 - 493 = 357 tickets."
+    },
+    {
+      "id": "sub_sch_015",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "723 - 456 = ?",
+      "options": ["257", "266", "267", "277"],
+      "correct_answer": "267",
+      "explanation_hint": "723 - 456 = 267."
+    },
+    {
+      "id": "sub_oly_001",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Find the missing number: 340 - __ = 185",
+      "options": ["145", "154", "155", "165"],
+      "correct_answer": "155",
+      "explanation_hint": "340 - 185 = 155."
+    },
+    {
+      "id": "sub_oly_002",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Which subtraction gives the smallest answer? (a) 500-120 (b) 500-380 (c) 500-260 (d) 500-90",
+      "options": ["a", "b", "c", "d"],
+      "correct_answer": "b",
+      "explanation_hint": "500-380=120, which is the smallest among all options."
+    },
+    {
+      "id": "sub_oly_003",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Aditya had some marbles. He lost 85 marbles and gave away 46 more, and now has 69 left. How many marbles did he have at the start?",
+      "options": ["190", "199", "200", "210"],
+      "correct_answer": "200",
+      "explanation_hint": "Total lost = 85+46=131. Start = 131+69=200 marbles."
+    },
+    {
+      "id": "sub_oly_004",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "A number minus 245 equals 380. What is the number?",
+      "options": ["615", "624", "625", "635"],
+      "correct_answer": "625",
+      "explanation_hint": "380 + 245 = 625, so the number is 625."
+    },
+    {
+      "id": "sub_oly_005",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Look at the pattern: 900-200=700, 800-200=600, 700-200=500, 600-200=__?",
+      "options": ["300", "350", "400", "450"],
+      "correct_answer": "400",
+      "explanation_hint": "The pattern subtracts 200 each time: 600 - 200 = 400."
+    },
+    {
+      "id": "sub_oly_006",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Find the missing number: 295 - __ = 118",
+      "options": ["167", "176", "177", "187"],
+      "correct_answer": "177",
+      "explanation_hint": "295 - 118 = 177."
+    },
+    {
+      "id": "sub_oly_007",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Karan had ₹450. He spent ₹128 on a toy and ₹95 on a book. How much money does he have left?",
+      "options": ["217", "226", "227", "237"],
+      "correct_answer": "227",
+      "explanation_hint": "450 - 128 - 95 = 227 rupees."
+    },
+    {
+      "id": "sub_oly_008",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "The difference between two numbers is 236. If the larger number is 512, what is the smaller number?",
+      "options": ["266", "275", "276", "286"],
+      "correct_answer": "276",
+      "explanation_hint": "512 - 236 = 276."
+    },
+    {
+      "id": "sub_oly_009",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Which of these equals 150? (a) 400-260 (b) 400-250 (c) 400-240 (d) 400-230",
+      "options": ["a", "b", "c", "d"],
+      "correct_answer": "b",
+      "explanation_hint": "400-250=150, so option (b) is correct."
+    },
+    {
+      "id": "sub_oly_010",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "A tank had 640 litres of water. Every hour, 80 litres leaks out. How much water will be left after 3 hours?",
+      "options": ["380", "400", "410", "420"],
+      "correct_answer": "400",
+      "explanation_hint": "Water lost in 3 hours = 80x3=240. Left = 640-240=400 litres."
+    }
+  ]
+}

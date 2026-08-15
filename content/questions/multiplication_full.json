@@ -1,0 +1,255 @@
+{
+  "topic": "multiplication",
+  "questions": [
+    {
+      "id": "mul_sch_001",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "There are 4 baskets with 3 mangoes each. How many mangoes are there in total?",
+      "options": ["10", "11", "12", "13"],
+      "correct_answer": "12",
+      "explanation_hint": "4 x 3 = 12 mangoes (3+3+3+3=12)."
+    },
+    {
+      "id": "mul_sch_002",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "5 x 4 = ?",
+      "options": ["18", "19", "20", "21"],
+      "correct_answer": "20",
+      "explanation_hint": "5 groups of 4 = 20."
+    },
+    {
+      "id": "mul_sch_003",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "A classroom has 6 rows with 5 chairs in each row. How many chairs are there in total?",
+      "options": ["28", "29", "30", "31"],
+      "correct_answer": "30",
+      "explanation_hint": "6 x 5 = 30 chairs."
+    },
+    {
+      "id": "mul_sch_004",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "A vendor has 3 crates with 7 coconuts in each crate. How many coconuts are there in total?",
+      "options": ["19", "20", "21", "23"],
+      "correct_answer": "21",
+      "explanation_hint": "3 x 7 = 21 coconuts."
+    },
+    {
+      "id": "mul_sch_005",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "Priya bought 4 packets of biscuits. Each packet has 6 biscuits. How many biscuits did she buy in total?",
+      "options": ["22", "23", "24", "26"],
+      "correct_answer": "24",
+      "explanation_hint": "4 x 6 = 24 biscuits."
+    },
+    {
+      "id": "mul_sch_006",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "7 x 6 = ?",
+      "options": ["40", "41", "42", "44"],
+      "correct_answer": "42",
+      "explanation_hint": "7 groups of 6 = 42."
+    },
+    {
+      "id": "mul_sch_007",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A gardener planted 8 rows of flowers with 4 flowers in each row. How many flowers are there in total?",
+      "options": ["30", "31", "32", "34"],
+      "correct_answer": "32",
+      "explanation_hint": "8 x 4 = 32 flowers."
+    },
+    {
+      "id": "mul_sch_008",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "There are 9 tables with 3 flower vases on each table. How many vases are there in total?",
+      "options": ["25", "26", "27", "29"],
+      "correct_answer": "27",
+      "explanation_hint": "9 x 3 = 27 vases."
+    },
+    {
+      "id": "mul_sch_009",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "There are 5 shelves in a library, each holding 8 books. How many books are there in total?",
+      "options": ["38", "39", "40", "42"],
+      "correct_answer": "40",
+      "explanation_hint": "5 x 8 = 40 books."
+    },
+    {
+      "id": "mul_sch_010",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A farmer has 8 crates with 6 mangoes in each crate. How many mangoes are there in total?",
+      "options": ["46", "47", "48", "50"],
+      "correct_answer": "48",
+      "explanation_hint": "8 x 6 = 48 mangoes."
+    },
+    {
+      "id": "mul_sch_011",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "9 x 8 = ?",
+      "options": ["70", "71", "72", "74"],
+      "correct_answer": "72",
+      "explanation_hint": "9 groups of 8 = 72."
+    },
+    {
+      "id": "mul_sch_012",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A baker made 7 trays of cupcakes with 9 cupcakes on each tray. How many cupcakes did he make?",
+      "options": ["61", "62", "63", "65"],
+      "correct_answer": "63",
+      "explanation_hint": "7 x 9 = 63 cupcakes."
+    },
+    {
+      "id": "mul_sch_013",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A shopkeeper arranges 6 boxes with 9 pens in each box. How many pens are there in total?",
+      "options": ["52", "53", "54", "56"],
+      "correct_answer": "54",
+      "explanation_hint": "6 x 9 = 54 pens."
+    },
+    {
+      "id": "mul_sch_014",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "There are 7 baskets with 8 oranges in each basket. How many oranges are there in total?",
+      "options": ["54", "55", "56", "58"],
+      "correct_answer": "56",
+      "explanation_hint": "7 x 8 = 56 oranges."
+    },
+    {
+      "id": "mul_sch_015",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "9 x 9 = ?",
+      "options": ["79", "80", "81", "83"],
+      "correct_answer": "81",
+      "explanation_hint": "9 groups of 9 = 81."
+    },
+    {
+      "id": "mul_oly_001",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Which of these equals 24? (a) 3x7 (b) 4x6 (c) 5x5 (d) 2x9",
+      "options": ["a", "b", "c", "d"],
+      "correct_answer": "b",
+      "explanation_hint": "4 x 6 = 24, so option (b) is correct."
+    },
+    {
+      "id": "mul_oly_002",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Find the missing number: 6 x __ = 48",
+      "options": ["6", "7", "8", "9"],
+      "correct_answer": "8",
+      "explanation_hint": "6 x 8 = 48."
+    },
+    {
+      "id": "mul_oly_003",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Look at the pattern: 2x3=6, 3x3=9, 4x3=12, 5x3=__?",
+      "options": ["13", "14", "15", "16"],
+      "correct_answer": "15",
+      "explanation_hint": "Each step adds 3: 5 x 3 = 15."
+    },
+    {
+      "id": "mul_oly_004",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "A shopkeeper arranges apples in 6 rows with 7 apples in each row. How many apples are there in total?",
+      "options": ["40", "41", "42", "44"],
+      "correct_answer": "42",
+      "explanation_hint": "6 x 7 = 42 apples."
+    },
+    {
+      "id": "mul_oly_005",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Which number when multiplied by itself gives 49?",
+      "options": ["5", "6", "7", "8"],
+      "correct_answer": "7",
+      "explanation_hint": "7 x 7 = 49."
+    },
+    {
+      "id": "mul_oly_006",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Find the missing number: 8 x __ = 56",
+      "options": ["6", "7", "8", "9"],
+      "correct_answer": "7",
+      "explanation_hint": "8 x 7 = 56."
+    },
+    {
+      "id": "mul_oly_007",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Look at the pattern: 1x5=5, 2x5=10, 3x5=15, 4x5=__?",
+      "options": ["18", "19", "20", "21"],
+      "correct_answer": "20",
+      "explanation_hint": "Each step adds 5: 4 x 5 = 20."
+    },
+    {
+      "id": "mul_oly_008",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "A class has 9 benches with 4 students sitting on each bench. How many students are there in total?",
+      "options": ["34", "35", "36", "38"],
+      "correct_answer": "36",
+      "explanation_hint": "9 x 4 = 36 students."
+    },
+    {
+      "id": "mul_oly_009",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Which of these equals 36? (a) 4x8 (b) 6x6 (c) 5x8 (d) 9x5",
+      "options": ["a", "b", "c", "d"],
+      "correct_answer": "b",
+      "explanation_hint": "6 x 6 = 36, so option (b) is correct."
+    },
+    {
+      "id": "mul_oly_010",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "A gardener has 8 flower pots with 5 flowers in each pot. He adds 3 more pots, each also with 5 flowers. How many flowers are there in total now?",
+      "options": ["50", "53", "55", "58"],
+      "correct_answer": "55",
+      "explanation_hint": "Total pots = 8+3=11. Flowers = 11 x 5 = 55."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "topic": "addition",
+  "notes": "2-3 digit addition, word-problem focused per latest scope update",
+  "questions": [
+    {
+      "id": "add_sch_001",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "Meera has 24 marbles. Her brother gives her 15 more. How many marbles does she have now?",
+      "options": ["38", "39", "40", "37"],
+      "correct_answer": "39",
+      "explanation_hint": "24 + 15 = 39 marbles."
+    },
+    {
+      "id": "add_sch_002",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "45 + 23 = ?",
+      "options": ["67", "68", "69", "66"],
+      "correct_answer": "68",
+      "explanation_hint": "Add ones: 5+3=8. Add tens: 40+20=60. Total: 68."
+    },
+    {
+      "id": "add_sch_003",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A school library has 128 story books and 156 comic books. How many books are there in total?",
+      "options": ["274", "284", "294", "264"],
+      "correct_answer": "284",
+      "explanation_hint": "128 + 156 = 284 books."
+    },
+    {
+      "id": "add_sch_004",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "236 + 148 = ?",
+      "options": ["374", "384", "394", "364"],
+      "correct_answer": "384",
+      "explanation_hint": "Add step by step: 236 + 148 = 384."
+    },
+    {
+      "id": "add_sch_005",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "In a fair, 275 tickets were sold on Saturday and 349 tickets were sold on Sunday. How many tickets were sold in both days?",
+      "options": ["614", "624", "634", "604"],
+      "correct_answer": "624",
+      "explanation_hint": "275 + 349 = 624 tickets."
+    },
+    {
+      "id": "add_oly_001",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Which two numbers add up to 100? (a) 45 and 55 (b) 40 and 55 (c) 35 and 60 (d) 42 and 50",
+      "options": ["a", "b", "c", "d"],
+      "correct_answer": "a",
+      "explanation_hint": "45 + 55 = 100, so option (a) is correct."
+    },
+    {
+      "id": "add_oly_002",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Find the missing number: 156 + __ = 300",
+      "options": ["134", "144", "154", "164"],
+      "correct_answer": "144",
+      "explanation_hint": "300 - 156 = 144."
+    },
+    {
+      "id": "add_oly_003",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "A farmer has 3 baskets. The first has 112 apples, the second has 25 more apples than the first, and the third has 30 more apples than the second. How many apples are in the third basket?",
+      "options": ["157", "167", "177", "147"],
+      "correct_answer": "167",
+      "explanation_hint": "Basket 1 = 112. Basket 2 = 112+25=137. Basket 3 = 137+30=167."
+    },
+    {
+      "id": "add_oly_004",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Class A collected 218 kg of paper and Class B collected 187 kg for recycling. Class C collected 15 kg more than Class A and B combined. How much did Class C collect?",
+      "options": ["405 kg", "420 kg", "415 kg", "410 kg"],
+      "correct_answer": "420 kg",
+      "explanation_hint": "A+B = 218+187 = 405. C = 405+15 = 420 kg."
+    },
+    {
+      "id": "add_oly_005",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Look at the pattern: 50+50=100, 60+60=120, 70+70=140, 80+80=__?",
+      "options": ["150", "160", "170", "180"],
+      "correct_answer": "160",
+      "explanation_hint": "The pattern doubles the number: 80 + 80 = 160."
+    }
+  ]
+}

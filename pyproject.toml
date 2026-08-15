@@ -1,0 +1,38 @@
+[project]
+name = "learn-with-masti"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Parul Chutani",email = "parulchutani.phd@gmail.com"}
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi (>=0.141.1,<0.142.0)",
+    "uvicorn[standard] (>=0.52.1,<0.53.0)",
+    "anthropic (>=0.121.0,<0.122.0)",
+    "python-dotenv (>=1.2.2,<2.0.0)",
+    "sqlalchemy (>=2.0.51,<3.0.0)",
+    "alembic (>=1.19.1,<2.0.0)",
+    "psycopg[binary] (>=3.3.4,<4.0.0)",
+    "passlib[bcrypt] (>=1.7.4,<2.0.0)",
+    "bcrypt (<4.1)",
+    "pyjwt (>=2.13.0,<3.0.0)",
+    "httpx (>=0.28.1,<0.29.0)"
+]
+
+[tool.poetry]
+packages = [{ include = "learn_with_masti", from = "src" }]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)",
+    "pytest-asyncio (>=1.4.0,<2.0.0)"
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

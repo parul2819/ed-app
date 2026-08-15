@@ -1,0 +1,5 @@
+Question: {question_text}
+Correct answer: {correct_answer}
+Explanation hint: {explanation_hint}
+
+Generate a step-wise solution for this question.

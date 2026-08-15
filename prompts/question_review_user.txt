@@ -1,0 +1,11 @@
+Review this Class 3 Math question:
+
+Topic: {topic}
+Track: {track}
+Difficulty: {difficulty}
+Question: {question_text}
+Options: {options}
+Correct answer: {correct_answer}
+Explanation hint: {explanation_hint}
+
+Check it against every review criterion and return your verdict as JSON.

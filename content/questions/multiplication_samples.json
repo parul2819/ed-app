@@ -1,0 +1,105 @@
+{
+  "topic": "multiplication",
+  "questions": [
+    {
+      "id": "mul_sch_001",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "2 x 3 = ?",
+      "options": ["5", "6", "7", "4"],
+      "correct_answer": "6",
+      "explanation_hint": "2 groups of 3 = 3 + 3 = 6."
+    },
+    {
+      "id": "mul_sch_002",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "There are 3 baskets with 4 apples each. How many apples in total?",
+      "options": ["10", "11", "12", "9"],
+      "correct_answer": "12",
+      "explanation_hint": "3 x 4 = 12 apples (4+4+4 = 12)."
+    },
+    {
+      "id": "mul_sch_003",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "5 x 5 = ?",
+      "options": ["20", "25", "30", "15"],
+      "correct_answer": "25",
+      "explanation_hint": "5 groups of 5 = 25."
+    },
+    {
+      "id": "mul_sch_004",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "Any number multiplied by 1 gives?",
+      "options": ["0", "The same number", "1", "10"],
+      "correct_answer": "The same number",
+      "explanation_hint": "Multiplying by 1 keeps the number the same, e.g., 6 x 1 = 6."
+    },
+    {
+      "id": "mul_sch_005",
+      "topic": "multiplication",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "4 x 6 = ?",
+      "options": ["20", "22", "24", "26"],
+      "correct_answer": "24",
+      "explanation_hint": "4 groups of 6 = 6+6+6+6 = 24."
+    },
+    {
+      "id": "mul_oly_001",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Which of these equals 18? (a) 2x9 (b) 3x5 (c) 4x4 (d) 6x2",
+      "options": ["a", "b", "c", "d"],
+      "correct_answer": "a",
+      "explanation_hint": "2 x 9 = 18, so option (a) is correct."
+    },
+    {
+      "id": "mul_oly_002",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Find the missing number: 3 x __ = 21",
+      "options": ["6", "7", "8", "9"],
+      "correct_answer": "7",
+      "explanation_hint": "3 x 7 = 21."
+    },
+    {
+      "id": "mul_oly_003",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Look at the pattern: 1x2=2, 2x2=4, 3x2=6, 4x2=__?",
+      "options": ["6", "7", "8", "9"],
+      "correct_answer": "8",
+      "explanation_hint": "Each step adds 2: 4 x 2 = 8."
+    },
+    {
+      "id": "mul_oly_004",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "A gardener plants 5 rows of trees with 4 trees in each row. How many trees are there in total?",
+      "options": ["18", "20", "22", "16"],
+      "correct_answer": "20",
+      "explanation_hint": "5 x 4 = 20 trees."
+    },
+    {
+      "id": "mul_oly_005",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Which number when multiplied by itself gives 9?",
+      "options": ["2", "3", "4", "5"],
+      "correct_answer": "3",
+      "explanation_hint": "3 x 3 = 9."
+    }
+  ]
+}

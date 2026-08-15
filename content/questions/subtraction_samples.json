@@ -1,0 +1,106 @@
+{
+  "topic": "subtraction",
+  "notes": "2-3 digit subtraction, word-problem focused per latest scope update",
+  "questions": [
+    {
+      "id": "sub_sch_001",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "Arjun had 58 stickers. He gave 23 to his friend. How many stickers does he have left?",
+      "options": ["34", "35", "36", "33"],
+      "correct_answer": "35",
+      "explanation_hint": "58 - 23 = 35 stickers."
+    },
+    {
+      "id": "sub_sch_002",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "76 - 34 = ?",
+      "options": ["40", "41", "42", "43"],
+      "correct_answer": "42",
+      "explanation_hint": "76 - 34 = 42."
+    },
+    {
+      "id": "sub_sch_003",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A shop had 240 chocolates. They sold 165 of them. How many chocolates are left in the shop?",
+      "options": ["65", "75", "85", "95"],
+      "correct_answer": "75",
+      "explanation_hint": "240 - 165 = 75 chocolates."
+    },
+    {
+      "id": "sub_sch_004",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "312 - 148 = ?",
+      "options": ["154", "164", "174", "144"],
+      "correct_answer": "164",
+      "explanation_hint": "312 - 148 = 164."
+    },
+    {
+      "id": "sub_sch_005",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "There were 425 people at a fair. By evening, 268 people had left. How many people were still at the fair?",
+      "options": ["147", "157", "167", "177"],
+      "correct_answer": "157",
+      "explanation_hint": "425 - 268 = 157 people."
+    },
+    {
+      "id": "sub_oly_001",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Find the missing number: 200 - __ = 87",
+      "options": ["103", "113", "123", "133"],
+      "correct_answer": "113",
+      "explanation_hint": "200 - 87 = 113."
+    },
+    {
+      "id": "sub_oly_002",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Which subtraction gives the largest answer? (a) 300-150 (b) 300-120 (c) 300-190 (d) 300-250",
+      "options": ["a", "b", "c", "d"],
+      "correct_answer": "b",
+      "explanation_hint": "300-120=180, which is the largest among all options."
+    },
+    {
+      "id": "sub_oly_003",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Riya had some money. She spent 145 rupees on a book and 89 rupees on a pen, and now has 66 rupees left. How much money did she have at the start?",
+      "options": ["280", "290", "300", "310"],
+      "correct_answer": "300",
+      "explanation_hint": "Total spent = 145+89 = 234. Start = 234 + 66 = 300 rupees."
+    },
+    {
+      "id": "sub_oly_004",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Look at the pattern: 500-100=400, 400-100=300, 300-100=200, 200-100=__?",
+      "options": ["50", "100", "150", "200"],
+      "correct_answer": "100",
+      "explanation_hint": "The pattern subtracts 100 each time: 200 - 100 = 100."
+    },
+    {
+      "id": "sub_oly_005",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "A number minus 175 equals 225. What is the number?",
+      "options": ["380", "390", "400", "410"],
+      "correct_answer": "400",
+      "explanation_hint": "400 - 175 = 225, so the number is 400."
+    }
+  ]
+}

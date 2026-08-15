@@ -1,0 +1,256 @@
+{
+  "topic": "addition",
+  "notes": "Full question bank: 2-3 digit addition, word-problem heavy, per latest scope update",
+  "questions": [
+    {
+      "id": "add_sch_001",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "Priya has 32 pencils. Her friend gives her 26 more. How many pencils does she have now?",
+      "options": ["57", "58", "59", "56"],
+      "correct_answer": "58",
+      "explanation_hint": "32 + 26 = 58 pencils."
+    },
+    {
+      "id": "add_sch_002",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "54 + 38 = ?",
+      "options": ["91", "92", "93", "90"],
+      "correct_answer": "92",
+      "explanation_hint": "54 + 38 = 92."
+    },
+    {
+      "id": "add_sch_003",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "A basket has 47 mangoes. Another basket has 35 mangoes. How many mangoes are there in total?",
+      "options": ["81", "82", "83", "80"],
+      "correct_answer": "82",
+      "explanation_hint": "47 + 35 = 82 mangoes."
+    },
+    {
+      "id": "add_sch_004",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "63 + 34 = ?",
+      "options": ["96", "97", "98", "95"],
+      "correct_answer": "97",
+      "explanation_hint": "63 + 34 = 97."
+    },
+    {
+      "id": "add_sch_005",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "Rohan collected 48 stamps. He collected 27 more the next day. How many stamps does he have now?",
+      "options": ["74", "75", "76", "73"],
+      "correct_answer": "75",
+      "explanation_hint": "48 + 27 = 75 stamps."
+    },
+    {
+      "id": "add_sch_006",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A school has 215 boys and 198 girls. How many students are there in total?",
+      "options": ["412", "413", "414", "403"],
+      "correct_answer": "413",
+      "explanation_hint": "215 + 198 = 413 students."
+    },
+    {
+      "id": "add_sch_007",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "342 + 256 = ?",
+      "options": ["588", "597", "598", "608"],
+      "correct_answer": "598",
+      "explanation_hint": "342 + 256 = 598."
+    },
+    {
+      "id": "add_sch_008",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A stadium sold 187 tickets on Friday and 234 tickets on Saturday. How many tickets were sold on both days?",
+      "options": ["411", "420", "421", "431"],
+      "correct_answer": "421",
+      "explanation_hint": "187 + 234 = 421 tickets."
+    },
+    {
+      "id": "add_sch_009",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "156 + 278 = ?",
+      "options": ["424", "433", "434", "444"],
+      "correct_answer": "434",
+      "explanation_hint": "156 + 278 = 434."
+    },
+    {
+      "id": "add_sch_010",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A farmer picked 246 apples in the morning and 179 apples in the afternoon. How many apples did he pick in total?",
+      "options": ["415", "424", "425", "435"],
+      "correct_answer": "425",
+      "explanation_hint": "246 + 179 = 425 apples."
+    },
+    {
+      "id": "add_sch_011",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A charity collected ₹368 on Monday and ₹275 on Tuesday. How much was collected over the two days?",
+      "options": ["633", "642", "643", "653"],
+      "correct_answer": "643",
+      "explanation_hint": "368 + 275 = 643 rupees."
+    },
+    {
+      "id": "add_sch_012",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "457 + 386 = ?",
+      "options": ["833", "842", "843", "853"],
+      "correct_answer": "843",
+      "explanation_hint": "457 + 386 = 843."
+    },
+    {
+      "id": "add_sch_013",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A cinema hall's first show had 289 people. The second show had 214 more people than the first show. How many people watched the second show?",
+      "options": ["493", "502", "503", "513"],
+      "correct_answer": "503",
+      "explanation_hint": "289 + 214 = 503 people."
+    },
+    {
+      "id": "add_sch_014",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "In a marathon, 524 runners finished in the first group and 349 runners finished in the second group. How many runners finished in total?",
+      "options": ["863", "872", "873", "883"],
+      "correct_answer": "873",
+      "explanation_hint": "524 + 349 = 873 runners."
+    },
+    {
+      "id": "add_sch_015",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "618 + 275 = ?",
+      "options": ["883", "892", "893", "903"],
+      "correct_answer": "893",
+      "explanation_hint": "618 + 275 = 893."
+    },
+    {
+      "id": "add_oly_001",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "A vendor sold 145 apples and some oranges. In total he sold 310 fruits. How many oranges did he sell?",
+      "options": ["155", "160", "165", "175"],
+      "correct_answer": "165",
+      "explanation_hint": "310 - 145 = 165 oranges."
+    },
+    {
+      "id": "add_oly_002",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Find the missing number: 238 + __ = 500",
+      "options": ["252", "261", "262", "272"],
+      "correct_answer": "262",
+      "explanation_hint": "500 - 238 = 262."
+    },
+    {
+      "id": "add_oly_003",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Two numbers add up to 725. One of the numbers is 348. What is the other number?",
+      "options": ["367", "376", "377", "387"],
+      "correct_answer": "377",
+      "explanation_hint": "725 - 348 = 377."
+    },
+    {
+      "id": "add_oly_004",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "A school collected 214 kg of paper in Week 1, and 25 kg more than Week 1 in Week 2. Week 3's collection was 40 kg more than Week 2. How much did they collect in Week 3?",
+      "options": ["269", "278", "279", "289"],
+      "correct_answer": "279",
+      "explanation_hint": "Week 2 = 214+25=239. Week 3 = 239+40=279 kg."
+    },
+    {
+      "id": "add_oly_005",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Look at the pattern: 25+25=50, 35+35=70, 45+45=90, 55+55=__?",
+      "options": ["100", "105", "110", "115"],
+      "correct_answer": "110",
+      "explanation_hint": "The pattern doubles the number: 55 + 55 = 110."
+    },
+    {
+      "id": "add_oly_006",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Which pair of numbers adds up to 250? (a) 120 and 125 (b) 110 and 140 (c) 105 and 150 (d) 130 and 115",
+      "options": ["a", "b", "c", "d"],
+      "correct_answer": "b",
+      "explanation_hint": "110 + 140 = 250, so option (b) is correct."
+    },
+    {
+      "id": "add_oly_007",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Riya adds two 3-digit numbers and gets 612. If one number is 275, what is the other number?",
+      "options": ["327", "336", "337", "347"],
+      "correct_answer": "337",
+      "explanation_hint": "612 - 275 = 337."
+    },
+    {
+      "id": "add_oly_008",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "A library had 356 books. After a new shipment arrived, it now has 620 books. How many books were in the shipment?",
+      "options": ["254", "263", "264", "274"],
+      "correct_answer": "264",
+      "explanation_hint": "620 - 356 = 264 books."
+    },
+    {
+      "id": "add_oly_009",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "medium",
+      "question_text": "Find the missing number: 189 + __ = 400",
+      "options": ["201", "210", "211", "221"],
+      "correct_answer": "211",
+      "explanation_hint": "400 - 189 = 211."
+    },
+    {
+      "id": "add_oly_010",
+      "topic": "addition",
+      "track": "olympiad",
+      "difficulty": "hard",
+      "question_text": "Look at the pattern: 100+200=300, 200+300=500, 300+400=700, 400+500=__?",
+      "options": ["800", "850", "900", "950"],
+      "correct_answer": "900",
+      "explanation_hint": "400 + 500 = 900."
+    }
+  ]
+}

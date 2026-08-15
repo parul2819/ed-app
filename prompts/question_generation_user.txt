@@ -1,0 +1,11 @@
+Generate {n} new questions for:
+Topic: {topic}
+Track: {track}
+Difficulty: {difficulty}
+
+Avoid repeating these existing question texts (for reference, do not copy style verbatim):
+{recent_question_texts}
+
+If more than one question is requested (n > 1), output a single JSON array
+containing all {n} question objects, e.g. [{{...}}, {{...}}]. Do NOT output
+multiple separate JSON objects one after another — it must be one array.
