@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import TopBar from "../components/TopBar";
 import { useAuth } from "../context/AuthContext";
+import { TOPIC_LABELS, levelLabel } from "../constants";
 import {
   getQuestions,
   generateQuestions,
@@ -9,12 +10,6 @@ import {
   recordAttempt,
   apiErrorMessage,
 } from "../api";
-
-const TOPIC_LABELS = {
-  addition: "Addition",
-  subtraction: "Subtraction",
-  multiplication: "Multiplication",
-};
 
 function capitalize(word) {
   return word.charAt(0).toUpperCase() + word.slice(1);
@@ -29,8 +24,16 @@ function shuffle(items) {
   return result;
 }
 
+function LevelBadge({ track, difficulty }) {
+  return (
+    <div className={`level-badge level-${difficulty}`}>
+      {levelLabel(track, difficulty)}
+    </div>
+  );
+}
+
 export default function PracticePage() {
-  const { track, topic } = useParams();
+  const { track, topic, difficulty } = useParams();
   const navigate = useNavigate();
   const { activeChild, logoutChild, signOut } = useAuth();
 
@@ -47,7 +50,7 @@ export default function PracticePage() {
     setLoadingQuestions(true);
     setError("");
     try {
-      const qs = await getQuestions({ topic, track, difficulty: "easy" });
+      const qs = await getQuestions({ topic, track, difficulty });
       setQuestions(shuffle(qs));
       setIndex(0);
       setSelected(null);
@@ -57,7 +60,7 @@ export default function PracticePage() {
     } finally {
       setLoadingQuestions(false);
     }
-  }, [topic, track]);
+  }, [topic, track, difficulty]);
 
   useEffect(() => {
     loadBankQuestions();
@@ -67,9 +70,9 @@ export default function PracticePage() {
     setGenerating(true);
     setError("");
     try {
-      const qs = await generateQuestions({ topic, track, difficulty: "easy", n: 5 });
-      setQuestions(qs);
-      setIndex(0);
+      const qs = await generateQuestions({ topic, track, difficulty, n: 5 });
+      setIndex(questions.length);
+      setQuestions((prev) => [...prev, ...qs]);
       setSelected(null);
       setSolution(null);
     } catch (err) {
@@ -77,7 +80,7 @@ export default function PracticePage() {
     } finally {
       setGenerating(false);
     }
-  }, [topic, track]);
+  }, [topic, track, difficulty, questions]);
 
   const current = questions[index];
   const isLastQuestion = index === questions.length - 1;
@@ -138,7 +141,7 @@ export default function PracticePage() {
     <div className="app-frame">
       <TopBar
         title={title}
-        onBack={() => navigate("/topics")}
+        onBack={() => navigate(`/levels/${track}/${topic}`)}
         actions={[
           { label: "Switch", onClick: handleSwitchChild },
           { label: "Sign out", onClick: handleSignOut },
@@ -165,19 +168,23 @@ export default function PracticePage() {
 
         {!busy && !current && !error && (
           <>
-            <p className="subtitle">No questions available yet.</p>
+            <p className="subtitle">
+              No questions here yet — let's create some just for you!
+            </p>
             <button
               type="button"
               className="btn btn-accent btn-block"
               onClick={loadMoreQuestions}
             >
-              🌟 Practice More
+              🌟 Generate Questions
             </button>
           </>
         )}
 
         {!busy && current && (
           <>
+            <LevelBadge track={track} difficulty={difficulty} />
+
             <div className="question-card">
               <div className="question-text">{current.question_text}</div>
             </div>

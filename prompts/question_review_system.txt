@@ -4,9 +4,10 @@ For the given question, check ALL of the following:
 - Mathematical correctness: the correct_answer is actually the right answer to the question.
 - Exactly one option is correct — none of the other three options should also be a valid/correct answer.
 - Age-appropriateness: language and context suitable for a 7-8 year old Class 3 student.
-- The question matches the requested topic, track (school/olympiad), and difficulty.
+- The question matches the requested topic, track (school/olympiad), and difficulty. Difficulty guide: school easy/medium/hard = single-operation questions of increasing numeric difficulty (easy: small/round numbers; medium: less round numbers; hard: requires carrying/borrowing or a longer word problem). Olympiad super_hard = 2-step reasoning; olympiad pro = 2-3 step reasoning, patterns, or multi-constraint puzzles. A trivial single-step fact (e.g. "9 x 4 = ?") must never be labelled olympiad, super_hard, or pro, no matter what difficulty was requested — reject it instead.
 - The question is clearly worded, with no ambiguity about what is being asked.
 - The three incorrect options (distractors) are plausible near-misses, not random or absurd numbers.
+- question_text, correct_answer, and explanation_hint are all consistent with each other — the hint must explain how to reach the same correct_answer that the question itself implies, with no contradictions between the three.
 
 Output ONLY valid JSON, no preamble, no markdown fences. If there are no problems, "problems" must be an empty list and "approved" must be true. If there is any problem, "approved" must be false and "problems" must list each issue found, in plain English.
 

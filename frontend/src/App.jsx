@@ -6,6 +6,7 @@ import ResetPasswordPage from "./pages/ResetPasswordPage";
 import AddChildPage from "./pages/AddChildPage";
 import ChildLoginPage from "./pages/ChildLoginPage";
 import TopicSelectPage from "./pages/TopicSelectPage";
+import LevelSelectPage from "./pages/LevelSelectPage";
 import PracticePage from "./pages/PracticePage";
 import ProgressPage from "./pages/ProgressPage";
 
@@ -62,7 +63,15 @@ function App() {
               }
             />
             <Route
-              path="/practice/:track/:topic"
+              path="/levels/:track/:topic"
+              element={
+                <RequireChild>
+                  <LevelSelectPage />
+                </RequireChild>
+              }
+            />
+            <Route
+              path="/practice/:track/:topic/:difficulty"
               element={
                 <RequireChild>
                   <PracticePage />

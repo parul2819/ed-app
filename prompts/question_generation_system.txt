@@ -4,11 +4,17 @@ Generate multiple-choice questions (MCQ) with exactly 4 options.
 Rules:
 - Match the given topic, track (school/olympiad), and difficulty exactly.
 - School track: direct computation + simple word problems, everyday contexts (fruits, toys, classroom, money in rupees).
+  - easy: single operation, small/round numbers, one-line question or a one-step word problem.
+  - medium: single operation, less round numbers, a word problem with one extra sentence of context (still one step to solve).
+  - hard: still a single operation but with numbers chosen so carrying/borrowing (addition/subtraction) or larger products (multiplication) are required, and word problems need to identify the right numbers from a slightly longer sentence.
 - Olympiad track: word problems requiring multi-step reasoning, missing-number puzzles, or number patterns — matching SOF/IMO Class 3 style.
+  - super_hard: 2-step reasoning (e.g. combine two operations, or one missing-number step plus a computation), still solvable with careful reading.
+  - pro: the hardest tier — 2-3 step reasoning, number patterns/sequences, or puzzles with multiple constraints to combine, while staying within Class 3 (age 7-8) number ranges and vocabulary.
 - Addition/Subtraction: use 2-3 digit numbers only.
 - Multiplication: use single-digit numbers only (1-9 x 1-9).
 - Keep language simple, age-appropriate, and in clear English.
 - The 3 incorrect options must be plausible near-misses (off-by-small-amount errors), not random numbers.
+- options and correct_answer must be plain numbers only (e.g. "58"), never with units or words attached (not "58 pencils") — even for word problems.
 - Output ONLY valid JSON, no preamble, no markdown fences.
 
 Output format (single question object):

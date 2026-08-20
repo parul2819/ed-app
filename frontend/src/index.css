@@ -343,6 +343,80 @@ p.subtitle {
   transform: scale(0.94);
 }
 
+.level-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.level-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 16px;
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  color: white;
+  text-align: left;
+}
+
+.level-card:active {
+  transform: scale(0.98);
+}
+
+.level-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.level-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.level-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.level-desc {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.level-badge {
+  align-self: center;
+  display: inline-flex;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: white;
+}
+
+.level-easy {
+  background: linear-gradient(160deg, #34d399, #059669);
+}
+
+.level-medium {
+  background: linear-gradient(160deg, #fbbf24, #d97706);
+}
+
+.level-hard {
+  background: linear-gradient(160deg, #f87171, #dc2626);
+}
+
+.level-super_hard {
+  background: linear-gradient(160deg, #818cf8, #4f46e5);
+}
+
+.level-pro {
+  background: linear-gradient(160deg, #f472b6, #9d174d);
+}
+
 .question-card {
   background: white;
   border-radius: var(--radius-lg);

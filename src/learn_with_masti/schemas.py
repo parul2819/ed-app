@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field, field_validator, model_validator
 
 Topic = Literal["addition", "subtraction", "multiplication"]
 Track = Literal["school", "olympiad"]
-Difficulty = Literal["easy", "medium", "hard"]
+Difficulty = Literal["easy", "medium", "hard", "super_hard", "pro"]
 SessionMode = Literal["scored", "open"]
 
 
