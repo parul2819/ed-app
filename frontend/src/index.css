@@ -98,6 +98,67 @@ input {
   background: transparent;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.topbar,
+.screen {
+  position: relative;
+  z-index: 1;
+}
+
+/* section 6: random photo layer — sits above the base pastel blob background
+   (body's --bg-blobs) and below all interactive screen content */
+.screen-bg {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.screen-bg-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.screen-bg-left-tilt,
+.screen-bg-right-tilt {
+  top: var(--space-12);
+  width: 58%;
+  aspect-ratio: 1 / 1;
+}
+
+.screen-bg-left-tilt {
+  left: -20%;
+}
+
+.screen-bg-right-tilt {
+  right: -20%;
+}
+
+.screen-bg-left-tilt .screen-bg-img,
+.screen-bg-right-tilt .screen-bg-img {
+  border-radius: var(--radius-lg);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 55%, transparent 92%);
+  mask-image: radial-gradient(circle at 50% 50%, black 55%, transparent 92%);
+}
+
+.screen-bg-full-low-opacity {
+  inset: 0;
+}
+
+/* solid pastel scrim on top of the low-opacity photo so body text kept its
+   contrast ratio (skill section 6 guardrail) */
+.screen-bg-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--color-bg);
+  opacity: 0.78;
 }
 
 .screen {

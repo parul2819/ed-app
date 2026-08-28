@@ -6,3 +6,8 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 debug_api_test.py
+
+# Raw source images for the background-image build pipeline (see kids-friendly-ui
+# skill section 6). The optimized output lives in frontend/public/backgrounds/ and
+# is generated with `npm run build:backgrounds` — that's what's committed.
+background images/

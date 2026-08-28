@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import TopBar from "../components/TopBar";
 import Mascot from "../components/Mascot";
 import ConfettiBurst from "../components/ConfettiBurst";
+import ScreenBackground from "../components/ScreenBackground";
 import { useAuth } from "../context/AuthContext";
 import {
   getQuestions,
@@ -138,6 +139,7 @@ export default function PracticePage() {
 
   return (
     <div className="app-frame">
+      <ScreenBackground />
       <TopBar
         title={title}
         onBack={() => navigate("/topics")}
