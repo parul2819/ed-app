@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import TopBar from "../components/TopBar";
 import Mascot from "../components/Mascot";
+import ScreenBackground from "../components/ScreenBackground";
 import { resetPassword, apiErrorMessage } from "../api";
 
 export default function ResetPasswordPage() {
@@ -28,6 +29,7 @@ export default function ResetPasswordPage() {
 
   return (
     <div className="app-frame">
+      <ScreenBackground />
       <TopBar title="Reset Password" onBack={() => navigate(-1)} />
       <div className="screen screen-centered">
         <Mascot state="encouraging" size="lg" />

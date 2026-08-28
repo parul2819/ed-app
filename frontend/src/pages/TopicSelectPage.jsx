@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TopBar from "../components/TopBar";
 import Mascot from "../components/Mascot";
+import ScreenBackground from "../components/ScreenBackground";
 import { useAuth } from "../context/AuthContext";
 
 const TOPICS = [
@@ -27,6 +28,7 @@ export default function TopicSelectPage() {
 
   return (
     <div className="app-frame">
+      <ScreenBackground />
       <TopBar
         title={`Hi, ${activeChild?.name ?? "there"}!`}
         actions={[

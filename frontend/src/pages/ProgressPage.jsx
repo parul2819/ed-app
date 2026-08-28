@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TopBar from "../components/TopBar";
 import Stars from "../components/Stars";
+import ScreenBackground from "../components/ScreenBackground";
 import { useAuth } from "../context/AuthContext";
 import { getChildProgress, apiErrorMessage } from "../api";
 
@@ -48,6 +49,7 @@ export default function ProgressPage() {
 
   return (
     <div className="app-frame">
+      <ScreenBackground />
       <TopBar
         title="My Progress"
         onBack={() => navigate("/topics")}

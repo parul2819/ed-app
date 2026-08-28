@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TopBar from "../components/TopBar";
 import Mascot from "../components/Mascot";
+import ScreenBackground from "../components/ScreenBackground";
 import { useAuth } from "../context/AuthContext";
 import { apiErrorMessage } from "../api";
 
@@ -40,6 +41,7 @@ export default function AddChildPage() {
 
   return (
     <div className="app-frame">
+      <ScreenBackground />
       <TopBar title="Add a Child" onBack={() => navigate(-1)} />
       <div className="screen">
         <Mascot state="encouraging" />

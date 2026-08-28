@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TopBar from "../components/TopBar";
 import Mascot from "../components/Mascot";
+import ScreenBackground from "../components/ScreenBackground";
 import { useAuth } from "../context/AuthContext";
 import { apiErrorMessage } from "../api";
 
@@ -133,6 +134,7 @@ export default function ChildLoginPage() {
   if (selectedChild) {
     return (
       <div className="app-frame">
+        <ScreenBackground />
         <PinPad
           child={selectedChild}
           onBack={() => setSelectedChild(null)}
@@ -144,6 +146,7 @@ export default function ChildLoginPage() {
 
   return (
     <div className="app-frame">
+      <ScreenBackground />
       <ChildList
         kids={cachedChildren}
         loading={childrenLoading}

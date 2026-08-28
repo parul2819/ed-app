@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { apiErrorMessage } from "../api";
 import Mascot from "../components/Mascot";
+import ScreenBackground from "../components/ScreenBackground";
 
 export default function ParentAuthPage() {
   const [mode, setMode] = useState("login");
@@ -33,6 +34,7 @@ export default function ParentAuthPage() {
 
   return (
     <div className="app-frame">
+      <ScreenBackground />
       <div className="screen screen-centered">
         <Mascot state="encouraging" size="lg" />
         <h1 className="title">Learn with Masti</h1>
