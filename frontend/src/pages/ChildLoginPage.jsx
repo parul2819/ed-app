@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TopBar from "../components/TopBar";
+import Mascot from "../components/Mascot";
 import { useAuth } from "../context/AuthContext";
 import { apiErrorMessage } from "../api";
 
@@ -13,8 +14,8 @@ const KEYPAD_ROWS = [
 
 function ChildList({ kids, loading, onPick, isParentLoggedIn, onAddChild, onParentLogin }) {
   return (
-    <div className="screen">
-      <div className="mascot">👋</div>
+    <div className="screen screen-top-centered">
+      <Mascot state="encouraging" size="lg" />
       <h1 className="title">Who's Practicing?</h1>
 
       {loading && kids.length === 0 && (
@@ -94,8 +95,8 @@ function PinPad({ child, onBack, onSuccess }) {
   return (
     <>
       <TopBar title={child.name} onBack={onBack} />
-      <div className="screen">
-        <div className="mascot">🔐</div>
+      <div className="screen screen-top-centered">
+        <Mascot state="encouraging" />
         <p className="subtitle">Enter your secret PIN</p>
 
         <div className="pin-dots">

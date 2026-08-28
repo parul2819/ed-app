@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TopBar from "../components/TopBar";
+import Mascot from "../components/Mascot";
 import { useAuth } from "../context/AuthContext";
 
 const TOPICS = [
@@ -33,7 +34,8 @@ export default function TopicSelectPage() {
           { label: "Sign out", onClick: handleSignOut },
         ]}
       />
-      <div className="screen">
+      <div className="screen screen-top-centered">
+        <Mascot state="encouraging" />
         <div className="btn-tabs">
           <button
             type="button"

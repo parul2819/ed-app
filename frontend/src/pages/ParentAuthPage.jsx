@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { apiErrorMessage } from "../api";
+import Mascot from "../components/Mascot";
 
 export default function ParentAuthPage() {
   const [mode, setMode] = useState("login");
@@ -33,7 +34,7 @@ export default function ParentAuthPage() {
   return (
     <div className="app-frame">
       <div className="screen screen-centered">
-        <div className="mascot">🦉</div>
+        <Mascot state="encouraging" size="lg" />
         <h1 className="title">Learn with Masti</h1>
         <p className="subtitle">A parent account keeps your child's practice safe.</p>
 

@@ -1,9 +1,25 @@
+function BackIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path
+        d="M15 5 L8 12 L15 19"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function TopBar({ title, onBack, actions = [] }) {
   return (
     <div className="topbar">
       {onBack ? (
-        <button type="button" className="topbar-btn" onClick={onBack}>
-          ← Back
+        <button type="button" className="topbar-btn topbar-back" onClick={onBack}>
+          <BackIcon />
+          Back
         </button>
       ) : (
         <span style={{ width: 64 }} />

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TopBar from "../components/TopBar";
+import Mascot from "../components/Mascot";
 import { useAuth } from "../context/AuthContext";
 import { apiErrorMessage } from "../api";
 
@@ -41,7 +42,7 @@ export default function AddChildPage() {
     <div className="app-frame">
       <TopBar title="Add a Child" onBack={() => navigate(-1)} />
       <div className="screen">
-        <div className="mascot">🧒</div>
+        <Mascot state="encouraging" />
         <p className="subtitle">Give your child a name and a secret PIN to log in with.</p>
 
         <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>

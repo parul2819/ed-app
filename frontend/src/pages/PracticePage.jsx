@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import TopBar from "../components/TopBar";
+import Mascot from "../components/Mascot";
+import ConfettiBurst from "../components/ConfettiBurst";
 import { useAuth } from "../context/AuthContext";
 import {
   getQuestions,
@@ -147,6 +149,7 @@ export default function PracticePage() {
       <div className="screen">
         {loadingQuestions && (
           <>
+            <Mascot state="encouraging" />
             <div className="loading-spinner" />
             <p className="subtitle">Getting your questions ready…</p>
           </>
@@ -154,6 +157,7 @@ export default function PracticePage() {
 
         {generating && (
           <>
+            <Mascot state="encouraging" />
             <div className="loading-spinner" />
             <p className="subtitle">
               Creating brand-new questions just for you… this can take a little while ⏳
@@ -165,6 +169,7 @@ export default function PracticePage() {
 
         {!busy && !current && !error && (
           <>
+            <Mascot state="encouraging" size="lg" />
             <p className="subtitle">No questions available yet.</p>
             <button
               type="button"
@@ -183,6 +188,9 @@ export default function PracticePage() {
             </div>
 
             <div className="option-grid">
+              {selected !== null && selected === current.correct_answer && (
+                <ConfettiBurst key={current.id} />
+              )}
               {current.options.map((option) => {
                 let cls = "option-btn";
                 if (selected !== null) {
@@ -205,6 +213,7 @@ export default function PracticePage() {
 
             {selected !== null && (
               <div className={`feedback-banner ${selected === current.correct_answer ? "correct" : "wrong"}`}>
+                <Mascot state={selected === current.correct_answer ? "happy" : "confused"} size="sm" />
                 {selected === current.correct_answer ? "🎉 Correct! Great job!" : "Not quite — you can do it!"}
               </div>
             )}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TopBar from "../components/TopBar";
+import Mascot from "../components/Mascot";
 import { forgotPassword, apiErrorMessage } from "../api";
 
 export default function ForgotPasswordPage() {
@@ -28,7 +29,7 @@ export default function ForgotPasswordPage() {
     <div className="app-frame">
       <TopBar title="Forgot Password" onBack={() => navigate(-1)} />
       <div className="screen screen-centered">
-        <div className="mascot">🔑</div>
+        <Mascot state="encouraging" size="lg" />
 
         {submitted ? (
           <>
