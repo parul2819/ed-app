@@ -109,9 +109,14 @@ input {
 }
 
 /* section 6: random photo layer — sits above the base pastel blob background
-   (body's --bg-blobs) and below all interactive screen content */
+   (body's --bg-blobs) and below all interactive screen content. Fixed to the
+   viewport (not the app-frame column), so on wide windows it can live in the
+   empty side margins instead of crowding the centered content column, and
+   anchored to the BOTTOM corner — every screen's heading/subtitle sits near
+   the top, right under the mascot, so a bottom anchor keeps the photo layer
+   clear of text on any screen. */
 .screen-bg {
-  position: absolute;
+  position: fixed;
   z-index: 0;
   pointer-events: none;
 }
@@ -127,17 +132,37 @@ input {
 
 .screen-bg-left-tilt,
 .screen-bg-right-tilt {
-  top: var(--space-12);
-  width: 58%;
+  bottom: var(--space-8);
+  width: clamp(72px, 22vw, 110px);
   aspect-ratio: 1 / 1;
 }
 
 .screen-bg-left-tilt {
-  left: -20%;
+  left: -40px;
 }
 
 .screen-bg-right-tilt {
-  right: -20%;
+  right: -40px;
+}
+
+/* wide windows: the content column stays capped at 480px (see .app-frame), so
+   anchor into the empty side margin instead of the viewport edge. Width is
+   capped to whatever margin is actually free, so it can never reach the
+   column even as the window keeps growing. */
+@media (min-width: 760px) {
+  .screen-bg-left-tilt,
+  .screen-bg-right-tilt {
+    bottom: var(--space-12);
+    width: min(200px, calc((100vw - 480px) / 2 - 40px));
+  }
+
+  .screen-bg-left-tilt {
+    left: 24px;
+  }
+
+  .screen-bg-right-tilt {
+    right: 24px;
+  }
 }
 
 .screen-bg-left-tilt .screen-bg-img,
