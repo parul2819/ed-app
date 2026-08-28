@@ -1,3 +1,4 @@
+import asyncio
 import uuid
 
 import pytest
@@ -368,6 +369,49 @@ async def test_list_children_only_returns_own_children(client):
     assert resp.status_code == 200
     names = {child["name"] for child in resp.json()}
     assert names == {"ChildA"}
+
+
+def test_db_touching_routes_are_not_coroutine_functions():
+    # Regression test for the /parents/children hang: these routes were
+    # `async def` while running their SQLAlchemy calls synchronously, which
+    # runs the blocking DB call directly on FastAPI's single shared event
+    # loop instead of its threadpool -- freezing every other concurrent
+    # request (any user, any route) for as long as the DB call takes, which is
+    # why a React StrictMode double-fire could hang both copies at once, and
+    # why an unrelated request like /health would hang too. Confirmed against
+    # a real uvicorn server: a slow synchronous call inside an `async def`
+    # route blocked a concurrent, dependency-free /health request for the
+    # full duration, while the identical call inside a plain `def` route
+    # (run via FastAPI's threadpool) left /health unaffected.
+    #
+    # Endpoints that call `db: Session = Depends(get_db)` synchronously must
+    # therefore be declared as plain `def`, not `async def`, so FastAPI runs
+    # them in its threadpool instead of on the event loop.
+    db_touching_paths = {
+        "/parents/signup",
+        "/parents/login",
+        "/parents/forgot-password",
+        "/parents/reset-password",
+        "/parents/children",
+        "/children/{child_id}/verify-pin",
+        "/children/{child_id}/progress",
+        "/children/{child_id}/attempts",
+    }
+
+    checked = set()
+    for route in main.app.routes:
+        path = getattr(route, "path", None)
+        endpoint = getattr(route, "endpoint", None)
+        if path not in db_touching_paths or endpoint is None:
+            continue
+        checked.add(path)
+        assert not asyncio.iscoroutinefunction(endpoint), (
+            f"{path} ({endpoint.__name__}) is declared `async def` but touches "
+            "the DB synchronously -- it will block the shared event loop for "
+            "every other concurrent request. Declare it as plain `def` instead."
+        )
+
+    assert checked == db_touching_paths
 
 
 async def test_get_progress_requires_child_token(client):

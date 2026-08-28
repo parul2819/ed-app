@@ -197,7 +197,7 @@ async def get_solution(request: GetSolutionRequest) -> Solution:
 
 
 @app.post("/parents/signup", response_model=TokenResponse, status_code=201)
-async def parents_signup(
+def parents_signup(
     request: ParentSignupRequest, db: Session = Depends(get_db)
 ) -> TokenResponse:
     parent = Parent(email=request.email, password_hash=auth.hash_secret(request.password))
@@ -212,7 +212,7 @@ async def parents_signup(
 
 
 @app.post("/parents/login", response_model=TokenResponse)
-async def parents_login(
+def parents_login(
     request: ParentLoginRequest, db: Session = Depends(get_db)
 ) -> TokenResponse:
     parent = db.query(Parent).filter(Parent.email == request.email.strip().lower()).first()
@@ -222,7 +222,7 @@ async def parents_login(
 
 
 @app.post("/parents/forgot-password", response_model=MessageResponse)
-async def forgot_password(
+def forgot_password(
     request: ForgotPasswordRequest, db: Session = Depends(get_db)
 ) -> MessageResponse:
     parent = db.query(Parent).filter(Parent.email == request.email.strip().lower()).first()
@@ -243,7 +243,7 @@ async def forgot_password(
 
 
 @app.post("/parents/reset-password", response_model=MessageResponse)
-async def reset_password(
+def reset_password(
     request: ResetPasswordRequest, db: Session = Depends(get_db)
 ) -> MessageResponse:
     token_hash = auth.hash_reset_token(request.token)
@@ -269,7 +269,7 @@ async def reset_password(
 
 
 @app.post("/parents/children", response_model=ChildResponse, status_code=201)
-async def create_child(
+def create_child(
     request: ChildCreateRequest,
     parent: Parent = Depends(get_current_parent),
     db: Session = Depends(get_db),
@@ -287,7 +287,7 @@ async def create_child(
 
 
 @app.get("/parents/children", response_model=list[ChildResponse])
-async def list_children(
+def list_children(
     parent: Parent = Depends(get_current_parent),
     db: Session = Depends(get_db),
 ) -> list[Child]:
@@ -300,7 +300,7 @@ async def list_children(
 
 
 @app.post("/children/{child_id}/verify-pin", response_model=ChildSessionResponse)
-async def verify_child_pin(
+def verify_child_pin(
     child_id: uuid.UUID,
     request: ChildPinVerifyRequest,
     db: Session = Depends(get_db),
@@ -316,7 +316,7 @@ async def verify_child_pin(
 
 
 @app.get("/children/{child_id}/progress", response_model=list[ChildProgressResponse])
-async def get_child_progress(
+def get_child_progress(
     child_id: uuid.UUID,
     child: Child = Depends(get_current_child),
     db: Session = Depends(get_db),
@@ -325,7 +325,7 @@ async def get_child_progress(
 
 
 @app.post("/children/{child_id}/attempts", response_model=ChildProgressResponse, status_code=201)
-async def record_attempt(
+def record_attempt(
     child_id: uuid.UUID,
     request: AttemptCreateRequest,
     child: Child = Depends(get_current_child),

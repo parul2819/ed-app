@@ -39,6 +39,11 @@ DATABASE_URL = os.environ.get(
     "DATABASE_URL", "postgresql+psycopg://masti:masti@localhost:5432/learn_with_masti"
 )
 
+# Bounds on how long a single DB connection attempt / query is allowed to hang
+# before failing with a clear error (see db.py). Postgres-only.
+DB_CONNECT_TIMEOUT_SECONDS = int(os.environ.get("DB_CONNECT_TIMEOUT_SECONDS", "5"))
+DB_STATEMENT_TIMEOUT_MS = int(os.environ.get("DB_STATEMENT_TIMEOUT_MS", "10000"))
+
 JWT_SECRET = os.environ.get("JWT_SECRET", "dev-secret-change-me-please-32-bytes-min")
 JWT_ALGORITHM = "HS256"
 PARENT_JWT_EXPIRE_MINUTES = int(os.environ.get("PARENT_JWT_EXPIRE_MINUTES", "10080"))
