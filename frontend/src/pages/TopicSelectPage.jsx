@@ -63,7 +63,7 @@ export default function TopicSelectPage() {
               key={topic.key}
               type="button"
               className={`tile ${topic.className}`}
-              onClick={() => navigate(`/practice/${track}/${topic.key}`)}
+              onClick={() => navigate(`/levels/${track}/${topic.key}`)}
             >
               <span className="tile-emoji">{topic.emoji}</span>
               {topic.label}

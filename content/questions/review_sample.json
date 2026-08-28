@@ -1,0 +1,66 @@
+{
+  "topic": "mixed",
+  "notes": "Small hand-picked sample for exercising scripts/audit_questions.py --review: 3 clean questions, 2 known-bad ones that fail stage 1 (mul_oly_012, add_sch_053), and 1 (mul_oly_test) that passes stage 1 but should be rejected by stage-2 LLM review for being a trivial fact mislabeled olympiad/pro.",
+  "questions": [
+    {
+      "id": "add_sch_001",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "Priya has 32 pencils. Her friend gives her 26 more. How many pencils does she have now?",
+      "options": ["57", "58", "59", "56"],
+      "correct_answer": "58",
+      "explanation_hint": "32 + 26 = 58 pencils."
+    },
+    {
+      "id": "add_sch_002",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "54 + 38 = ?",
+      "options": ["91", "92", "93", "90"],
+      "correct_answer": "92",
+      "explanation_hint": "54 + 38 = 92."
+    },
+    {
+      "id": "add_sch_003",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "A basket has 47 mangoes. Another basket has 35 mangoes. How many mangoes are there in total?",
+      "options": ["81", "82", "83", "80"],
+      "correct_answer": "82",
+      "explanation_hint": "47 + 35 = 82 mangoes."
+    },
+    {
+      "id": "mul_oly_012",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "What is 9 x 4? (a) 36 (b) 37 (c) 38 (d) 39",
+      "options": ["(a) 36", "(b) 37", "(c) 38", "(d) 39"],
+      "correct_answer": "(a) 36",
+      "explanation_hint": "9 x 4 = 36."
+    },
+    {
+      "id": "add_sch_053",
+      "topic": "addition",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A child has ₹125. They get ₹75 more. How much money does the child have now?",
+      "options": ["₹200", "₹201", "₹202", "₹203"],
+      "correct_answer": "₹201",
+      "explanation_hint": "125 + 75 = 200, but since the question says 'more', it's 125 + 75 = 200, not 201."
+    },
+    {
+      "id": "mul_oly_test",
+      "topic": "multiplication",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "What is 6 x 3?",
+      "options": ["18", "19", "20", "21"],
+      "correct_answer": "18",
+      "explanation_hint": "6 x 3 = 18."
+    }
+  ]
+}

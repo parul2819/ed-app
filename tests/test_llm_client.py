@@ -1,8 +1,10 @@
 import json
+import logging
 from types import SimpleNamespace
 
 import httpx
 import pytest
+from pydantic import ValidationError
 
 import learn_with_masti.llm_client as llm_client
 from learn_with_masti.config import PROMPTS_DIR
@@ -443,3 +445,172 @@ async def test_review_question_includes_question_details_in_prompt(monkeypatch):
     assert "60" in captured["user_prompt"]
     assert "addition" in captured["user_prompt"]
     assert "school" in captured["user_prompt"]
+
+
+async def test_review_question_raises_on_missing_required_field(monkeypatch):
+    async def fake_complete(system_prompt, user_prompt):
+        # "approved" is required by the QuestionReview schema.
+        return json.dumps({"problems": []})
+
+    monkeypatch.setattr(
+        llm_client, "get_review_provider", lambda: SimpleNamespace(complete=fake_complete)
+    )
+
+    with pytest.raises(ValidationError):
+        await llm_client.review_question(_sample_question())
+
+
+async def test_review_question_raises_on_invalid_json(monkeypatch):
+    async def fake_complete(system_prompt, user_prompt):
+        return "not json at all"
+
+    monkeypatch.setattr(
+        llm_client, "get_review_provider", lambda: SimpleNamespace(complete=fake_complete)
+    )
+
+    with pytest.raises(json.JSONDecodeError):
+        await llm_client.review_question(_sample_question())
+
+
+def _question_json(**overrides) -> dict:
+    defaults = {
+        "id": "addition_school_gen_0001",
+        "topic": "addition",
+        "track": "school",
+        "difficulty": "easy",
+        "question_text": "40 + 20 = ?",
+        "options": ["58", "59", "60", "61"],
+        "correct_answer": "60",
+        "explanation_hint": "40 + 20 = 60.",
+    }
+    defaults.update(overrides)
+    return defaults
+
+
+def _provider_returning(*payloads):
+    """A fake Provider whose .complete() returns each payload in turn (as a
+    JSON string), for stubbing successive generate_questions() attempts."""
+    calls = iter(payloads)
+
+    async def fake_complete(system_prompt, user_prompt):
+        return json.dumps(next(calls))
+
+    return SimpleNamespace(complete=fake_complete)
+
+
+async def test_generate_questions_discards_stage1_failures(monkeypatch):
+    good = _question_json(id="addition_school_gen_0001")
+    bad = _question_json(id="addition_school_gen_0002", question_text="41 + 20 = ?")
+
+    monkeypatch.setattr(llm_client, "get_provider", lambda: _provider_returning([good, bad]))
+    monkeypatch.setattr(
+        llm_client,
+        "validate_question",
+        lambda q: [] if q.id == "addition_school_gen_0001" else ["arithmetic is wrong"],
+    )
+    monkeypatch.setattr(llm_client, "REVIEW_ENABLED", False)
+
+    result = await llm_client.generate_questions("addition", "school", "easy", 1, [])
+
+    assert [q.id for q in result] == ["addition_school_gen_0001"]
+
+
+async def test_generate_questions_discards_stage2_rejected_questions(monkeypatch):
+    good = _question_json(id="addition_school_gen_0001")
+    rejected = _question_json(id="addition_school_gen_0002", question_text="41 + 20 = ?")
+
+    monkeypatch.setattr(llm_client, "get_provider", lambda: _provider_returning([good, rejected]))
+    monkeypatch.setattr(llm_client, "validate_question", lambda q: [])
+    monkeypatch.setattr(llm_client, "REVIEW_ENABLED", True)
+
+    async def fake_review(question):
+        from learn_with_masti.schemas import QuestionReview
+
+        if question.id == "addition_school_gen_0001":
+            return QuestionReview(approved=True, problems=[])
+        return QuestionReview(approved=False, problems=["distractors are not plausible"])
+
+    monkeypatch.setattr(llm_client, "review_question", fake_review)
+
+    result = await llm_client.generate_questions("addition", "school", "easy", 1, [])
+
+    assert [q.id for q in result] == ["addition_school_gen_0001"]
+
+
+async def test_generate_questions_skips_review_when_disabled(monkeypatch):
+    only = _question_json(id="addition_school_gen_0001")
+
+    monkeypatch.setattr(llm_client, "get_provider", lambda: _provider_returning([only]))
+    monkeypatch.setattr(llm_client, "validate_question", lambda q: [])
+    monkeypatch.setattr(llm_client, "REVIEW_ENABLED", False)
+
+    async def fail_review(question):
+        raise AssertionError("review_question should not be called when REVIEW_ENABLED is False")
+
+    monkeypatch.setattr(llm_client, "review_question", fail_review)
+
+    result = await llm_client.generate_questions("addition", "school", "easy", 1, [])
+
+    assert [q.id for q in result] == ["addition_school_gen_0001"]
+
+
+async def test_generate_questions_retries_until_enough_survive(monkeypatch):
+    rejected = _question_json(id="addition_school_gen_0001", question_text="41 + 20 = ?")
+    good = _question_json(id="addition_school_gen_0002")
+
+    monkeypatch.setattr(
+        llm_client, "get_provider", lambda: _provider_returning([rejected], [good])
+    )
+    monkeypatch.setattr(llm_client, "validate_question", lambda q: [])
+    monkeypatch.setattr(llm_client, "REVIEW_ENABLED", True)
+    monkeypatch.setattr(llm_client, "LLM_MAX_ATTEMPTS", 2)
+
+    async def fake_review(question):
+        from learn_with_masti.schemas import QuestionReview
+
+        approved = question.id == "addition_school_gen_0002"
+        return QuestionReview(
+            approved=approved, problems=[] if approved else ["not plausible"]
+        )
+
+    monkeypatch.setattr(llm_client, "review_question", fake_review)
+
+    result = await llm_client.generate_questions("addition", "school", "easy", 1, [])
+
+    assert [q.id for q in result] == ["addition_school_gen_0002"]
+
+
+async def test_generate_questions_raises_when_nothing_survives_after_retries(monkeypatch):
+    rejected1 = _question_json(id="addition_school_gen_0001")
+    rejected2 = _question_json(id="addition_school_gen_0002")
+
+    monkeypatch.setattr(
+        llm_client, "get_provider", lambda: _provider_returning([rejected1], [rejected2])
+    )
+    monkeypatch.setattr(llm_client, "validate_question", lambda q: ["always fails"])
+    monkeypatch.setattr(llm_client, "REVIEW_ENABLED", False)
+    monkeypatch.setattr(llm_client, "LLM_MAX_ATTEMPTS", 2)
+
+    with pytest.raises(ValueError, match="No generated questions passed"):
+        await llm_client.generate_questions("addition", "school", "easy", 1, [])
+
+
+async def test_generate_questions_logs_discarded_questions(monkeypatch, caplog):
+    bad = _question_json(id="addition_school_gen_0001", question_text="41 + 20 = ?")
+    good = _question_json(id="addition_school_gen_0002")
+
+    monkeypatch.setattr(llm_client, "get_provider", lambda: _provider_returning([bad, good]))
+    monkeypatch.setattr(
+        llm_client,
+        "validate_question",
+        lambda q: [] if q.id == "addition_school_gen_0002" else ["arithmetic is wrong"],
+    )
+    monkeypatch.setattr(llm_client, "REVIEW_ENABLED", False)
+
+    with caplog.at_level(logging.INFO, logger="learn_with_masti.llm_client"):
+        await llm_client.generate_questions("addition", "school", "easy", 1, [])
+
+    assert any(
+        "addition_school_gen_0001" in record.message and "arithmetic is wrong" in record.message
+        for record in caplog.records
+    )
