@@ -31,6 +31,7 @@ export default function TopicSelectPage() {
       <ScreenBackground />
       <TopBar
         title={`Hi, ${activeChild?.name ?? "there"}!`}
+        onBack={() => navigate("/subjects")}
         actions={[
           { label: "Switch", onClick: handleSwitchChild },
           { label: "Sign out", onClick: handleSignOut },

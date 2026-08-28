@@ -1,3 +1,5 @@
+import pytest
+
 from learn_with_masti import question_bank
 
 
@@ -89,3 +91,25 @@ def test_find_question_by_id_found_in_each_topic():
 
 def test_find_question_by_id_returns_none_for_unknown_id():
     assert question_bank.find_question_by_id("does_not_exist_123") is None
+
+
+def test_get_questions_defaults_subject_to_maths():
+    results = question_bank.get_questions("addition", "school", limit=1)
+    assert results[0].subject == "maths"
+
+
+def test_get_questions_rejects_non_maths_subject():
+    with pytest.raises(ValueError, match="not served by the question bank"):
+        question_bank.get_questions("addition", "school", subject="english")
+
+
+def test_get_recent_question_texts_rejects_non_maths_subject():
+    with pytest.raises(ValueError, match="not served by the question bank"):
+        question_bank.get_recent_question_texts(
+            "addition", "school", "easy", subject="english"
+        )
+
+
+def test_find_question_by_id_rejects_non_maths_subject():
+    with pytest.raises(ValueError, match="not served by the question bank"):
+        question_bank.find_question_by_id("add_sch_001", subject="english")

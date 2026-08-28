@@ -61,11 +61,11 @@ export async function getChildProgress(childToken, childId) {
 export async function recordAttempt(
   childToken,
   childId,
-  { topic, track, question_id, selected_answer, is_correct }
+  { subject = "maths", topic, track, question_id, selected_answer, is_correct }
 ) {
   const { data } = await client.post(
     `/children/${childId}/attempts`,
-    { topic, track, question_id, selected_answer, is_correct },
+    { subject, topic, track, question_id, selected_answer, is_correct },
     authHeader(childToken)
   );
   return data;
@@ -87,6 +87,24 @@ export async function generateQuestions({ topic, track, difficulty = "easy", n =
     n,
   });
   return data.questions;
+}
+
+export async function getPassages() {
+  const { data } = await client.get("/passages");
+  return data;
+}
+
+export async function getPassage(passageId) {
+  const { data } = await client.get(`/passages/${passageId}`);
+  return data;
+}
+
+export async function getPassageProgress(childToken, childId) {
+  const { data } = await client.get(
+    `/children/${childId}/passage-progress`,
+    authHeader(childToken)
+  );
+  return data;
 }
 
 export async function getSolution({ question_text, correct_answer, explanation_hint }) {

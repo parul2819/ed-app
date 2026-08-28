@@ -129,6 +129,39 @@ async def test_get_questions_invalid_topic_returns_422(client):
     assert resp.status_code == 422
 
 
+async def test_get_questions_defaults_subject_to_maths(client):
+    resp = await client.get(
+        "/questions", params={"topic": "addition", "track": "school"}
+    )
+
+    assert resp.status_code == 200
+    assert all(q["subject"] == "maths" for q in resp.json()["questions"])
+
+
+async def test_get_questions_rejects_english_subject_with_400(client):
+    resp = await client.get(
+        "/questions",
+        params={"topic": "addition", "track": "school", "subject": "english"},
+    )
+
+    assert resp.status_code == 400
+
+
+async def test_generate_questions_rejects_english_subject_with_400(client):
+    resp = await client.post(
+        "/generate-questions",
+        json={
+            "subject": "english",
+            "topic": "addition",
+            "track": "school",
+            "difficulty": "easy",
+            "n": 1,
+        },
+    )
+
+    assert resp.status_code == 400
+
+
 async def test_generate_questions_valid_response_parses(client, monkeypatch):
     monkeypatch.setattr(llm_client, "REVIEW_ENABLED", False)
     monkeypatch.setattr(

@@ -1,7 +1,18 @@
 import uuid
 from datetime import datetime
 
-from sqlalchemy import Boolean, DateTime, ForeignKey, Index, Integer, String, Text, Uuid
+from sqlalchemy import (
+    JSON,
+    Boolean,
+    CheckConstraint,
+    DateTime,
+    ForeignKey,
+    Index,
+    Integer,
+    String,
+    Text,
+    Uuid,
+)
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.sql import func
 
@@ -72,6 +83,7 @@ class PracticeSession(Base):
     child_id: Mapped[uuid.UUID] = mapped_column(
         Uuid, ForeignKey("children.id", ondelete="CASCADE"), nullable=False
     )
+    subject: Mapped[str] = mapped_column(String, nullable=False, server_default="maths")
     topic: Mapped[str] = mapped_column(String, nullable=False)
     track: Mapped[str] = mapped_column(String, nullable=False)
     mode: Mapped[str] = mapped_column(String, nullable=False)
@@ -105,6 +117,9 @@ class ChildProgress(Base):
     child_id: Mapped[uuid.UUID] = mapped_column(
         Uuid, ForeignKey("children.id", ondelete="CASCADE"), primary_key=True
     )
+    subject: Mapped[str] = mapped_column(
+        String, primary_key=True, server_default="maths"
+    )
     topic: Mapped[str] = mapped_column(String, primary_key=True)
     track: Mapped[str] = mapped_column(String, primary_key=True)
     questions_attempted: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
@@ -116,3 +131,45 @@ class ChildProgress(Base):
         server_default=func.now(),
         onupdate=func.now(),
     )
+
+
+class Passage(Base):
+    __tablename__ = "passages"
+    __table_args__ = (
+        CheckConstraint(
+            "difficulty_rank >= 1 AND difficulty_rank <= 50",
+            name="ck_passages_difficulty_rank_range",
+        ),
+    )
+
+    id: Mapped[uuid.UUID] = mapped_column(Uuid, primary_key=True, default=uuid.uuid4)
+    subject: Mapped[str] = mapped_column(String, nullable=False)
+    title: Mapped[str] = mapped_column(Text, nullable=False)
+    body: Mapped[str] = mapped_column(Text, nullable=False)
+    word_count: Mapped[int] = mapped_column(Integer, nullable=False)
+    sentence_count: Mapped[int] = mapped_column(Integer, nullable=False)
+    difficulty_rank: Mapped[int] = mapped_column(Integer, nullable=False, index=True)
+    takeaway: Mapped[str] = mapped_column(Text, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, server_default=func.now()
+    )
+
+    questions: Mapped[list["ComprehensionQuestion"]] = relationship(
+        back_populates="passage", cascade="all, delete-orphan"
+    )
+
+
+class ComprehensionQuestion(Base):
+    __tablename__ = "comprehension_questions"
+
+    id: Mapped[uuid.UUID] = mapped_column(Uuid, primary_key=True, default=uuid.uuid4)
+    passage_id: Mapped[uuid.UUID] = mapped_column(
+        Uuid, ForeignKey("passages.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    question_type: Mapped[str] = mapped_column(String, nullable=False)
+    question_text: Mapped[str] = mapped_column(Text, nullable=False)
+    options: Mapped[list[str]] = mapped_column(JSON, nullable=False)
+    correct_answer: Mapped[str] = mapped_column(Text, nullable=False)
+    explanation_hint: Mapped[str] = mapped_column(Text, nullable=False)
+
+    passage: Mapped["Passage"] = relationship(back_populates="questions")

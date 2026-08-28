@@ -5,14 +5,17 @@ import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 import AddChildPage from "./pages/AddChildPage";
 import ChildLoginPage from "./pages/ChildLoginPage";
+import SubjectSelectPage from "./pages/SubjectSelectPage";
 import TopicSelectPage from "./pages/TopicSelectPage";
 import LevelSelectPage from "./pages/LevelSelectPage";
 import PracticePage from "./pages/PracticePage";
+import PassageListPage from "./pages/PassageListPage";
+import PassagePage from "./pages/PassagePage";
 import ProgressPage from "./pages/ProgressPage";
 
 function RootRedirect() {
   const { activeChild, isParentLoggedIn, cachedChildren } = useAuth();
-  if (activeChild) return <Navigate to="/topics" replace />;
+  if (activeChild) return <Navigate to="/subjects" replace />;
   if (isParentLoggedIn || cachedChildren.length > 0) {
     return <Navigate to="/children" replace />;
   }
@@ -55,7 +58,15 @@ function App() {
               }
             />
             <Route
-              path="/topics"
+              path="/subjects"
+              element={
+                <RequireChild>
+                  <SubjectSelectPage />
+                </RequireChild>
+              }
+            />
+            <Route
+              path="/maths/topics"
               element={
                 <RequireChild>
                   <TopicSelectPage />
@@ -75,6 +86,22 @@ function App() {
               element={
                 <RequireChild>
                   <PracticePage />
+                </RequireChild>
+              }
+            />
+            <Route
+              path="/english/passages"
+              element={
+                <RequireChild>
+                  <PassageListPage />
+                </RequireChild>
+              }
+            />
+            <Route
+              path="/english/passages/:passageId"
+              element={
+                <RequireChild>
+                  <PassagePage />
                 </RequireChild>
               }
             />

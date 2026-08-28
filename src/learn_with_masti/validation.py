@@ -1,6 +1,8 @@
+import difflib
 import re
 
-from .schemas import Question
+from .reading_levels import spec_for_rank
+from .schemas import PassageDetail, Question
 
 _OP = r"+\-−x×*÷/"  # ascii -, unicode minus sign, x, unicode times, *, ÷, /
 _UNIT_WORD = r"(?:\s+[A-Za-z]+)?"  # optional trailing unit label, e.g. "8 plants"
@@ -442,3 +444,165 @@ def validate_bank(questions: list[Question]) -> dict[str, list[str]]:
             )
 
     return problems_by_id
+
+
+_WORD_RE = re.compile(r"[A-Za-z']+")
+_SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
+_NEAR_DUPLICATE_RATIO = 0.8
+
+# Words ignored when judging whether a passage's takeaway is a real lesson
+# or just the title said again -- generic enough to appear in almost any
+# title/takeaway pair without indicating actual overlap in content.
+_TAKEAWAY_STOPWORDS = {
+    "a", "an", "the", "is", "was", "are", "were", "this", "that", "about",
+    "of", "to", "and", "in", "on", "how", "why", "it", "its", "for", "with",
+}
+
+
+def _content_words(text: str) -> set[str]:
+    return {w for w in _WORD_RE.findall(text.lower()) if w not in _TAKEAWAY_STOPWORDS}
+
+
+def _sentence_count(body: str) -> int:
+    return len([s for s in _SENTENCE_SPLIT_RE.split(body.strip()) if s.strip()])
+
+
+def _max_word_length(body: str) -> int:
+    return max((len(w) for w in _WORD_RE.findall(body)), default=0)
+
+
+def validate_passage(p: PassageDetail) -> list[str]:
+    """Programmatically check a passage and its comprehension questions
+    against the measurable spec for its difficulty_rank (see
+    reading_levels.spec_for_rank). Mirrors validate_question's role for the
+    maths bank: a fast, best-effort heuristic pass that generation and
+    review can both run before content ships.
+    """
+    problems: list[str] = []
+    spec = spec_for_rank(p.difficulty_rank)
+
+    # (a) Declared word_count must match the body's actual word count, and
+    # fall within the rank's target range.
+    actual_word_count = len(p.body.split())
+    if actual_word_count != p.word_count:
+        problems.append(
+            f"word_count is {p.word_count} but the body actually has "
+            f"{actual_word_count} words"
+        )
+    if not (spec.word_count_min <= p.word_count <= spec.word_count_max):
+        problems.append(
+            f"word_count {p.word_count} is outside rank {p.difficulty_rank}'s "
+            f"range [{spec.word_count_min}, {spec.word_count_max}]"
+        )
+
+    # (b) Declared sentence_count must match the body's actual sentence count.
+    actual_sentence_count = _sentence_count(p.body)
+    if actual_sentence_count != p.sentence_count:
+        problems.append(
+            f"sentence_count is {p.sentence_count} but the body actually has "
+            f"{actual_sentence_count} sentences"
+        )
+
+    # (c) Average words/sentence, checked as a float -- never rounded to an
+    # integer range (see reading_levels.py for why that matters).
+    if p.sentence_count > 0:
+        average = p.word_count / p.sentence_count
+        if not (spec.words_per_sentence_min <= average <= spec.words_per_sentence_max):
+            problems.append(
+                f"average words/sentence is {average:.2f}, outside rank "
+                f"{p.difficulty_rank}'s range [{spec.words_per_sentence_min}, "
+                f"{spec.words_per_sentence_max}]"
+            )
+    else:
+        problems.append("sentence_count is 0; cannot compute average words per sentence")
+
+    # (d) No word in the body may exceed the rank's max letter count.
+    longest = _max_word_length(p.body)
+    if longest > spec.max_word_length:
+        problems.append(
+            f"body contains a word of {longest} letters, longer than rank "
+            f"{p.difficulty_rank}'s max of {spec.max_word_length}"
+        )
+
+    # (e) Question count must fall within the rank's range.
+    if not (spec.question_count_min <= len(p.questions) <= spec.question_count_max):
+        problems.append(
+            f"passage has {len(p.questions)} questions, outside rank "
+            f"{p.difficulty_rank}'s range [{spec.question_count_min}, "
+            f"{spec.question_count_max}]"
+        )
+
+    # (f) takeaway must be present and read like a real lesson, not just the
+    # title said back -- flagged when every content word in the title also
+    # appears in the takeaway and the takeaway adds fewer than 3 new ones.
+    if not p.takeaway.strip():
+        problems.append("takeaway is empty")
+    else:
+        title_words = _content_words(p.title)
+        takeaway_words = _content_words(p.takeaway)
+        extra_words = takeaway_words - title_words
+        if title_words and title_words <= takeaway_words and len(extra_words) < 3:
+            problems.append(
+                "takeaway looks like a restatement of the title rather than a real lesson"
+            )
+
+    # Per-question checks.
+    normalized_stems: list[str] = []
+    for idx, question in enumerate(p.questions, start=1):
+        # (g) correct_answer must be one of options (the ComprehensionQuestion
+        # schema already enforces this at construction; checked again here
+        # for a complete, self-contained report).
+        if question.correct_answer not in question.options:
+            problems.append(
+                f"question {idx}: correct_answer {question.correct_answer!r} "
+                "is not among its options"
+            )
+
+        # (h) question_type must be one this rank allows.
+        if question.question_type not in spec.allowed_question_types:
+            problems.append(
+                f"question {idx}: question_type {question.question_type!r} is not allowed "
+                f"at rank {p.difficulty_rank} (allowed: {spec.allowed_question_types})"
+            )
+
+        # (i) stem/option word-length limits, where the band sets them
+        # (only ranks 1-10 do -- see reading_levels.QuestionTypeBand).
+        stem_word_count = len(question.question_text.split())
+        if spec.stem_max_words is not None and stem_word_count > spec.stem_max_words:
+            problems.append(
+                f"question {idx}: stem has {stem_word_count} words, over rank "
+                f"{p.difficulty_rank}'s limit of {spec.stem_max_words}"
+            )
+        for opt in question.options:
+            opt_word_count = len(opt.split())
+            if spec.option_min_words is not None and opt_word_count < spec.option_min_words:
+                problems.append(
+                    f"question {idx}: option {opt!r} has {opt_word_count} words, under "
+                    f"rank {p.difficulty_rank}'s minimum of {spec.option_min_words}"
+                )
+            if spec.option_max_words is not None and opt_word_count > spec.option_max_words:
+                problems.append(
+                    f"question {idx}: option {opt!r} has {opt_word_count} words, over "
+                    f"rank {p.difficulty_rank}'s maximum of {spec.option_max_words}"
+                )
+
+        # (j) the stem must not give away its own answer.
+        answer = question.correct_answer.strip()
+        if answer and re.search(rf"\b{re.escape(answer)}\b", question.question_text, re.IGNORECASE):
+            problems.append(
+                f"question {idx}: stem contains its own correct_answer {answer!r}"
+            )
+
+        normalized_stems.append(" ".join(question.question_text.lower().split()))
+
+    # (k) no two questions in the same passage may be near-duplicates.
+    for i in range(len(normalized_stems)):
+        for j in range(i + 1, len(normalized_stems)):
+            ratio = difflib.SequenceMatcher(None, normalized_stems[i], normalized_stems[j]).ratio()
+            if ratio > _NEAR_DUPLICATE_RATIO:
+                problems.append(
+                    f"questions {i + 1} and {j + 1} are near-duplicates "
+                    f"(similarity {ratio:.2f})"
+                )
+
+    return problems

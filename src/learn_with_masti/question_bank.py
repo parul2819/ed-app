@@ -2,13 +2,25 @@ import json
 from functools import lru_cache
 
 from .config import CONTENT_DIR
-from .schemas import Difficulty, Question, Topic, Track
+from .schemas import Difficulty, Question, Subject, Topic, Track
 
 TOPIC_FILES = {
     "addition": "addition_full.json",
     "subtraction": "subtraction_full.json",
     "multiplication": "multiplication_full.json",
 }
+
+
+def _require_maths(subject: Subject) -> None:
+    """The JSON question banks only ever hold "maths" content -- English
+    content lives in the passages/comprehension_questions DB tables instead
+    (see main.py's /passages endpoints). Raise clearly rather than silently
+    returning nothing for any other subject."""
+    if subject != "maths":
+        raise ValueError(
+            f"subject {subject!r} is not served by the question bank; "
+            "English content is served via /passages"
+        )
 
 
 @lru_cache(maxsize=None)
@@ -21,8 +33,13 @@ def _load_topic_questions(topic: Topic) -> tuple[dict, ...]:
 
 
 def get_questions(
-    topic: Topic, track: Track, difficulty: Difficulty | None = None, limit: int | None = None
+    topic: Topic,
+    track: Track,
+    difficulty: Difficulty | None = None,
+    limit: int | None = None,
+    subject: Subject = "maths",
 ) -> list[Question]:
+    _require_maths(subject)
     questions = _load_topic_questions(topic)
     matching = [
         Question.model_validate(q)
@@ -35,8 +52,9 @@ def get_questions(
 
 
 def get_recent_question_texts(
-    topic: Topic, track: Track, difficulty: Difficulty, limit: int = 10
+    topic: Topic, track: Track, difficulty: Difficulty, limit: int = 10, subject: Subject = "maths"
 ) -> list[str]:
+    _require_maths(subject)
     questions = _load_topic_questions(topic)
     matching = [
         q["question_text"]
@@ -48,7 +66,8 @@ def get_recent_question_texts(
     return matching[-limit:]
 
 
-def find_question_by_id(question_id: str) -> Question | None:
+def find_question_by_id(question_id: str, subject: Subject = "maths") -> Question | None:
+    _require_maths(subject)
     for topic in TOPIC_FILES:
         for q in _load_topic_questions(topic):
             if q["id"] == question_id:

@@ -1,5 +1,8 @@
-from learn_with_masti.schemas import Question
-from learn_with_masti.validation import validate_bank, validate_question
+import uuid
+from datetime import datetime, timezone
+
+from learn_with_masti.schemas import ComprehensionQuestion, PassageDetail, Question
+from learn_with_masti.validation import validate_bank, validate_passage, validate_question
 
 
 def _question(**overrides):
@@ -600,3 +603,202 @@ def test_validate_question_reports_multiple_problems_together():
     assert any("does not match" in p for p in problems)
     assert any("operand 5" in p for p in problems)
     assert "options contain duplicates" in problems
+
+
+# --- validate_passage ---------------------------------------------------
+# RANK1_BODY is a real, hand-checked rank-1 passage (word_count=47,
+# sentence_count=8, avg words/sentence=5.88, max word length=6) -- every
+# test below starts from a fully clean passage and breaks exactly one thing.
+
+RANK1_BODY = (
+    "Ravi has a mango tree. It grows near his small house. "
+    "The tree is old and tall. Green leaves cover the whole tree. "
+    "Fruit grows on it each May. At first the fruit is green. "
+    "Soon the mango turns bright yellow. Ravi picks one and eats it."
+)
+
+
+def _comprehension_question(**overrides):
+    defaults = dict(
+        id=uuid.uuid4(),
+        passage_id=uuid.uuid4(),
+        question_type="literal_recall",
+        question_text="What does Ravi have?",
+        options=["Mango tree", "Red car", "Small dog", "Big house"],
+        correct_answer="Mango tree",
+        explanation_hint="The passage says Ravi has a mango tree.",
+    )
+    defaults.update(overrides)
+    return ComprehensionQuestion(**defaults)
+
+
+def _clean_rank1_questions():
+    stems = [
+        ("What does Ravi have?", ["Mango tree", "Red car", "Small dog", "Big house"], "Mango tree"),
+        ("Where does the tree grow?", ["House", "Park", "River", "School"], "House"),
+        ("What color does mango turn?", ["Yellow", "Blue", "Purple", "Black"], "Yellow"),
+        (
+            "How is the tree?",
+            ["Old and tall", "Short and new", "Thin and small", "New and short"],
+            "Old and tall",
+        ),
+        ("What covers the tree?", ["Green leaves", "Red flowers", "White snow", "Small stones"], "Green leaves"),
+        ("When does the fruit grow?", ["May", "July", "January", "October"], "May"),
+        ("What does Ravi do with it?", ["Eats it", "Throws it", "Paints it", "Hides it"], "Eats it"),
+    ]
+    return [
+        _comprehension_question(
+            question_text=text, options=opts, correct_answer=ans, explanation_hint="See passage."
+        )
+        for text, opts, ans in stems
+    ]
+
+
+def _passage(**overrides):
+    defaults = dict(
+        id=uuid.uuid4(),
+        subject="english",
+        title="The Mango Tree",
+        body=RANK1_BODY,
+        word_count=47,
+        sentence_count=8,
+        difficulty_rank=1,
+        takeaway="Fruit changes color as it ripens.",
+        created_at=datetime.now(timezone.utc),
+        questions=_clean_rank1_questions(),
+    )
+    defaults.update(overrides)
+    return PassageDetail(**defaults)
+
+
+def test_validate_passage_accepts_clean_rank1_passage():
+    assert validate_passage(_passage()) == []
+
+
+def test_validate_passage_rejects_word_count_not_matching_body():
+    problems = validate_passage(_passage(word_count=999))
+
+    assert any("word_count is 999" in p and "actually has 47 words" in p for p in problems)
+
+
+def test_validate_passage_rejects_word_count_outside_rank_range():
+    short_body = "Ravi has a mango tree. It is small."
+    problems = validate_passage(
+        _passage(body=short_body, word_count=len(short_body.split()), sentence_count=2)
+    )
+
+    assert any("outside rank 1's range" in p for p in problems)
+
+
+def test_validate_passage_rejects_sentence_count_not_matching_body():
+    problems = validate_passage(_passage(sentence_count=99))
+
+    assert any("sentence_count is 99" in p and "actually has 8 sentences" in p for p in problems)
+
+
+def test_validate_passage_rejects_average_words_per_sentence_out_of_range():
+    problems = validate_passage(_passage(sentence_count=1))
+
+    assert any("average words/sentence" in p for p in problems)
+
+
+def test_validate_passage_rejects_word_longer_than_rank_max():
+    body = RANK1_BODY.replace("mango", "watermelon")
+    problems = validate_passage(_passage(body=body, word_count=len(body.split())))
+
+    assert any("longer than rank 1's max" in p for p in problems)
+
+
+def test_validate_passage_rejects_question_count_outside_rank_range():
+    problems = validate_passage(_passage(questions=_clean_rank1_questions()[:3]))
+
+    assert any("passage has 3 questions" in p for p in problems)
+
+
+def test_validate_passage_rejects_empty_takeaway():
+    problems = validate_passage(_passage(takeaway="   "))
+
+    assert "takeaway is empty" in problems
+
+
+def test_validate_passage_rejects_takeaway_that_restates_the_title():
+    problems = validate_passage(
+        _passage(title="The Mango Tree", takeaway="This is about the mango tree.")
+    )
+
+    assert any("restatement of the title" in p for p in problems)
+
+
+def test_validate_passage_rejects_disallowed_question_type_for_rank():
+    questions = _clean_rank1_questions()
+    questions[0] = _comprehension_question(
+        question_type="inference",  # not allowed until rank 21+
+        question_text=questions[0].question_text,
+        options=questions[0].options,
+        correct_answer=questions[0].correct_answer,
+    )
+
+    problems = validate_passage(_passage(questions=questions))
+
+    assert any("question_type 'inference' is not allowed at rank 1" in p for p in problems)
+
+
+def test_validate_passage_rejects_stem_over_word_limit_for_low_rank():
+    questions = _clean_rank1_questions()
+    questions[2] = _comprehension_question(
+        question_text="What color does the mango turn after it ripens fully in the sun?",
+        options=questions[2].options,
+        correct_answer=questions[2].correct_answer,
+    )
+
+    problems = validate_passage(_passage(questions=questions))
+
+    assert any("stem has" in p and "over rank 1's limit" in p for p in problems)
+
+
+def test_validate_passage_rejects_option_over_word_limit_for_low_rank():
+    questions = _clean_rank1_questions()
+    questions[0] = _comprehension_question(
+        question_text=questions[0].question_text,
+        options=["A big green mango tree", "Red car", "Small dog", "Big house"],
+        correct_answer="A big green mango tree",
+    )
+
+    problems = validate_passage(_passage(questions=questions))
+
+    assert any("over rank 1's maximum" in p for p in problems)
+
+
+def test_validate_passage_rejects_question_that_contains_its_own_answer():
+    questions = _clean_rank1_questions()
+    questions[0] = _comprehension_question(
+        question_text="Does Ravi have a Mango tree?",
+        options=questions[0].options,
+        correct_answer="Mango tree",
+    )
+
+    problems = validate_passage(_passage(questions=questions))
+
+    assert any("contains its own correct_answer" in p for p in problems)
+
+
+def test_validate_passage_rejects_near_duplicate_questions():
+    # Make question 2 a near-duplicate of question 1's stem (rest of the
+    # fields don't matter for this check -- only question_text is compared).
+    questions = _clean_rank1_questions()
+    questions[1] = _comprehension_question(
+        question_text="What does Ravi have here?",
+        options=questions[1].options,
+        correct_answer=questions[1].correct_answer,
+    )
+
+    problems = validate_passage(_passage(questions=questions))
+
+    assert any("near-duplicates" in p for p in problems)
+
+
+def test_validate_passage_reports_multiple_problems_together():
+    problems = validate_passage(_passage(word_count=999, takeaway=""))
+
+    assert any("word_count is 999" in p for p in problems)
+    assert "takeaway is empty" in problems

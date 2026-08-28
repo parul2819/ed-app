@@ -138,7 +138,7 @@ export default function ChildLoginPage() {
         <PinPad
           child={selectedChild}
           onBack={() => setSelectedChild(null)}
-          onSuccess={() => navigate("/topics")}
+          onSuccess={() => navigate("/subjects")}
         />
       </div>
     );

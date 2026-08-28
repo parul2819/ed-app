@@ -22,7 +22,9 @@ from .db import get_db
 from .models import (
     Child,
     ChildProgress,
+    ComprehensionQuestion,
     Parent,
+    Passage,
     PasswordResetToken,
     PracticeSession,
     QuestionAttempt,
@@ -43,9 +45,13 @@ from .schemas import (
     MessageResponse,
     ParentLoginRequest,
     ParentSignupRequest,
+    PassageDetail,
+    PassageProgressResponse,
+    PassageSummary,
     QuestionsResponse,
     ResetPasswordRequest,
     Solution,
+    Subject,
     Topic,
     Track,
     TokenResponse,
@@ -135,14 +141,25 @@ async def list_questions(
     track: Track,
     difficulty: Difficulty | None = None,
     limit: int | None = None,
+    subject: Subject = "maths",
 ) -> QuestionsResponse:
-    return QuestionsResponse(questions=get_questions(topic, track, difficulty, limit))
+    try:
+        questions = get_questions(topic, track, difficulty, limit, subject=subject)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    return QuestionsResponse(questions=questions)
 
 
 @app.post("/generate-questions", response_model=GenerateQuestionsResponse)
 async def generate_questions(request: GenerateQuestionsRequest) -> GenerateQuestionsResponse:
+    if request.subject != "maths":
+        raise HTTPException(
+            status_code=400,
+            detail=f"subject {request.subject!r} is not supported by /generate-questions; "
+            "English content is served via /passages",
+        )
     recent_question_texts = get_recent_question_texts(
-        request.topic, request.track, request.difficulty
+        request.topic, request.track, request.difficulty, subject=request.subject
     )
     try:
         questions = await llm_client.generate_questions(
@@ -159,6 +176,21 @@ async def generate_questions(request: GenerateQuestionsRequest) -> GenerateQuest
     except ValueError as exc:
         raise HTTPException(status_code=502, detail=str(exc)) from exc
     return GenerateQuestionsResponse(questions=questions)
+
+
+@app.get("/passages", response_model=list[PassageSummary])
+def list_passages(db: Session = Depends(get_db)) -> list[Passage]:
+    return db.query(Passage).order_by(Passage.difficulty_rank).all()
+
+
+@app.get("/passages/{passage_id}", response_model=PassageDetail)
+def get_passage(passage_id: uuid.UUID, db: Session = Depends(get_db)) -> Passage:
+    passage = db.get(Passage, passage_id)
+    if passage is None:
+        raise HTTPException(
+            status_code=404, detail=f"No passage found with id '{passage_id}'"
+        )
+    return passage
 
 
 @app.post("/get-solution", response_model=Solution)
@@ -324,6 +356,76 @@ def get_child_progress(
     return db.query(ChildProgress).filter(ChildProgress.child_id == child_id).all()
 
 
+@app.get(
+    "/children/{child_id}/passage-progress", response_model=list[PassageProgressResponse]
+)
+def get_child_passage_progress(
+    child_id: uuid.UUID,
+    child: Child = Depends(get_current_child),
+    db: Session = Depends(get_db),
+) -> list[PassageProgressResponse]:
+    attempts = (
+        db.query(QuestionAttempt)
+        .join(PracticeSession, PracticeSession.id == QuestionAttempt.session_id)
+        .filter(
+            PracticeSession.child_id == child_id,
+            PracticeSession.subject == "english",
+        )
+        .all()
+    )
+    if not attempts:
+        return []
+
+    # question_attempts.question_id is a plain string column (shared with the
+    # maths bank's string ids), not a foreign key -- so it's matched to
+    # comprehension_questions.id in Python rather than a SQL join, which
+    # sidesteps having to cast a UUID column to text identically across
+    # Postgres (prod) and SQLite (tests).
+    question_to_passage = {
+        str(question.id): passage
+        for question, passage in db.query(ComprehensionQuestion, Passage).join(
+            Passage, Passage.id == ComprehensionQuestion.passage_id
+        )
+    }
+
+    stats: dict[uuid.UUID, dict] = {}
+    for attempt in attempts:
+        passage = question_to_passage.get(attempt.question_id)
+        if passage is None:
+            continue
+        entry = stats.setdefault(
+            passage.id,
+            {
+                "passage": passage,
+                "questions_attempted": 0,
+                "questions_correct": 0,
+                "last_attempted_at": attempt.answered_at,
+            },
+        )
+        entry["questions_attempted"] += 1
+        if attempt.is_correct:
+            entry["questions_correct"] += 1
+        if attempt.answered_at > entry["last_attempted_at"]:
+            entry["last_attempted_at"] = attempt.answered_at
+
+    results = [
+        PassageProgressResponse(
+            passage_id=entry["passage"].id,
+            title=entry["passage"].title,
+            difficulty_rank=entry["passage"].difficulty_rank,
+            questions_attempted=entry["questions_attempted"],
+            questions_correct=entry["questions_correct"],
+            stars_earned=_stars_for_accuracy(
+                entry["questions_correct"], entry["questions_attempted"]
+            ),
+            last_attempted_at=entry["last_attempted_at"],
+        )
+        for entry in stats.values()
+    ]
+    results.sort(key=lambda r: r.last_attempted_at, reverse=True)
+    return results
+
+
 @app.post("/children/{child_id}/attempts", response_model=ChildProgressResponse, status_code=201)
 def record_attempt(
     child_id: uuid.UUID,
@@ -335,6 +437,7 @@ def record_attempt(
         db.query(PracticeSession)
         .filter(
             PracticeSession.child_id == child_id,
+            PracticeSession.subject == request.subject,
             PracticeSession.topic == request.topic,
             PracticeSession.track == request.track,
             PracticeSession.mode == request.mode,
@@ -346,6 +449,7 @@ def record_attempt(
     if session is None:
         session = PracticeSession(
             child_id=child_id,
+            subject=request.subject,
             topic=request.topic,
             track=request.track,
             mode=request.mode,
@@ -361,10 +465,11 @@ def record_attempt(
     )
     db.add(attempt)
 
-    progress = db.get(ChildProgress, (child_id, request.topic, request.track))
+    progress = db.get(ChildProgress, (child_id, request.subject, request.topic, request.track))
     if progress is None:
         progress = ChildProgress(
             child_id=child_id,
+            subject=request.subject,
             topic=request.topic,
             track=request.track,
             questions_attempted=0,

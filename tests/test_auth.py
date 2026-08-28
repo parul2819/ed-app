@@ -395,7 +395,10 @@ def test_db_touching_routes_are_not_coroutine_functions():
         "/parents/children",
         "/children/{child_id}/verify-pin",
         "/children/{child_id}/progress",
+        "/children/{child_id}/passage-progress",
         "/children/{child_id}/attempts",
+        "/passages",
+        "/passages/{passage_id}",
     }
 
     checked = set()
@@ -697,6 +700,72 @@ async def test_record_attempt_tracks_topics_separately(client):
     assert resp.status_code == 200
     topics = {row["topic"] for row in resp.json()}
     assert topics == {"addition", "subtraction"}
+
+
+async def test_record_attempt_accepts_english_subject_and_creates_progress_row(client):
+    child_id, child_token = await _create_and_login_child(client)
+
+    resp = await client.post(
+        f"/children/{child_id}/attempts",
+        json={
+            "subject": "english",
+            "topic": "comprehension",
+            "track": "school",
+            "question_id": "passage_1_q1",
+            "selected_answer": "Mango tree",
+            "is_correct": True,
+        },
+        headers={"Authorization": f"Bearer {child_token}"},
+    )
+
+    assert resp.status_code == 201
+    data = resp.json()
+    assert data["subject"] == "english"
+    assert data["topic"] == "comprehension"
+    assert data["track"] == "school"
+    assert data["questions_attempted"] == 1
+    assert data["questions_correct"] == 1
+
+
+async def test_record_attempt_tracks_subjects_separately(client):
+    child_id, child_token = await _create_and_login_child(client)
+    headers = {"Authorization": f"Bearer {child_token}"}
+
+    await client.post(
+        f"/children/{child_id}/attempts",
+        json={
+            "topic": "addition",
+            "track": "school",
+            "question_id": "add_sch_001",
+            "selected_answer": "4",
+            "is_correct": True,
+        },
+        headers=headers,
+    )
+    await client.post(
+        f"/children/{child_id}/attempts",
+        json={
+            "subject": "english",
+            "topic": "comprehension",
+            "track": "school",
+            "question_id": "passage_1_q1",
+            "selected_answer": "Mango tree",
+            "is_correct": False,
+        },
+        headers=headers,
+    )
+
+    resp = await client.get(f"/children/{child_id}/progress", headers=headers)
+
+    assert resp.status_code == 200
+    rows = resp.json()
+    subjects = {row["subject"] for row in rows}
+    assert subjects == {"maths", "english"}
+    maths_row = next(row for row in rows if row["subject"] == "maths")
+    english_row = next(row for row in rows if row["subject"] == "english")
+    assert maths_row["topic"] == "addition"
+    assert english_row["topic"] == "comprehension"
+    assert english_row["questions_correct"] == 0
 
 
 async def test_record_attempt_rejects_mismatched_child_token(client):
