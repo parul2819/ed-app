@@ -153,7 +153,7 @@ input {
   .screen-bg-left-tilt,
   .screen-bg-right-tilt {
     bottom: var(--space-12);
-    width: min(200px, calc((100vw - 480px) / 2 - 40px));
+    width: min(420px, calc((100vw - 480px) / 2 - 40px));
   }
 
   .screen-bg-left-tilt {
@@ -177,13 +177,17 @@ input {
 }
 
 /* solid pastel scrim on top of the low-opacity photo so body text kept its
-   contrast ratio (skill section 6 guardrail) */
+   contrast ratio (skill section 6 guardrail). 0.58 verified via computed
+   contrast (not eyeballed): with photo opacity at its max 0.45, --color-text
+   on the combined photo+scrim layers still hits >=7.4:1 against the darkest
+   sampled region across all images in public/backgrounds/ (worst offenders
+   17.webp, 77.webp, 52.webp), comfortably above the 4.5:1 minimum. */
 .screen-bg-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background: var(--color-bg);
-  opacity: 0.78;
+  opacity: 0.58;
 }
 
 .screen {

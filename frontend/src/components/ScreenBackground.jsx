@@ -14,7 +14,7 @@ function pickBackground() {
       : placement === "right-tilt"
       ? 8 + Math.random() * 7
       : 0;
-  const opacity = placement === "full-low-opacity" ? 0.15 + Math.random() * 0.1 : 0.92;
+  const opacity = placement === "full-low-opacity" ? 0.35 + Math.random() * 0.1 : 0.92;
 
   return { image, placement, tilt, opacity };
 }
