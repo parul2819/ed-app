@@ -12,6 +12,12 @@ function difficultyTier(rank) {
   return "hard";
 }
 
+const TIERS = [
+  { key: "easy", label: "Easy" },
+  { key: "medium", label: "Medium" },
+  { key: "hard", label: "Hard" },
+];
+
 export default function PassageListPage() {
   const navigate = useNavigate();
   const { activeChild } = useAuth();
@@ -57,8 +63,13 @@ export default function PassageListPage() {
     };
   }, [activeChild]);
 
+  const passagesByTier = { easy: [], medium: [], hard: [] };
+  for (const passage of passages) {
+    passagesByTier[difficultyTier(passage.difficulty_rank)].push(passage);
+  }
+
   return (
-    <div className="app-frame">
+    <div className="app-frame app-frame-wide">
       <ScreenBackground />
       <TopBar title="Reading Comprehension" onBack={() => navigate("/subjects")} />
       <div className="screen">
@@ -69,37 +80,40 @@ export default function PassageListPage() {
           <p className="subtitle">No passages available yet — check back soon!</p>
         )}
 
-        {!loading && passages.length > 0 && (
-          <div className="passage-list">
-            {passages.map((passage) => {
-              const completed = progressByPassage[passage.id];
-              return (
-                <button
-                  key={passage.id}
-                  type="button"
-                  className="passage-card"
-                  onClick={() => navigate(`/english/passages/${passage.id}`)}
-                >
-                  <div className="passage-card-title-row">
-                    <span className="passage-card-title">{passage.title}</span>
-                    <div className="passage-card-right">
-                      {completed && (
-                        <span className="passage-card-badge">
-                          ✅ {completed.stars_earned > 0 ? "⭐".repeat(completed.stars_earned) : ""}
-                        </span>
-                      )}
-                      <span
-                        className={`difficulty-dot difficulty-dot-${difficultyTier(passage.difficulty_rank)}`}
-                        title={`Difficulty: ${difficultyTier(passage.difficulty_rank)}`}
-                      />
-                    </div>
-                  </div>
-                  <span className="passage-card-meta">Level {passage.difficulty_rank}</span>
-                </button>
-              );
-            })}
-          </div>
-        )}
+        {!loading &&
+          passages.length > 0 &&
+          TIERS.map(({ key, label }) => {
+            const tierPassages = passagesByTier[key];
+            if (tierPassages.length === 0) return null;
+            return (
+              <section key={key} className="passage-category">
+                <h2 className={`passage-category-heading passage-category-heading-${key}`}>
+                  <span className={`difficulty-dot difficulty-dot-${key}`} /> {label}
+                </h2>
+                <div className="passage-grid">
+                  {tierPassages.map((passage) => {
+                    const completed = progressByPassage[passage.id];
+                    return (
+                      <button
+                        key={passage.id}
+                        type="button"
+                        className="passage-grid-card"
+                        onClick={() => navigate(`/english/passages/${passage.id}`)}
+                      >
+                        {completed && (
+                          <span className="passage-grid-card-badge">
+                            ✅ {completed.stars_earned > 0 ? "⭐".repeat(completed.stars_earned) : ""}
+                          </span>
+                        )}
+                        <span className="passage-grid-card-level">Level {passage.difficulty_rank}</span>
+                        <span className="passage-grid-card-title">{passage.title}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
+            );
+          })}
       </div>
     </div>
   );
