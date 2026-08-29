@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import TopBar from "../components/TopBar";
 import Stars from "../components/Stars";
@@ -44,6 +44,9 @@ export default function PassagePage() {
   const [correctCount, setCorrectCount] = useState(0);
   const [showSummary, setShowSummary] = useState(false);
   const [allPassages, setAllPassages] = useState([]);
+  // True until the first attempt is recorded for this read-through, so that
+  // attempt is the one that starts a new PracticeSession (see attempt-history).
+  const isFreshRound = useRef(true);
 
   useEffect(() => {
     let cancelled = false;
@@ -54,6 +57,7 @@ export default function PassagePage() {
       setSelected(null);
       setCorrectCount(0);
       setShowSummary(false);
+      isFreshRound.current = true;
       try {
         const data = await getPassage(passageId);
         if (!cancelled) setPassage(data);
@@ -103,9 +107,11 @@ export default function PassagePage() {
       question_id: question.id,
       selected_answer: option,
       is_correct: isCorrect,
+      new_session: isFreshRound.current,
     }).catch(() => {
       // Progress syncing is best-effort — don't interrupt reading over it.
     });
+    isFreshRound.current = false;
   }
 
   function handleNext() {
@@ -118,6 +124,7 @@ export default function PassagePage() {
     setSelected(null);
     setCorrectCount(0);
     setShowSummary(false);
+    isFreshRound.current = true;
   }, []);
 
   const question = passage?.questions?.[index];

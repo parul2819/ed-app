@@ -397,6 +397,7 @@ def test_db_touching_routes_are_not_coroutine_functions():
         "/children/{child_id}/progress",
         "/children/{child_id}/passage-progress",
         "/children/{child_id}/attempts",
+        "/children/{child_id}/attempt-history",
         "/passages",
         "/passages/{passage_id}",
     }

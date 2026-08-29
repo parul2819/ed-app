@@ -61,11 +61,28 @@ export async function getChildProgress(childToken, childId) {
 export async function recordAttempt(
   childToken,
   childId,
-  { subject = "maths", topic, track, question_id, selected_answer, is_correct }
+  {
+    subject = "maths",
+    topic,
+    track,
+    question_id,
+    selected_answer,
+    is_correct,
+    difficulty,
+    new_session = false,
+  }
 ) {
   const { data } = await client.post(
     `/children/${childId}/attempts`,
-    { subject, topic, track, question_id, selected_answer, is_correct },
+    { subject, topic, track, question_id, selected_answer, is_correct, difficulty, new_session },
+    authHeader(childToken)
+  );
+  return data;
+}
+
+export async function getAttemptHistory(childToken, childId) {
+  const { data } = await client.get(
+    `/children/${childId}/attempt-history`,
     authHeader(childToken)
   );
   return data;

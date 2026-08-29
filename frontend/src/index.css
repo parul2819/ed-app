@@ -990,6 +990,120 @@ p.subtitle {
   font-size: 0.95rem;
 }
 
+.attempt-group {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.attempt-group-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.attempt-group-emoji {
+  font-size: 1.4rem;
+}
+
+.attempt-group-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  flex: 1;
+  text-align: left;
+}
+
+.attempt-group-count {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.attempt-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.attempt-chip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  min-width: 74px;
+  color: white;
+  font-weight: 700;
+  animation: attempt-chip-pop 0.3s ease-out;
+}
+
+/* same green/yellow/red gradients as .level-easy/.level-medium/.level-hard,
+   reused here for the same "great / okay / needs practice" meaning. */
+.attempt-chip-great {
+  background: linear-gradient(160deg, #34d399, #059669);
+}
+
+.attempt-chip-good {
+  background: linear-gradient(160deg, #fbbf24, #d97706);
+}
+
+.attempt-chip-keep-trying {
+  background: linear-gradient(160deg, #f87171, #dc2626);
+}
+
+.attempt-chip-number {
+  font-size: 0.7rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.attempt-chip-score {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+}
+
+.attempt-chip-percent {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+.attempt-chip-crown {
+  position: absolute;
+  top: -12px;
+  right: -6px;
+  font-size: 1.3rem;
+  animation: attempt-crown-bounce 1.4s ease-in-out infinite;
+}
+
+@keyframes attempt-chip-pop {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes attempt-crown-bounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(8deg);
+  }
+}
+
 .loading-spinner {
   width: 48px;
   height: 48px;

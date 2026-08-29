@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import TopBar from "../components/TopBar";
 import Mascot from "../components/Mascot";
@@ -48,6 +48,9 @@ export default function PracticePage() {
   const [loadingQuestions, setLoadingQuestions] = useState(true);
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState("");
+  // True until the first attempt is recorded for this level visit, so that
+  // attempt is the one that starts a new PracticeSession (see attempt-history).
+  const isFreshRound = useRef(true);
 
   const loadBankQuestions = useCallback(async () => {
     setLoadingQuestions(true);
@@ -58,6 +61,7 @@ export default function PracticePage() {
       setIndex(0);
       setSelected(null);
       setSolution(null);
+      isFreshRound.current = true;
     } catch (err) {
       setError(apiErrorMessage(err, "Couldn't load questions. Please try again."));
     } finally {
@@ -96,12 +100,15 @@ export default function PracticePage() {
     recordAttempt(activeChild.token, activeChild.id, {
       topic,
       track,
+      difficulty,
       question_id: current.id,
       selected_answer: option,
       is_correct: isCorrect,
+      new_session: isFreshRound.current,
     }).catch(() => {
       // Progress syncing is best-effort — don't interrupt practice over it.
     });
+    isFreshRound.current = false;
   }
 
   function handleNext() {

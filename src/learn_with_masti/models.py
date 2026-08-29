@@ -87,6 +87,10 @@ class PracticeSession(Base):
     topic: Mapped[str] = mapped_column(String, nullable=False)
     track: Mapped[str] = mapped_column(String, nullable=False)
     mode: Mapped[str] = mapped_column(String, nullable=False)
+    # Maths only (null for english/comprehension sessions, which have no
+    # difficulty tiers) -- lets attempt-history report which level a round
+    # of practice was played at without re-deriving it from question ids.
+    difficulty: Mapped[str | None] = mapped_column(String, nullable=True)
     started_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, server_default=func.now()
     )

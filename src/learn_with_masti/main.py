@@ -32,6 +32,7 @@ from .models import (
 from .question_bank import find_question_by_id, get_questions, get_recent_question_texts
 from .schemas import (
     AttemptCreateRequest,
+    AttemptRoundResponse,
     ChildCreateRequest,
     ChildPinVerifyRequest,
     ChildProgressResponse,
@@ -433,19 +434,20 @@ def record_attempt(
     child: Child = Depends(get_current_child),
     db: Session = Depends(get_db),
 ) -> ChildProgress:
-    session = (
-        db.query(PracticeSession)
-        .filter(
-            PracticeSession.child_id == child_id,
-            PracticeSession.subject == request.subject,
-            PracticeSession.topic == request.topic,
-            PracticeSession.track == request.track,
-            PracticeSession.mode == request.mode,
-            PracticeSession.completed_at.is_(None),
+    session = None
+    if not request.new_session:
+        session = (
+            db.query(PracticeSession)
+            .filter(
+                PracticeSession.child_id == child_id,
+                PracticeSession.subject == request.subject,
+                PracticeSession.topic == request.topic,
+                PracticeSession.track == request.track,
+                PracticeSession.mode == request.mode,
+            )
+            .order_by(PracticeSession.started_at.desc())
+            .first()
         )
-        .order_by(PracticeSession.started_at.desc())
-        .first()
-    )
     if session is None:
         session = PracticeSession(
             child_id=child_id,
@@ -453,6 +455,7 @@ def record_attempt(
             topic=request.topic,
             track=request.track,
             mode=request.mode,
+            difficulty=request.difficulty,
         )
         db.add(session)
         db.flush()
@@ -488,3 +491,81 @@ def record_attempt(
     db.commit()
     db.refresh(progress)
     return progress
+
+
+@app.get(
+    "/children/{child_id}/attempt-history", response_model=list[AttemptRoundResponse]
+)
+def get_child_attempt_history(
+    child_id: uuid.UUID,
+    child: Child = Depends(get_current_child),
+    db: Session = Depends(get_db),
+) -> list[AttemptRoundResponse]:
+    """One row per practice round (PracticeSession) with its own score --
+    lets the attempt-history report show every attempt at a level/passage
+    separately, instead of the running totals /progress and
+    /passage-progress report."""
+    rows = (
+        db.query(QuestionAttempt, PracticeSession)
+        .join(PracticeSession, PracticeSession.id == QuestionAttempt.session_id)
+        .filter(PracticeSession.child_id == child_id)
+        .all()
+    )
+    if not rows:
+        return []
+
+    # Same rationale as /passage-progress: question_attempts.question_id is a
+    # plain string (shared with the maths bank's string ids), matched to
+    # comprehension_questions.id in Python rather than a SQL join.
+    question_to_passage = {
+        str(question.id): passage
+        for question, passage in db.query(ComprehensionQuestion, Passage).join(
+            Passage, Passage.id == ComprehensionQuestion.passage_id
+        )
+    }
+
+    sessions: dict[uuid.UUID, dict] = {}
+    for attempt, session in rows:
+        entry = sessions.setdefault(
+            session.id,
+            {
+                "session": session,
+                "questions_attempted": 0,
+                "questions_correct": 0,
+                # every attempt in an english session belongs to the same
+                # passage, so any one of them is enough to look it up
+                "sample_question_id": attempt.question_id,
+            },
+        )
+        entry["questions_attempted"] += 1
+        if attempt.is_correct:
+            entry["questions_correct"] += 1
+
+    results = []
+    for entry in sessions.values():
+        session = entry["session"]
+        passage = (
+            question_to_passage.get(entry["sample_question_id"])
+            if session.subject == "english"
+            else None
+        )
+        results.append(
+            AttemptRoundResponse(
+                session_id=session.id,
+                subject=session.subject,
+                topic=session.topic,
+                track=session.track,
+                difficulty=session.difficulty,
+                passage_id=passage.id if passage else None,
+                passage_title=passage.title if passage else None,
+                passage_difficulty_rank=passage.difficulty_rank if passage else None,
+                questions_attempted=entry["questions_attempted"],
+                questions_correct=entry["questions_correct"],
+                stars_earned=_stars_for_accuracy(
+                    entry["questions_correct"], entry["questions_attempted"]
+                ),
+                started_at=session.started_at,
+            )
+        )
+    results.sort(key=lambda r: r.started_at)
+    return results

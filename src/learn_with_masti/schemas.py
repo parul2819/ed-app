@@ -173,6 +173,33 @@ class AttemptCreateRequest(BaseModel):
     selected_answer: str = Field(min_length=1)
     is_correct: bool
     mode: SessionMode = "open"
+    difficulty: Optional[Difficulty] = None
+    # True for the first attempt of a fresh practice round (a new level visit,
+    # or a passage retry) -- starts a new PracticeSession instead of folding
+    # into whichever one this child/topic/track last used, so attempt-history
+    # can report separate scores per round instead of one running total.
+    new_session: bool = False
+
+
+class AttemptRoundResponse(BaseModel):
+    """One practice round (one PracticeSession) with its own score, for the
+    attempt-history report -- as opposed to ChildProgressResponse/
+    PassageProgressResponse, which aggregate every round together."""
+
+    session_id: uuid.UUID
+    subject: Subject
+    topic: Topic
+    track: Track
+    difficulty: Optional[Difficulty] = None
+    passage_id: Optional[uuid.UUID] = None
+    passage_title: Optional[str] = None
+    passage_difficulty_rank: Optional[int] = None
+    questions_attempted: int
+    questions_correct: int
+    stars_earned: int
+    started_at: datetime
+
+    model_config = {"from_attributes": True}
 
 
 class ComprehensionQuestion(BaseModel):
