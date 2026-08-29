@@ -69,7 +69,7 @@ export default function PassageListPage() {
   }
 
   return (
-    <div className="app-frame app-frame-wide">
+    <div className="app-frame app-frame-wide passage-list-frame">
       <ScreenBackground />
       <TopBar title="Reading Comprehension" onBack={() => navigate("/subjects")} />
       <div className="screen">

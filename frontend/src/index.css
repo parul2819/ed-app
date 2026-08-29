@@ -225,6 +225,12 @@ input {
   max-width: 760px;
 }
 
+/* Passage list needs a bit more breathing room than the reading screen
+   (760px) since it's a 5-column grid, not prose -- ~10% wider. */
+.app-frame-wide.passage-list-frame {
+  max-width: 836px;
+}
+
 .screen {
   flex: 1;
   display: flex;
@@ -527,7 +533,7 @@ p.subtitle {
   align-items: center;
   gap: var(--space-2);
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   margin: 0;
 }
 
@@ -582,12 +588,12 @@ p.subtitle {
 
 .passage-grid-card-level {
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--color-primary-dark);
 }
 
 .passage-grid-card-title {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--color-muted);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -599,7 +605,7 @@ p.subtitle {
   position: absolute;
   top: var(--space-1);
   right: var(--space-1);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 }
 
 .passage-reading-box {
