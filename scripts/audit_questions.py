@@ -45,7 +45,8 @@ async def _review_all(questions: list[Question]) -> dict[str, list[str]]:
         try:
             review = await review_question(q)
         except Exception as exc:  # noqa: BLE001 - report any reviewer failure, keep auditing
-            problems_by_id[q.id] = [f"reviewer call failed: {exc}"]
+            detail = str(exc) or repr(exc)
+            problems_by_id[q.id] = [f"reviewer call failed: {type(exc).__name__}: {detail}"]
             continue
         if not review.approved:
             problems_by_id[q.id] = [f"reviewer: {p}" for p in review.problems]
