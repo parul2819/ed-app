@@ -25,6 +25,8 @@
   --color-danger-dark: #e56c5c;
   --color-danger-bg: #ffe6e1;
 
+  --color-warning: var(--pastel-yellow-dark);
+
   --color-bg: #fffaf1;
   --color-surface: #ffffff;
   --color-text: #3a2e52;
@@ -990,11 +992,36 @@ p.subtitle {
   gap: 8px;
 }
 
+.passage-card-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
 .passage-card-badge {
   font-size: 0.85rem;
   font-weight: 800;
   color: var(--color-success);
   white-space: nowrap;
+}
+
+.difficulty-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-pill);
+  flex-shrink: 0;
+}
+
+.difficulty-dot-easy {
+  background: var(--color-success);
+}
+
+.difficulty-dot-medium {
+  background: var(--color-warning);
+}
+
+.difficulty-dot-hard {
+  background: var(--color-danger);
 }
 
 .progress-date {

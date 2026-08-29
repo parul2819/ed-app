@@ -5,6 +5,13 @@ import ScreenBackground from "../components/ScreenBackground";
 import { useAuth } from "../context/AuthContext";
 import { getPassages, getPassageProgress, apiErrorMessage } from "../api";
 
+// Mirrors reading_levels.py's DIFFICULTY_BANDS: ranks 1-10 easy, 11-30 medium, 31-50 hard.
+function difficultyTier(rank) {
+  if (rank <= 10) return "easy";
+  if (rank <= 30) return "medium";
+  return "hard";
+}
+
 export default function PassageListPage() {
   const navigate = useNavigate();
   const { activeChild } = useAuth();
@@ -75,15 +82,19 @@ export default function PassageListPage() {
                 >
                   <div className="passage-card-title-row">
                     <span className="passage-card-title">{passage.title}</span>
-                    {completed && (
-                      <span className="passage-card-badge">
-                        ✅ {completed.stars_earned > 0 ? "⭐".repeat(completed.stars_earned) : ""}
-                      </span>
-                    )}
+                    <div className="passage-card-right">
+                      {completed && (
+                        <span className="passage-card-badge">
+                          ✅ {completed.stars_earned > 0 ? "⭐".repeat(completed.stars_earned) : ""}
+                        </span>
+                      )}
+                      <span
+                        className={`difficulty-dot difficulty-dot-${difficultyTier(passage.difficulty_rank)}`}
+                        title={`Difficulty: ${difficultyTier(passage.difficulty_rank)}`}
+                      />
+                    </div>
                   </div>
-                  <span className="passage-card-meta">
-                    Level {passage.difficulty_rank} · {passage.word_count} words
-                  </span>
+                  <span className="passage-card-meta">Level {passage.difficulty_rank}</span>
                 </button>
               );
             })}
