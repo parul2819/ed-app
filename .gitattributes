@@ -1,0 +1,33 @@
+# Normalize line endings so the repo behaves the same on every machine,
+# regardless of a contributor's local core.autocrlf setting. Text files are
+# stored in git with LF; Git still checks them out as CRLF on Windows unless
+# eol=lf is forced (kept plain LF here since the frontend/py tooling in this
+# repo expects LF).
+* text=auto eol=lf
+
+# Explicit text types (redundant with the catch-all above, but documents
+# intent and protects against future default changes).
+*.py text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.toml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sh text eol=lf
+
+# Binary/generated assets must never be touched by line-ending conversion.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
