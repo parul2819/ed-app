@@ -11,3 +11,6 @@ debug_api_test.py
 # skill section 6). The optimized output lives in frontend/public/backgrounds/ and
 # is generated with `npm run build:backgrounds` — that's what's committed.
 background images/
+
+# Output of scripts/audit_questions.py -- regenerate, don't commit.
+audit_report.txt
