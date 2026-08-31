@@ -8,6 +8,7 @@ TOPIC_FILES = {
     "addition": "addition_full.json",
     "subtraction": "subtraction_full.json",
     "multiplication": "multiplication_full.json",
+    "division": "division_full.json",
 }
 
 

@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import TopBar from "../components/TopBar";
 import Stars from "../components/Stars";
 import ScreenBackground from "../components/ScreenBackground";
+import CountdownWatch from "../components/CountdownWatch";
 import { useAuth } from "../context/AuthContext";
 import { getPassage, getPassages, recordAttempt, apiErrorMessage } from "../api";
 
@@ -35,7 +36,11 @@ function encouragementForAccuracy(accuracy) {
 export default function PassagePage() {
   const { passageId } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const { activeChild } = useAuth();
+  const timerSeconds = location.state?.timerSeconds ?? null;
+  const [timeUp, setTimeUp] = useState(false);
+  const handleTimeUp = useCallback(() => setTimeUp(true), []);
   const [passage, setPassage] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -151,7 +156,10 @@ export default function PassagePage() {
                 type="button"
                 className="btn btn-outline"
                 disabled={!prevPassage}
-                onClick={() => prevPassage && navigate(`/english/passages/${prevPassage.id}`)}
+                onClick={() =>
+                  prevPassage &&
+                  navigate(`/english/passages/${prevPassage.id}`, { state: { timerSeconds } })
+                }
               >
                 ⬅ Previous
               </button>
@@ -159,11 +167,23 @@ export default function PassagePage() {
                 type="button"
                 className="btn btn-outline"
                 disabled={!nextPassage}
-                onClick={() => nextPassage && navigate(`/english/passages/${nextPassage.id}`)}
+                onClick={() =>
+                  nextPassage &&
+                  navigate(`/english/passages/${nextPassage.id}`, { state: { timerSeconds } })
+                }
               >
                 Next ➡
               </button>
             </div>
+
+            {timerSeconds !== null && !showSummary && (
+              <>
+                <CountdownWatch totalSeconds={timerSeconds} onExpire={handleTimeUp} />
+                {timeUp && (
+                  <div className="timer-up-banner">⏰ Time's up! Finish this one, champ!</div>
+                )}
+              </>
+            )}
 
             {showSummary ? (
               <div className="summary-card">
@@ -184,7 +204,9 @@ export default function PassagePage() {
                   <button
                     type="button"
                     className="btn btn-accent btn-block"
-                    onClick={() => navigate(`/english/passages/${nextPassage.id}`)}
+                    onClick={() =>
+                      navigate(`/english/passages/${nextPassage.id}`, { state: { timerSeconds } })
+                    }
                   >
                     Next Passage ➡️
                   </button>

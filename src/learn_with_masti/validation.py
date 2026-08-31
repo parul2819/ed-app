@@ -40,6 +40,7 @@ _TOPIC_OPS = {
     "addition": {"+"},
     "subtraction": {"-", "−"},
     "multiplication": {"x", "×", "*"},
+    "division": {"÷", "/"},
 }
 _OP_NAME = {
     "+": "addition",
@@ -59,6 +60,7 @@ _TOPIC_ALLOWED_HINT_OP_NAMES = {
     "addition": {"addition", "subtraction"},
     "subtraction": {"subtraction", "addition"},
     "multiplication": {"multiplication", "division"},
+    "division": {"division", "multiplication"},
 }
 
 # An equation extracted from explanation_hint: (a, op, b, c, match, check_digits).
@@ -365,7 +367,9 @@ def validate_question(q: Question) -> list[str]:
             )
 
     # (c) Topic digit rules: addition/subtraction operands must be 2-3
-    # digits, multiplication operands must be single digits 1-9. Checked
+    # digits, multiplication operands must be single digits 1-9, division
+    # operands must fall in 1-81 (a single-digit divisor times a
+    # single-digit quotient). Checked
     # against numbers in question_text (see _operand_candidates) as well as
     # operands of hint equations flagged check_digits=True, for both
     # tracks -- olympiad word problems often state their real operands only
@@ -399,6 +403,19 @@ def validate_question(q: Question) -> list[str]:
             if not (1 <= num <= 9):
                 problems.append(
                     f"multiplication operand {num} is not a single digit (1-9)"
+                )
+    elif q.topic == "division":
+        # Class 3 division facts are the inverse of the 1-9 times tables, so
+        # divisor and quotient are single digits (1-9) and the dividend is
+        # their product -- at most 9x9=81. Unlike multiplication's rule, the
+        # dividend legitimately appears as a 2-digit number in question_text
+        # itself (e.g. "72 ÷ 8 = ?"), so the check allows the full 1-81
+        # range rather than requiring every operand to be single-digit.
+        for num in sorted(numbers):
+            if not (1 <= num <= 81):
+                problems.append(
+                    f"division operand {num} is outside the expected range (1-81) "
+                    "for a Class 3 division fact"
                 )
 
     # (d) No duplicate options.

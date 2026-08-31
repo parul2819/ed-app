@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TopBar from "../components/TopBar";
 import ScreenBackground from "../components/ScreenBackground";
+import TimerChoiceModal from "../components/TimerChoiceModal";
 import { useAuth } from "../context/AuthContext";
 import { getPassages, getPassageProgress, apiErrorMessage } from "../api";
 
@@ -25,6 +26,13 @@ export default function PassageListPage() {
   const [progressByPassage, setProgressByPassage] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [pendingPassage, setPendingPassage] = useState(null);
+
+  function handleChooseTimer(timerSeconds) {
+    const passage = pendingPassage;
+    setPendingPassage(null);
+    navigate(`/english/passages/${passage.id}`, { state: { timerSeconds } });
+  }
 
   useEffect(() => {
     let cancelled = false;
@@ -98,7 +106,7 @@ export default function PassageListPage() {
                         key={passage.id}
                         type="button"
                         className="passage-grid-card"
-                        onClick={() => navigate(`/english/passages/${passage.id}`)}
+                        onClick={() => setPendingPassage(passage)}
                       >
                         {completed && (
                           <span className="passage-grid-card-badge">
@@ -115,6 +123,11 @@ export default function PassageListPage() {
             );
           })}
       </div>
+      <TimerChoiceModal
+        open={pendingPassage !== null}
+        onChoose={handleChooseTimer}
+        onCancel={() => setPendingPassage(null)}
+      />
     </div>
   );
 }

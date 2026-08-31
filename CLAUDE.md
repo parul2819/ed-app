@@ -33,7 +33,7 @@ Copy `.env.example` to `.env` and set `ANTHROPIC_API_KEY` before calling `/gener
 
 ## Product summary
 
-EdTech app for school students, starting with **Class 3, Math only** (Addition, Subtraction, Multiplication — single-digit). Two tracks: School Syllabus and Olympiad (SOF/IMO) prep. Questions are MCQ (4 options) stored as JSON with fields: `id`, `topic`, `track`, `difficulty`, `question_text`, `options`, `correct_answer`, `explanation_hint`.
+EdTech app for school students, starting with **Class 3, Math only** (Addition, Subtraction — 2-3 digit; Multiplication, Division — single-digit). Two tracks: School Syllabus and Olympiad (SOF/IMO) prep. Questions are MCQ (4 options) stored as JSON with fields: `id`, `topic`, `track`, `difficulty`, `question_text`, `options`, `correct_answer`, `explanation_hint`.
 
 Two LLM-powered features are planned: generating fresh practice questions when the bank runs low, and generating step-wise, Class-3-appropriate solutions on wrong answers. Progress tracking uses accuracy/stars/badges, deliberately not a competitive leaderboard.
 

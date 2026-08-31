@@ -17,6 +17,7 @@ const TOPICS = [
   { key: "addition", label: "Addition", emoji: "➕" },
   { key: "subtraction", label: "Subtraction", emoji: "➖" },
   { key: "multiplication", label: "Multiply", emoji: "✖️" },
+  { key: "division", label: "Divide", emoji: "➗" },
 ];
 const TOPIC_ORDER = TOPICS.map((t) => t.key);
 const TRACK_ORDER = ["school", "olympiad"];
@@ -241,31 +242,31 @@ export default function ProgressPage() {
               </button>
             </div>
 
-            {TOPICS.map((topic) => {
-              const entry = progress.find(
-                (row) => row.topic === topic.key && row.track === track
-              );
-              const attempted = entry?.questions_attempted ?? 0;
-              const correct = entry?.questions_correct ?? 0;
-              const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
-              const stars = entry?.stars_earned ?? 0;
+            <p className="subtitle">🧮 Math</p>
+            <div className="progress-grid">
+              {TOPICS.map((topic) => {
+                const entry = progress.find(
+                  (row) => row.topic === topic.key && row.track === track
+                );
+                const attempted = entry?.questions_attempted ?? 0;
+                const correct = entry?.questions_correct ?? 0;
+                const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
+                const stars = entry?.stars_earned ?? 0;
 
-              return (
-                <div className="progress-card" key={topic.key}>
-                  <div className="progress-info">
-                    <span className="progress-topic">
-                      {topic.emoji} {topic.label}
-                    </span>
-                    <span className="progress-accuracy">
+                return (
+                  <div className="progress-tile" key={topic.key}>
+                    <span className="progress-tile-icon">{topic.emoji}</span>
+                    <span className="progress-tile-label">{topic.label}</span>
+                    <span className="progress-tile-accuracy">
                       {attempted > 0
-                        ? `${accuracy}% correct · ${attempted} question${attempted === 1 ? "" : "s"}`
+                        ? `${accuracy}% · ${attempted} question${attempted === 1 ? "" : "s"}`
                         : "Not started yet"}
                     </span>
+                    <Stars count={stars} />
                   </div>
-                  <Stars count={stars} />
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
 
             <p className="subtitle">📖 English</p>
             {(() => {

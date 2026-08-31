@@ -68,13 +68,15 @@ TOPIC_TITLES = {
     "addition": "Addition Practice",
     "subtraction": "Subtraction Practice",
     "multiplication": "Multiplication Practice",
+    "division": "Division Practice",
 }
-TOPIC_SYMBOLS = {"addition": "+", "subtraction": "-", "multiplication": "x"}
+TOPIC_SYMBOLS = {"addition": "+", "subtraction": "-", "multiplication": "x", "division": "÷"}
 
 NAMES = ["Priya", "Rohan", "Aisha", "Kabir", "Meera", "Arjun", "Diya", "Vihaan", "Sara", "Ishaan"]
 ADD_SUB_OBJECTS = ["marbles", "stickers", "pencils", "stamps", "candies", "balloons"]
 MUL_CONTAINERS = ["boxes", "baskets", "bags", "trays", "shelves"]
 MUL_ITEMS = ["pencils", "apples", "candies", "toys", "stickers", "flowers"]
+DIV_ITEMS = ["marbles", "stickers", "pencils", "candies", "flowers", "toys"]
 
 SUMS_PER_WORKSHEET = 20
 WORD_PROBLEMS_PER_WORKSHEET = 3
@@ -86,6 +88,8 @@ def _apply_op(a: int, op: str, b: int) -> int:
         return a + b
     if op == "-":
         return a - b
+    if op == "÷":
+        return a // b
     return a * b  # "x"
 
 
@@ -142,6 +146,9 @@ def generate_column_sums(
             b = _random_operand(rng, rng.choice([2, 3]))
             hi, lo = max(a, b), min(a, b)
             sums.append(ColumnSum(hi, lo, "-", hi - lo))
+        elif topic == "division":
+            divisor, quotient = rng.randint(1, 9), rng.randint(1, 9)
+            sums.append(ColumnSum(divisor * quotient, divisor, "÷", quotient))
         else:
             raise ValueError(f"Unknown topic {topic!r}")
     return sums
@@ -184,6 +191,16 @@ def generate_word_problems(
                 f"How many {item} are there in total?"
             )
             problems.append(WordProblem(text, a, b, "x", a * b))
+        elif topic == "division":
+            name = rng.choice(NAMES)
+            item = rng.choice(DIV_ITEMS)
+            divisor, quotient = rng.randint(1, 9), rng.randint(1, 9)
+            dividend = divisor * quotient
+            text = (
+                f"{name} has {dividend} {item} to share equally among {divisor} friends. "
+                f"How many {item} will each friend get?"
+            )
+            problems.append(WordProblem(text, dividend, divisor, "÷", quotient))
         else:
             raise ValueError(f"Unknown topic {topic!r}")
     return problems

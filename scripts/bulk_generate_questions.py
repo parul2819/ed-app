@@ -27,7 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from learn_with_masti import llm_client  # noqa: E402
 from learn_with_masti.config import CONTENT_DIR  # noqa: E402
 
-TOPIC_PREFIX = {"addition": "add", "subtraction": "sub", "multiplication": "mul"}
+TOPIC_PREFIX = {"addition": "add", "subtraction": "sub", "multiplication": "mul", "division": "div"}
 TRACK_ABBREV = {"school": "sch", "olympiad": "oly"}
 BUCKETS = [
     ("school", "easy"),

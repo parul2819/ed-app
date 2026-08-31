@@ -123,7 +123,7 @@ async def test_get_questions_respects_limit(client):
 
 async def test_get_questions_invalid_topic_returns_422(client):
     resp = await client.get(
-        "/questions", params={"topic": "division", "track": "school"}
+        "/questions", params={"topic": "geometry", "track": "school"}
     )
 
     assert resp.status_code == 422

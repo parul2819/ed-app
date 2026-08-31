@@ -2,6 +2,7 @@ export const TOPIC_LABELS = {
   addition: "Addition",
   subtraction: "Subtraction",
   multiplication: "Multiplication",
+  division: "Division",
 };
 
 export const LEVELS_BY_TRACK = {

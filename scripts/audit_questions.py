@@ -34,6 +34,7 @@ DEFAULT_FILES = [
     CONTENT_DIR / "addition_full.json",
     CONTENT_DIR / "subtraction_full.json",
     CONTENT_DIR / "multiplication_full.json",
+    CONTENT_DIR / "division_full.json",
 ]
 
 

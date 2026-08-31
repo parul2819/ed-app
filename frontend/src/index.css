@@ -27,13 +27,31 @@
 
   --color-warning: var(--pastel-yellow-dark);
 
-  --color-bg: #fffaf1;
-  --color-surface: #ffffff;
+  --color-bg: #f6efe1;
+  --color-surface: #fffdf8;
   --color-text: #3a2e52;
   --color-muted: #8377a0;
 
-  /* base decorative background (section 1): soft pastel blobs, never a flat fill */
-  --bg-blobs: radial-gradient(circle at 12% 15%, var(--pastel-pink) 0%, transparent 38%),
+  /* wool/knit theme: warm cream base with a soft woven fiber texture plus
+     the same pastel blobs, now dimmed under the knit so they read as dyed
+     patches in the wool rather than flat color pools (icons/2-4.jpg ref). */
+  --wool-fiber-light: rgba(255, 255, 255, 0.55);
+  --wool-fiber-shadow: rgba(146, 111, 66, 0.1);
+  --bg-blobs: repeating-linear-gradient(
+      45deg,
+      var(--wool-fiber-light) 0px,
+      var(--wool-fiber-light) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      var(--wool-fiber-shadow) 0px,
+      var(--wool-fiber-shadow) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    radial-gradient(circle at 12% 15%, var(--pastel-pink) 0%, transparent 38%),
     radial-gradient(circle at 88% 10%, var(--pastel-blue) 0%, transparent 42%),
     radial-gradient(circle at 14% 90%, var(--pastel-mint) 0%, transparent 40%),
     radial-gradient(circle at 92% 85%, var(--pastel-yellow) 0%, transparent 38%),
@@ -270,14 +288,15 @@ input {
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
-  background: rgba(255, 255, 255, 0.22);
-  border: none;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.45);
   color: white;
   border-radius: var(--radius-pill);
   padding: var(--space-2) var(--space-3);
   font-size: 0.95rem;
   font-weight: 700;
   white-space: nowrap;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
 }
 
 .topbar-back {
@@ -394,36 +413,40 @@ p.subtitle {
 }
 
 .btn-primary {
-  background: linear-gradient(180deg, #a68af6, var(--color-primary));
-  color: white;
-  box-shadow: 0 4px 0 var(--color-primary-dark), 0 8px 18px rgba(139, 107, 242, 0.3),
-    inset 0 2px 0 rgba(255, 255, 255, 0.35);
+  background: linear-gradient(160deg, #ffffff, #e4d6ff 55%, #b9a8f7);
+  color: var(--color-primary-dark);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 3px 4px rgba(255, 255, 255, 0.85), inset 0 -8px 14px rgba(139, 107, 242, 0.22),
+    0 4px 0 var(--color-primary-dark), 0 8px 16px rgba(58, 46, 82, 0.18);
 }
 
 .btn-primary:active {
-  box-shadow: 0 1px 0 var(--color-primary-dark), 0 3px 8px rgba(139, 107, 242, 0.3),
-    inset 0 2px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 3px 4px rgba(255, 255, 255, 0.85), inset 0 -8px 14px rgba(139, 107, 242, 0.22),
+    0 1px 0 var(--color-primary-dark), 0 3px 8px rgba(58, 46, 82, 0.18);
 }
 
 .btn-accent {
-  background: linear-gradient(180deg, #ffcb75, var(--color-accent-2));
+  background: linear-gradient(160deg, #fffdf8, #fff0c2 45%, #ffd27a);
   color: #6b3f00;
-  box-shadow: 0 4px 0 #d98f1f, 0 8px 18px rgba(255, 182, 72, 0.35), inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 3px 4px rgba(255, 255, 255, 0.85), inset 0 -8px 12px rgba(160, 110, 20, 0.22),
+    0 4px 0 #d98f1f, 0 8px 16px rgba(58, 46, 82, 0.16);
 }
 
 .btn-accent:active {
-  box-shadow: 0 1px 0 #d98f1f, 0 3px 8px rgba(255, 182, 72, 0.35), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 3px 4px rgba(255, 255, 255, 0.85), inset 0 -8px 12px rgba(160, 110, 20, 0.22),
+    0 1px 0 #d98f1f, 0 3px 8px rgba(58, 46, 82, 0.16);
 }
 
 .btn-outline {
-  background: white;
+  background: linear-gradient(160deg, #fffdf8, #f3ecff 60%, #e4d6ff);
   color: var(--color-primary-dark);
   border: 2px solid var(--pastel-lavender-dark);
-  box-shadow: 0 3px 0 var(--pastel-lavender), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.8), 0 3px 0 var(--pastel-lavender);
 }
 
 .btn-outline:active {
-  box-shadow: 0 1px 0 var(--pastel-lavender);
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.8), 0 1px 0 var(--pastel-lavender);
 }
 
 .btn-block {
@@ -433,9 +456,11 @@ p.subtitle {
 .btn-tabs {
   display: flex;
   gap: var(--space-2);
-  background: var(--pastel-lavender);
+  background: linear-gradient(160deg, #fff1e6, #ffe0cf);
   padding: var(--space-2);
   border-radius: var(--radius-pill);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.7), inset 0 -4px 8px rgba(180, 120, 90, 0.16);
 }
 
 .btn-tab {
@@ -457,9 +482,10 @@ p.subtitle {
 }
 
 .btn-tab.active {
-  background: var(--color-primary);
-  color: white;
-  box-shadow: 0 3px 0 var(--color-primary-dark), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  background: linear-gradient(160deg, #ffb4d6, #ff8fc0);
+  color: #6b1743;
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.7), inset 0 -6px 10px rgba(150, 40, 90, 0.28),
+    0 3px 0 rgba(150, 40, 90, 0.35);
 }
 
 .tile-grid {
@@ -468,58 +494,109 @@ p.subtitle {
   gap: var(--space-4);
 }
 
+/* Wool felt tile: a soft knit-square badge + a colored glow, echoing the
+   embroidered rounded-square icon patches in the reference art
+   (icons/2-4.jpg). The button itself is just a layout box (no card); the
+   ".tile-emoji" badge carries all the puffiness, and the label sits
+   underneath it as plain text. Each variant only sets --tile-glow (the
+   glow color). */
 .tile {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--space-3);
-  padding: var(--space-6) var(--space-3);
+  padding: var(--space-4) var(--space-2);
   border-radius: var(--radius-lg);
   border: none;
+  background: transparent;
   color: var(--color-text);
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   min-height: 130px;
   cursor: pointer;
-  box-shadow: 0 5px 0 rgba(58, 46, 82, 0.12), 0 8px 16px rgba(58, 46, 82, 0.12),
-    inset 0 2px 0 rgba(255, 255, 255, 0.5);
-  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  transition: transform 0.08s ease;
 }
 
 .tile:active {
-  transform: translateY(2px) scale(0.97);
-  box-shadow: 0 2px 0 rgba(58, 46, 82, 0.12), 0 4px 10px rgba(58, 46, 82, 0.12),
-    inset 0 2px 0 rgba(255, 255, 255, 0.5);
+  transform: scale(0.97);
+}
+
+.tile:active .tile-emoji {
+  transform: scale(0.93) translateY(1px);
 }
 
 .tile-emoji {
-  font-size: 2.6rem;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(90px, 24vw, 116px);
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  font-size: 3.1rem;
+  line-height: 1;
+  background: radial-gradient(circle at 30% 25%, #fffdf8 0%, #fff3e0 45%, #ffe0ea 100%);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.95), inset 0 -10px 14px rgba(190, 110, 150, 0.22),
+    0 10px 18px rgba(58, 46, 82, 0.16);
+  filter: drop-shadow(0 1px 1px rgba(58, 46, 82, 0.12));
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.tile-emoji::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  z-index: -1;
+  border-radius: calc(var(--radius-lg) + 12px);
+  background: radial-gradient(circle, var(--tile-glow, transparent) 0%, transparent 68%);
+  filter: blur(9px);
+  opacity: 0.85;
+}
+
+/* soft knit halo instead of a chrome donut-ring: a diffuse glow sitting
+   behind the rounded-square badge, like dyed wool bleeding at the edges. */
+.tile-emoji::after {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  z-index: -1;
+  border-radius: calc(var(--radius-lg) + 14px);
+  background: var(--tile-glow, transparent);
+  filter: blur(12px);
+  opacity: 0.6;
 }
 
 .tile-addition {
-  background: linear-gradient(160deg, var(--pastel-mint), var(--pastel-mint-dark));
+  --tile-glow: #4ade80;
 }
 
 .tile-subtraction {
-  background: linear-gradient(160deg, var(--pastel-blue), var(--pastel-blue-dark));
+  --tile-glow: #38bdf8;
 }
 
 .tile-multiplication {
-  background: linear-gradient(160deg, var(--pastel-pink), var(--pastel-pink-dark));
+  --tile-glow: #f472b6;
+}
+
+.tile-division {
+  --tile-glow: #2dd4bf;
 }
 
 .tile-add-child {
-  background: linear-gradient(160deg, var(--pastel-yellow), var(--pastel-yellow-dark));
+  --tile-glow: #fbbf24;
 }
 
 .tile-maths {
-  background: linear-gradient(160deg, #818cf8, #4f46e5);
+  --tile-glow: #6366f1;
 }
 
 .tile-english {
-  background: linear-gradient(160deg, #fb923c, #ea580c);
+  --tile-glow: #fb923c;
 }
 
 .passage-category {
@@ -636,7 +713,7 @@ p.subtitle {
   padding: var(--space-6) var(--space-2);
   border-radius: var(--radius-lg);
   border: none;
-  background: white;
+  background: var(--color-surface);
   box-shadow: 0 5px 0 rgba(58, 46, 82, 0.08), 0 8px 16px rgba(58, 46, 82, 0.1),
     inset 0 2px 0 rgba(255, 255, 255, 0.6);
   cursor: pointer;
@@ -701,7 +778,7 @@ p.subtitle {
   padding: var(--space-4) 0;
   border-radius: var(--radius-md);
   border: none;
-  background: white;
+  background: var(--color-surface);
   box-shadow: 0 4px 0 var(--pastel-lavender), 0 6px 12px rgba(58, 46, 82, 0.1),
     inset 0 2px 0 rgba(255, 255, 255, 0.6);
   color: var(--color-primary-dark);
@@ -758,6 +835,78 @@ p.subtitle {
   opacity: 0.9;
 }
 
+.level-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 2px;
+}
+
+.level-progress-bar {
+  width: 100%;
+  height: 7px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+
+.level-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  transition: width 0.3s ease;
+}
+
+.level-progress-caption {
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.92;
+}
+
+.session-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.session-progress-caption {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.session-progress-bar {
+  width: 100%;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--pastel-lavender);
+  overflow: hidden;
+}
+
+.session-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, #a68af6, var(--color-primary));
+  transition: width 0.3s ease;
+}
+
+.topic-progress-bar {
+  width: 100%;
+  max-width: 72px;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--pastel-lavender);
+  overflow: hidden;
+}
+
+.topic-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, #a68af6, var(--color-primary));
+  transition: width 0.3s ease;
+}
+
 .level-badge {
   align-self: center;
   display: inline-flex;
@@ -789,7 +938,7 @@ p.subtitle {
 }
 
 .question-card {
-  background: white;
+  background: var(--color-surface);
   border-radius: var(--radius-lg);
   padding: var(--space-6) var(--space-4);
   box-shadow: var(--shadow-soft);
@@ -818,7 +967,7 @@ p.subtitle {
   padding: var(--space-4) var(--space-2);
   border-radius: var(--radius-lg);
   border: 3px solid var(--pastel-lavender);
-  background: white;
+  background: var(--color-surface);
   color: var(--color-text);
   cursor: pointer;
   min-height: 72px;
@@ -961,8 +1110,46 @@ p.subtitle {
   gap: var(--space-1);
 }
 
+.progress-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.progress-tile {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-3);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.progress-tile-icon {
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.progress-tile-label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.98rem;
+}
+
+.progress-tile-accuracy {
+  font-size: 0.76rem;
+  color: var(--color-muted);
+}
+
+.progress-tile .stars-row {
+  margin-top: 2px;
+}
+
 .progress-card {
-  background: white;
+  background: var(--color-surface);
   border-radius: var(--radius-lg);
   padding: var(--space-4);
   box-shadow: var(--shadow-soft);
@@ -991,7 +1178,7 @@ p.subtitle {
 }
 
 .attempt-group {
-  background: white;
+  background: var(--color-surface);
   border-radius: var(--radius-lg);
   padding: var(--space-4);
   box-shadow: var(--shadow-soft);
@@ -1130,7 +1317,7 @@ p.subtitle {
 }
 
 .summary-card {
-  background: white;
+  background: var(--color-surface);
   border-radius: var(--radius-lg);
   padding: 28px 20px;
   box-shadow: var(--shadow-soft);
@@ -1210,4 +1397,222 @@ p.subtitle {
   font-size: 1rem;
   cursor: pointer;
   text-decoration: underline;
+}
+
+/* timed-practice choice modal (shown before a level/passage starts) */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: rgba(58, 46, 82, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6) var(--space-4);
+  animation: modal-fade-in 0.18s ease;
+}
+
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-4);
+  box-shadow: 0 20px 40px rgba(58, 46, 82, 0.35);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  animation: modal-pop-in 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modal-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-emoji {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--color-primary-dark);
+}
+
+.modal-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  margin: 0 0 var(--space-2);
+}
+
+.timer-choice-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.timer-choice-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: var(--space-3) var(--space-2);
+  border-radius: var(--radius-md);
+  border: 3px solid var(--pastel-lavender);
+  background: var(--color-surface);
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--pastel-lavender), inset 0 2px 0 rgba(255, 255, 255, 0.6);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, border-color 0.08s ease;
+}
+
+.timer-choice-btn:active {
+  transform: translateY(2px) scale(0.97);
+  box-shadow: 0 1px 0 var(--pastel-lavender), inset 0 2px 0 rgba(255, 255, 255, 0.6);
+}
+
+.timer-choice-btn:hover {
+  border-color: var(--color-primary);
+}
+
+.timer-choice-emoji {
+  font-size: 1.6rem;
+}
+
+.timer-choice-label {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.02rem;
+  color: var(--color-text);
+}
+
+.timer-choice-desc {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+/* the countdown "watch" — a glossy chrome dial with an SVG ring that
+   drains as time runs out, shown for the whole timed level/passage. */
+.timer-watch {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #ffffff 0%, #f3f5f8 32%, #dde1e8 62%, #c2c8d1 100%);
+  box-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.95), inset 0 -10px 14px rgba(58, 46, 82, 0.16),
+    0 10px 18px rgba(58, 46, 82, 0.22);
+}
+
+.timer-watch-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.timer-watch-track {
+  fill: none;
+  stroke: var(--pastel-lavender);
+  stroke-width: 10;
+}
+
+.timer-watch-progress {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke: var(--color-primary);
+  transition: stroke-dashoffset 1s linear, stroke 0.3s ease;
+  filter: drop-shadow(0 0 4px rgba(139, 107, 242, 0.5));
+}
+
+.timer-watch-warning .timer-watch-progress {
+  stroke: var(--color-accent-2);
+  filter: drop-shadow(0 0 4px rgba(255, 182, 72, 0.55));
+}
+
+.timer-watch-danger .timer-watch-progress {
+  stroke: var(--color-danger-dark);
+  filter: drop-shadow(0 0 5px rgba(229, 108, 92, 0.6));
+}
+
+.timer-watch-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.timer-watch-time {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-watch-danger .timer-watch-time {
+  color: var(--color-danger-dark);
+}
+
+.timer-watch-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+}
+
+.timer-watch-pulse {
+  animation: timer-watch-pulse 1s ease-in-out infinite;
+}
+
+@keyframes timer-watch-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.timer-up-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--color-danger-bg);
+  color: var(--color-danger-dark);
+  text-align: center;
 }

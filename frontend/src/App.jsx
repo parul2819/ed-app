@@ -1,5 +1,6 @@
 import { Navigate, Route, BrowserRouter, Routes } from "react-router-dom";
 import { AuthProvider, useAuth } from "./context/AuthContext";
+import ButtonSkinRoot from "./components/ButtonSkinRoot";
 import ParentAuthPage from "./pages/ParentAuthPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
@@ -38,7 +39,7 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <div className="app-shell">
+        <ButtonSkinRoot>
           <Routes>
             <Route path="/" element={<RootRedirect />} />
             <Route path="/parent/auth" element={<ParentAuthPage />} />
@@ -115,7 +116,7 @@ function App() {
             />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
-        </div>
+        </ButtonSkinRoot>
       </BrowserRouter>
     </AuthProvider>
   );

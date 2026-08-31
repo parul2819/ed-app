@@ -34,6 +34,14 @@ REVIEW_ENABLED = os.environ.get("REVIEW_ENABLED", "true").strip().lower() in (
 )
 ANTHROPIC_REVIEW_MODEL = os.environ.get("ANTHROPIC_REVIEW_MODEL", "claude-sonnet-4-6")
 OLLAMA_REVIEW_MODEL = os.environ.get("OLLAMA_REVIEW_MODEL", "qwen3:4b")
+# qwen3's reasoning ("think") mode gives better review judgments but is far
+# slower on CPU-only Ollama (minutes per call, non-deterministic); disable it
+# to trade some review depth for speed when that's the bottleneck.
+OLLAMA_REVIEW_THINK = os.environ.get("OLLAMA_REVIEW_THINK", "true").strip().lower() in (
+    "1",
+    "true",
+    "yes",
+)
 
 DATABASE_URL = os.environ.get(
     "DATABASE_URL", "postgresql+psycopg://masti:masti@localhost:5432/learn_with_masti"

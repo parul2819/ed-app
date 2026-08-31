@@ -14,3 +14,9 @@ background images/
 
 # Output of scripts/audit_questions.py -- regenerate, don't commit.
 audit_report.txt
+
+# Local design-reference material (mood-board screenshots, purchased Etsy PDF)
+# used while styling the button "wool" theme -- not app assets, not imported
+# by any code.
+/icons/
+/ETSY - animals Cartoons A-Z.pdf

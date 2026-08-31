@@ -65,7 +65,7 @@ def test_question_rejects_correct_answer_not_in_options():
 
 def test_question_rejects_unknown_topic():
     with pytest.raises(ValidationError):
-        Question(**make_question(topic="division"))
+        Question(**make_question(topic="geometry"))
 
 
 def test_get_solution_request_rejects_when_nothing_provided():

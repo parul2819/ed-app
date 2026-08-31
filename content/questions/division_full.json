@@ -1,0 +1,1131 @@
+{
+  "topic": "division",
+  "notes": "Full question bank: single-digit (1-9) divisor/quotient division, word-problem heavy, per latest scope update",
+  "questions": [
+    {
+      "id": "div_sch_001",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "A gardener has 24 saplings to plant equally in 4 rows. How many saplings will be in each row?",
+      "options": [
+        "6",
+        "5",
+        "7",
+        "8"
+      ],
+      "correct_answer": "6",
+      "explanation_hint": "24 ÷ 4 = 6 saplings."
+    },
+    {
+      "id": "div_sch_002",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "36 ÷ 6 = ?",
+      "options": [
+        "5",
+        "7",
+        "4",
+        "6"
+      ],
+      "correct_answer": "6",
+      "explanation_hint": "36 ÷ 6 = 6."
+    },
+    {
+      "id": "div_sch_003",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "Meera has 30 chocolates to share equally among 5 friends. How many chocolates will each friend get?",
+      "options": [
+        "5",
+        "9",
+        "6",
+        "7"
+      ],
+      "correct_answer": "6",
+      "explanation_hint": "30 ÷ 5 = 6 chocolates."
+    },
+    {
+      "id": "div_sch_004",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "A teacher has 28 pencils to give out equally to 7 students. How many pencils will each student get?",
+      "options": [
+        "5",
+        "4",
+        "2",
+        "3"
+      ],
+      "correct_answer": "4",
+      "explanation_hint": "28 ÷ 7 = 4 pencils."
+    },
+    {
+      "id": "div_sch_005",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "42 ÷ 6 = ?",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "6"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "42 ÷ 6 = 7."
+    },
+    {
+      "id": "div_sch_016",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "A gardener has 32 saplings to plant equally in 4 rows near the school gate. How many saplings will be in each row?",
+      "options": [
+        "10",
+        "6",
+        "8",
+        "7"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "32 ÷ 4 = 8 saplings."
+    },
+    {
+      "id": "div_sch_017",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "40 ÷ 5 = ?",
+      "options": [
+        "9",
+        "8",
+        "10",
+        "6"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "40 ÷ 5 = 8."
+    },
+    {
+      "id": "div_sch_018",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "Rohan has 27 stickers to share equally among 3 friends. How many stickers will each friend get?",
+      "options": [
+        "9",
+        "8",
+        "7",
+        "10"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "27 ÷ 3 = 9 stickers."
+    },
+    {
+      "id": "div_sch_019",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "A teacher has 24 pencils to give out equally to 6 students for the art class. How many pencils will each student get?",
+      "options": [
+        "5",
+        "2",
+        "6",
+        "4"
+      ],
+      "correct_answer": "4",
+      "explanation_hint": "24 ÷ 6 = 4 pencils."
+    },
+    {
+      "id": "div_sch_020",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "35 ÷ 7 = ?",
+      "options": [
+        "3",
+        "6",
+        "4",
+        "5"
+      ],
+      "correct_answer": "5",
+      "explanation_hint": "35 ÷ 7 = 5."
+    },
+    {
+      "id": "div_sch_021",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "For the class party, 36 party hats need to be shared equally among 4 tables. How many party hats will each table get?",
+      "options": [
+        "10",
+        "12",
+        "9",
+        "8"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "36 ÷ 4 = 9 party hats."
+    },
+    {
+      "id": "div_sch_022",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "18 ÷ 3 = ?",
+      "options": [
+        "5",
+        "6",
+        "8",
+        "7"
+      ],
+      "correct_answer": "6",
+      "explanation_hint": "18 ÷ 3 = 6."
+    },
+    {
+      "id": "div_sch_023",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "A vendor has 45 oranges to pack equally into 5 baskets for the market. How many oranges will go in each basket?",
+      "options": [
+        "9",
+        "6",
+        "10",
+        "8"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "45 ÷ 5 = 9 oranges."
+    },
+    {
+      "id": "div_sch_024",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "48 ÷ 6 = ?",
+      "options": [
+        "9",
+        "11",
+        "6",
+        "8"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "48 ÷ 6 = 8."
+    },
+    {
+      "id": "div_sch_025",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "Meera has 21 seashells to share equally among 3 friends from her beach trip. How many seashells will each friend get?",
+      "options": [
+        "9",
+        "8",
+        "7",
+        "5"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "21 ÷ 3 = 7 seashells."
+    },
+    {
+      "id": "div_sch_006",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "For the class party, 48 balloons need to be tied into bunches of 6 balloons each. How many bunches can be made?",
+      "options": [
+        "7",
+        "10",
+        "6",
+        "8"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "48 ÷ 6 = 8 bunches."
+    },
+    {
+      "id": "div_sch_007",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "54 ÷ 9 = ?",
+      "options": [
+        "4",
+        "7",
+        "6",
+        "8"
+      ],
+      "correct_answer": "6",
+      "explanation_hint": "54 ÷ 9 = 6."
+    },
+    {
+      "id": "div_sch_008",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A librarian has 56 storybooks to arrange equally on 8 shelves. How many storybooks will go on each shelf?",
+      "options": [
+        "8",
+        "7",
+        "6",
+        "5"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "56 ÷ 8 = 7 storybooks."
+    },
+    {
+      "id": "div_sch_009",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "63 ÷ 7 = ?",
+      "options": [
+        "9",
+        "10",
+        "7",
+        "11"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "63 ÷ 7 = 9."
+    },
+    {
+      "id": "div_sch_010",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A shopkeeper packs 45 oranges into bags of 9 oranges each for the weekend market. How many bags does he need?",
+      "options": [
+        "5",
+        "3",
+        "6",
+        "4"
+      ],
+      "correct_answer": "5",
+      "explanation_hint": "45 ÷ 9 = 5 bags."
+    },
+    {
+      "id": "div_sch_026",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "For the annual fete, 49 balloons need to be tied into bunches of 7 balloons each. How many bunches can be made?",
+      "options": [
+        "10",
+        "7",
+        "6",
+        "8"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "49 ÷ 7 = 7 bunches."
+    },
+    {
+      "id": "div_sch_027",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "72 ÷ 9 = ?",
+      "options": [
+        "8",
+        "10",
+        "9",
+        "7"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "72 ÷ 9 = 8."
+    },
+    {
+      "id": "div_sch_028",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A librarian has 42 storybooks to arrange equally on 6 shelves in the reading corner. How many storybooks will go on each shelf?",
+      "options": [
+        "4",
+        "8",
+        "6",
+        "7"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "42 ÷ 6 = 7 storybooks."
+    },
+    {
+      "id": "div_sch_029",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "56 ÷ 7 = ?",
+      "options": [
+        "11",
+        "6",
+        "8",
+        "9"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "56 ÷ 7 = 8."
+    },
+    {
+      "id": "div_sch_030",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A caterer packs 63 samosas equally into boxes of 9 samosas each for the wedding order. How many boxes does she need?",
+      "options": [
+        "9",
+        "8",
+        "7",
+        "5"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "63 ÷ 9 = 7 boxes."
+    },
+    {
+      "id": "div_sch_031",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "For sports day, 40 medals need to be arranged equally into 8 trays before the ceremony. How many medals will each tray hold?",
+      "options": [
+        "7",
+        "5",
+        "6",
+        "2"
+      ],
+      "correct_answer": "5",
+      "explanation_hint": "40 ÷ 8 = 5 medals."
+    },
+    {
+      "id": "div_sch_032",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "45 ÷ 9 = ?",
+      "options": [
+        "5",
+        "4",
+        "8",
+        "3"
+      ],
+      "correct_answer": "5",
+      "explanation_hint": "45 ÷ 9 = 5."
+    },
+    {
+      "id": "div_sch_033",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A shopkeeper packs 54 mangoes equally into crates of 6 mangoes each for the market. How many crates does he need?",
+      "options": [
+        "11",
+        "8",
+        "7",
+        "9"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "54 ÷ 6 = 9 crates."
+    },
+    {
+      "id": "div_sch_034",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "64 ÷ 8 = ?",
+      "options": [
+        "7",
+        "10",
+        "8",
+        "6"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "64 ÷ 8 = 8."
+    },
+    {
+      "id": "div_sch_035",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A florist arranges 48 marigolds equally into garlands of 8 marigolds each for the festival. How many garlands can she make?",
+      "options": [
+        "7",
+        "6",
+        "9",
+        "4"
+      ],
+      "correct_answer": "6",
+      "explanation_hint": "48 ÷ 8 = 6 garlands."
+    },
+    {
+      "id": "div_sch_011",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "The school canteen has 72 cupcakes to pack equally into boxes of 8 cupcakes each for the bake sale. How many boxes will be filled?",
+      "options": [
+        "8",
+        "10",
+        "11",
+        "9"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "72 ÷ 8 = 9 boxes."
+    },
+    {
+      "id": "div_sch_012",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "81 ÷ 9 = ?",
+      "options": [
+        "10",
+        "7",
+        "9",
+        "8"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "81 ÷ 9 = 9."
+    },
+    {
+      "id": "div_sch_013",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "For sports day, 64 medals need to be arranged equally into 8 trays before the ceremony begins. How many medals will each tray hold?",
+      "options": [
+        "11",
+        "8",
+        "9",
+        "7"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "64 ÷ 8 = 8 medals."
+    },
+    {
+      "id": "div_sch_014",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "77 ÷ 7 = ?",
+      "options": [
+        "11",
+        "9",
+        "10",
+        "12"
+      ],
+      "correct_answer": "11",
+      "explanation_hint": "77 ÷ 7 = 11."
+    },
+    {
+      "id": "div_sch_015",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A farmer has 63 sacks of wheat to load equally onto 7 carts for the market. How many sacks will each cart carry?",
+      "options": [
+        "10",
+        "11",
+        "8",
+        "9"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "63 ÷ 7 = 9 sacks."
+    },
+    {
+      "id": "div_sch_036",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A wholesaler has 63 kilograms of rice to pack equally into 9 sacks for delivery to a village store. How many kilograms will each sack hold?",
+      "options": [
+        "7",
+        "6",
+        "9",
+        "5"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "63 ÷ 9 = 7 kilograms."
+    },
+    {
+      "id": "div_sch_037",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "56 ÷ 8 = ?",
+      "options": [
+        "9",
+        "5",
+        "8",
+        "7"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "56 ÷ 8 = 7."
+    },
+    {
+      "id": "div_sch_038",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "For the annual exhibition, 72 project charts need to be displayed equally across 8 corridor boards in the school hall. How many charts will go on each board?",
+      "options": [
+        "7",
+        "10",
+        "9",
+        "8"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "72 ÷ 8 = 9 charts."
+    },
+    {
+      "id": "div_sch_039",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "45 ÷ 5 = ?",
+      "options": [
+        "11",
+        "9",
+        "10",
+        "7"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "45 ÷ 5 = 9."
+    },
+    {
+      "id": "div_sch_040",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A charity packs 54 relief kits equally into 6 vans for distribution to flood-affected villages. How many kits will each van carry?",
+      "options": [
+        "8",
+        "9",
+        "7",
+        "10"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "54 ÷ 6 = 9 kits."
+    },
+    {
+      "id": "div_sch_041",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "63 ÷ 9 = ?",
+      "options": [
+        "7",
+        "6",
+        "8",
+        "10"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "63 ÷ 9 = 7."
+    },
+    {
+      "id": "div_sch_042",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A textile mill has 64 metres of cloth to divide equally among 8 tailoring stalls at the craft fair. How many metres will each stall receive?",
+      "options": [
+        "10",
+        "9",
+        "7",
+        "8"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "64 ÷ 8 = 8 metres."
+    },
+    {
+      "id": "div_sch_043",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "72 ÷ 8 = ?",
+      "options": [
+        "10",
+        "8",
+        "9",
+        "6"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "72 ÷ 8 = 9."
+    },
+    {
+      "id": "div_sch_044",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A trader has 56 boxes of tea packets to load equally onto 7 delivery vans for the weekend market. How many boxes will each van carry?",
+      "options": [
+        "6",
+        "8",
+        "9",
+        "11"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "56 ÷ 7 = 8 boxes."
+    },
+    {
+      "id": "div_sch_045",
+      "topic": "division",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A bakery has 81 cookies to pack equally into 9 gift boxes for the festival stall. How many cookies will go in each box?",
+      "options": [
+        "9",
+        "7",
+        "11",
+        "10"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "81 ÷ 9 = 9 cookies."
+    },
+    {
+      "id": "div_oly_001",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "A school has 4 classes with 9 students in each class attending a workshop. The students are then split equally into groups of 6 students each. How many groups are formed in total?",
+      "options": [
+        "8",
+        "4",
+        "6",
+        "5"
+      ],
+      "correct_answer": "6",
+      "explanation_hint": "4 x 9 = 36. 36 ÷ 6 = 6 groups."
+    },
+    {
+      "id": "div_oly_002",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "Find the missing number: 63 ÷ __ = 9",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "5"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "63 ÷ 9 = 7."
+    },
+    {
+      "id": "div_oly_003",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "The product of two numbers is 56. One of the numbers is 8. What is the other number?",
+      "options": [
+        "7",
+        "6",
+        "5",
+        "8"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "56 ÷ 8 = 7."
+    },
+    {
+      "id": "div_oly_004",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "A juice seller has 72 cups of juice. He first fills bottles of 8 cups each, and then packs the bottles equally into crates of 3 bottles each. How many crates does he need?",
+      "options": [
+        "4",
+        "1",
+        "5",
+        "3"
+      ],
+      "correct_answer": "3",
+      "explanation_hint": "72 ÷ 8 = 9. 9 ÷ 3 = 3 crates."
+    },
+    {
+      "id": "div_oly_005",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "Look at the pattern: 16÷2=8, 24÷3=8, 32÷4=8. Following the same pattern, what does 40÷5 equal?",
+      "options": [
+        "9",
+        "7",
+        "8",
+        "6"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "40 ÷ 5 = 8."
+    },
+    {
+      "id": "div_oly_011",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "A school has 5 classes with 8 students in each class attending a workshop. The students are then split equally into groups of 5 students each. How many groups are formed in total?",
+      "options": [
+        "11",
+        "8",
+        "7",
+        "9"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "5 x 8 = 40. 40 ÷ 5 = 8 groups."
+    },
+    {
+      "id": "div_oly_012",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "Find the missing number: 54 ÷ __ = 9",
+      "options": [
+        "6",
+        "8",
+        "7",
+        "5"
+      ],
+      "correct_answer": "6",
+      "explanation_hint": "54 ÷ 9 = 6."
+    },
+    {
+      "id": "div_oly_013",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "The product of two numbers is 63. One of the numbers is 9. What is the other number?",
+      "options": [
+        "4",
+        "8",
+        "6",
+        "7"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "63 ÷ 9 = 7."
+    },
+    {
+      "id": "div_oly_014",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "A tea seller has 56 cups of tea. He first fills flasks of 7 cups each, and then packs the flasks equally into boxes of 4 flasks each. How many boxes does he need?",
+      "options": [
+        "5",
+        "0",
+        "2",
+        "3"
+      ],
+      "correct_answer": "2",
+      "explanation_hint": "56 ÷ 7 = 8. 8 ÷ 4 = 2 boxes."
+    },
+    {
+      "id": "div_oly_015",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "Look at the pattern: 12÷2=6, 18÷3=6, 24÷4=6. Following the same pattern, what does 30÷5 equal?",
+      "options": [
+        "7",
+        "6",
+        "4",
+        "8"
+      ],
+      "correct_answer": "6",
+      "explanation_hint": "30 ÷ 5 = 6."
+    },
+    {
+      "id": "div_oly_016",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "A school has 6 classes with 7 students in each class attending a workshop. The students are then split equally into groups of 6 students each. How many groups are formed in total?",
+      "options": [
+        "7",
+        "8",
+        "4",
+        "9"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "6 x 7 = 42. 42 ÷ 6 = 7 groups."
+    },
+    {
+      "id": "div_oly_017",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "Find the missing number: 48 ÷ __ = 6",
+      "options": [
+        "7",
+        "11",
+        "6",
+        "8"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "48 ÷ 6 = 8."
+    },
+    {
+      "id": "div_oly_018",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "The product of two numbers is 72. One of the numbers is 8. What is the other number?",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "11"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "72 ÷ 8 = 9."
+    },
+    {
+      "id": "div_oly_019",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "A juice seller has 64 cups of juice. He first fills bottles of 8 cups each, and then packs the bottles equally into crates of 4 bottles each. How many crates does he need?",
+      "options": [
+        "4",
+        "2",
+        "0",
+        "1"
+      ],
+      "correct_answer": "2",
+      "explanation_hint": "64 ÷ 8 = 8. 8 ÷ 4 = 2 crates."
+    },
+    {
+      "id": "div_oly_020",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "super_hard",
+      "question_text": "Look at the pattern: 20÷4=5, 25÷5=5, 30÷6=5. Following the same pattern, what does 35÷7 equal?",
+      "options": [
+        "6",
+        "5",
+        "8",
+        "3"
+      ],
+      "correct_answer": "5",
+      "explanation_hint": "35 ÷ 7 = 5."
+    },
+    {
+      "id": "div_oly_006",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "A florist has 81 flowers. She makes bouquets of 9 flowers each, and then arranges the bouquets equally onto 3 display tables. How many bouquets are on each table?",
+      "options": [
+        "5",
+        "3",
+        "2",
+        "4"
+      ],
+      "correct_answer": "3",
+      "explanation_hint": "81 ÷ 9 = 9. 9 ÷ 3 = 3."
+    },
+    {
+      "id": "div_oly_007",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "Two numbers have a quotient of 9. The dividend is 72. What is the divisor?",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "6"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "72 ÷ 9 = 8."
+    },
+    {
+      "id": "div_oly_008",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "When a certain number is divided by 6, the answer is 9. What is that number divided by 3 instead?",
+      "options": [
+        "19",
+        "17",
+        "21",
+        "18"
+      ],
+      "correct_answer": "18",
+      "explanation_hint": "6 x 9 = 54. 54 ÷ 3 = 18."
+    },
+    {
+      "id": "div_oly_009",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "A charity sold 9 tickets to each of 8 volunteers for a fundraiser. All the tickets sold are then split equally among 4 prize categories. How many tickets go into each category?",
+      "options": [
+        "17",
+        "19",
+        "18",
+        "16"
+      ],
+      "correct_answer": "18",
+      "explanation_hint": "9 x 8 = 72. 72 ÷ 4 = 18 tickets."
+    },
+    {
+      "id": "div_oly_010",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "Find the missing number in the pattern: 18÷3=6, 24÷4=6, 30÷5=6, 36÷6=__?",
+      "options": [
+        "8",
+        "5",
+        "6",
+        "7"
+      ],
+      "correct_answer": "6",
+      "explanation_hint": "36 ÷ 6 = 6."
+    },
+    {
+      "id": "div_oly_021",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "A florist has 72 flowers. She makes bouquets of 8 flowers each, and then arranges the bouquets equally onto 3 display tables. How many bouquets are on each table?",
+      "options": [
+        "3",
+        "2",
+        "5",
+        "1"
+      ],
+      "correct_answer": "3",
+      "explanation_hint": "72 ÷ 8 = 9. 9 ÷ 3 = 3."
+    },
+    {
+      "id": "div_oly_022",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "Two numbers have a quotient of 8. The dividend is 64. What is the divisor?",
+      "options": [
+        "10",
+        "6",
+        "9",
+        "8"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "64 ÷ 8 = 8."
+    },
+    {
+      "id": "div_oly_023",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "When a certain number is divided by 7, the answer is 8. What is that number divided by 8 instead?",
+      "options": [
+        "5",
+        "8",
+        "7",
+        "6"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "7 x 8 = 56. 56 ÷ 8 = 7."
+    },
+    {
+      "id": "div_oly_024",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "A school has 8 classes with 9 students in each class attending a workshop. The students are then split equally among 8 workshop groups. How many students are in each group?",
+      "options": [
+        "11",
+        "9",
+        "10",
+        "7"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "8 x 9 = 72. 72 ÷ 8 = 9 students."
+    },
+    {
+      "id": "div_oly_025",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "Find the missing number in the pattern: 21÷3=7, 28÷4=7, 35÷5=7, 42÷6=__?",
+      "options": [
+        "7",
+        "5",
+        "8",
+        "6"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "42 ÷ 6 = 7."
+    },
+    {
+      "id": "div_oly_026",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "A charity sold 9 tickets to each of 7 volunteers for a fundraiser. All the tickets sold are then split equally among 9 prize categories. How many tickets go into each category?",
+      "options": [
+        "6",
+        "8",
+        "10",
+        "7"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "7 x 9 = 63. 63 ÷ 9 = 7 tickets."
+    },
+    {
+      "id": "div_oly_027",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "When a certain number is divided by 7, the answer is 9. What is that number divided by 9 instead?",
+      "options": [
+        "8",
+        "6",
+        "7",
+        "9"
+      ],
+      "correct_answer": "7",
+      "explanation_hint": "7 x 9 = 63. 63 ÷ 9 = 7."
+    },
+    {
+      "id": "div_oly_028",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "A charity had 6 boxes with 9 books in each box. All the books are then given equally to 9 schools. How many books does each school get?",
+      "options": [
+        "5",
+        "6",
+        "3",
+        "7"
+      ],
+      "correct_answer": "6",
+      "explanation_hint": "6 x 9 = 54. 54 ÷ 9 = 6 books."
+    },
+    {
+      "id": "div_oly_029",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "Find the missing number in the pattern: 27÷3=9, 36÷4=9, 45÷5=9, 54÷6=__?",
+      "options": [
+        "9",
+        "10",
+        "12",
+        "7"
+      ],
+      "correct_answer": "9",
+      "explanation_hint": "54 ÷ 6 = 9."
+    },
+    {
+      "id": "div_oly_030",
+      "topic": "division",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "Find the missing number in the pattern: 32÷4=8, 40÷5=8, 48÷6=8, 56÷7=__?",
+      "options": [
+        "8",
+        "6",
+        "10",
+        "9"
+      ],
+      "correct_answer": "8",
+      "explanation_hint": "56 ÷ 7 = 8."
+    }
+  ]
+}

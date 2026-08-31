@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import TopBar from "../components/TopBar";
 import Mascot from "../components/Mascot";
 import ConfettiBurst from "../components/ConfettiBurst";
 import ScreenBackground from "../components/ScreenBackground";
+import CountdownWatch from "../components/CountdownWatch";
 import { useAuth } from "../context/AuthContext";
 import { TOPIC_LABELS, levelLabel } from "../constants";
 import {
@@ -38,7 +39,11 @@ function LevelBadge({ track, difficulty }) {
 export default function PracticePage() {
   const { track, topic, difficulty } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const { activeChild, logoutChild, signOut } = useAuth();
+  const timerSeconds = location.state?.timerSeconds ?? null;
+  const [timeUp, setTimeUp] = useState(false);
+  const handleTimeUp = useCallback(() => setTimeUp(true), []);
 
   const [questions, setQuestions] = useState([]);
   const [index, setIndex] = useState(0);
@@ -159,6 +164,15 @@ export default function PracticePage() {
         ]}
       />
       <div className="screen">
+        {timerSeconds !== null && !busy && (
+          <>
+            <CountdownWatch totalSeconds={timerSeconds} onExpire={handleTimeUp} />
+            {timeUp && (
+              <div className="timer-up-banner">⏰ Time's up! Finish this one, champ!</div>
+            )}
+          </>
+        )}
+
         {loadingQuestions && (
           <>
             <Mascot state="encouraging" />
@@ -198,6 +212,18 @@ export default function PracticePage() {
         {!busy && current && (
           <>
             <LevelBadge track={track} difficulty={difficulty} />
+
+            <div className="session-progress">
+              <span className="session-progress-caption">
+                Question {index + 1} of {questions.length}
+              </span>
+              <span className="session-progress-bar">
+                <span
+                  className="session-progress-fill"
+                  style={{ width: `${((index + 1) / questions.length) * 100}%` }}
+                />
+              </span>
+            </div>
 
             <div className="question-card">
               <div className="question-text">{current.question_text}</div>

@@ -11,7 +11,7 @@ Subject = Literal["maths", "english"]
 # by topic); attempts on passage questions always use track="school" since there
 # is no olympiad reading track. Keep these two values consistent across
 # PassagePage.jsx, ProgressPage.jsx, and scripts/seed_english_passages.py.
-Topic = Literal["addition", "subtraction", "multiplication", "comprehension"]
+Topic = Literal["addition", "subtraction", "multiplication", "division", "comprehension"]
 Track = Literal["school", "olympiad"]
 Difficulty = Literal["easy", "medium", "hard", "super_hard", "pro"]
 SessionMode = Literal["scored", "open"]

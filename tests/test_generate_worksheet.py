@@ -112,7 +112,7 @@ def test_generate_worksheet_data_differs_across_seeds(topic):
 
 def test_generate_worksheet_data_rejects_unknown_topic():
     with pytest.raises(ValueError, match="Unknown topic"):
-        generate_worksheet_data("division", seed=0)
+        generate_worksheet_data("geometry", seed=0)
 
 
 def test_render_worksheet_pdf_writes_a_valid_two_page_pdf(tmp_path):

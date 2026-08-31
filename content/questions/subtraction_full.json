@@ -7,8 +7,13 @@
       "topic": "subtraction",
       "track": "school",
       "difficulty": "easy",
-      "question_text": "Sneha had 68 crayons. She gave 24 to her classmate. How many crayons does she have left?",
-      "options": ["43", "44", "45", "42"],
+      "question_text": "Sneha had 68 crayons. She gave 24 crayons to her classmate. How many crayons does she have left?",
+      "options": [
+        "54",
+        "44",
+        "43",
+        "45"
+      ],
       "correct_answer": "44",
       "explanation_hint": "68 - 24 = 44 crayons."
     },
@@ -18,7 +23,12 @@
       "track": "school",
       "difficulty": "easy",
       "question_text": "84 - 37 = ?",
-      "options": ["45", "46", "47", "48"],
+      "options": [
+        "47",
+        "46",
+        "48",
+        "37"
+      ],
       "correct_answer": "47",
       "explanation_hint": "84 - 37 = 47."
     },
@@ -27,8 +37,13 @@
       "topic": "subtraction",
       "track": "school",
       "difficulty": "easy",
-      "question_text": "A box had 95 chocolates. 38 were eaten. How many chocolates are left?",
-      "options": ["55", "56", "57", "58"],
+      "question_text": "A box had 95 chocolates. 38 chocolates were eaten during the party. How many chocolates are left in the box?",
+      "options": [
+        "58",
+        "56",
+        "59",
+        "57"
+      ],
       "correct_answer": "57",
       "explanation_hint": "95 - 38 = 57 chocolates."
     },
@@ -37,28 +52,193 @@
       "topic": "subtraction",
       "track": "school",
       "difficulty": "easy",
-      "question_text": "73 - 28 = ?",
-      "options": ["43", "44", "45", "46"],
-      "correct_answer": "45",
-      "explanation_hint": "73 - 28 = 45."
+      "question_text": "Dev had 88 balloons for the birthday party. 45 balloons flew away before the party started. How many balloons does he have now?",
+      "options": [
+        "42",
+        "44",
+        "43",
+        "41"
+      ],
+      "correct_answer": "43",
+      "explanation_hint": "88 - 45 = 43 balloons."
     },
     {
       "id": "sub_sch_005",
       "topic": "subtraction",
       "track": "school",
       "difficulty": "easy",
-      "question_text": "Dev had 88 balloons. 45 flew away. How many balloons does he have now?",
-      "options": ["41", "42", "43", "44"],
-      "correct_answer": "43",
-      "explanation_hint": "88 - 45 = 43 balloons."
+      "question_text": "73 - 28 = ?",
+      "options": [
+        "44",
+        "45",
+        "46",
+        "47"
+      ],
+      "correct_answer": "45",
+      "explanation_hint": "73 - 28 = 45."
+    },
+    {
+      "id": "sub_sch_016",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "Ananya had 58 diyas for Diwali. She gave away 23 diyas to her neighbours. How many diyas does she have left?",
+      "options": [
+        "34",
+        "37",
+        "33",
+        "35"
+      ],
+      "correct_answer": "35",
+      "explanation_hint": "58 - 23 = 35 diyas."
+    },
+    {
+      "id": "sub_sch_017",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "76 - 29 = ?",
+      "options": [
+        "45",
+        "48",
+        "47",
+        "49"
+      ],
+      "correct_answer": "47",
+      "explanation_hint": "76 - 29 = 47."
+    },
+    {
+      "id": "sub_sch_018",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "At the community pool, 64 children were swimming in the morning. By noon, 27 children had left for lunch. How many children were still swimming?",
+      "options": [
+        "38",
+        "37",
+        "36",
+        "35"
+      ],
+      "correct_answer": "37",
+      "explanation_hint": "64 - 27 = 37 children."
+    },
+    {
+      "id": "sub_sch_019",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "Kabir had 82 stamps in his album. He gave 35 stamps to his cousin. How many stamps does he have left?",
+      "options": [
+        "47",
+        "48",
+        "45",
+        "49"
+      ],
+      "correct_answer": "47",
+      "explanation_hint": "82 - 35 = 47 stamps."
+    },
+    {
+      "id": "sub_sch_020",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "91 - 38 = ?",
+      "options": [
+        "53",
+        "51",
+        "54",
+        "52"
+      ],
+      "correct_answer": "53",
+      "explanation_hint": "91 - 38 = 53."
+    },
+    {
+      "id": "sub_sch_021",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "A vendor had 67 baskets of tomatoes at the market. She sold 29 baskets by noon. How many baskets does she have left?",
+      "options": [
+        "37",
+        "39",
+        "41",
+        "38"
+      ],
+      "correct_answer": "38",
+      "explanation_hint": "67 - 29 = 38 baskets."
+    },
+    {
+      "id": "sub_sch_022",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "At the railway station, 85 tickets were printed for the morning train. 46 tickets were sold before departure. How many tickets are still unsold?",
+      "options": [
+        "40",
+        "38",
+        "39",
+        "41"
+      ],
+      "correct_answer": "39",
+      "explanation_hint": "85 - 46 = 39 tickets."
+    },
+    {
+      "id": "sub_sch_023",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "73 - 26 = ?",
+      "options": [
+        "46",
+        "47",
+        "44",
+        "48"
+      ],
+      "correct_answer": "47",
+      "explanation_hint": "73 - 26 = 47."
+    },
+    {
+      "id": "sub_sch_024",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "For the Republic Day parade, 78 students practiced marching. 24 students had to leave early for another event. How many students continued practicing?",
+      "options": [
+        "54",
+        "55",
+        "57",
+        "52"
+      ],
+      "correct_answer": "54",
+      "explanation_hint": "78 - 24 = 54 students."
+    },
+    {
+      "id": "sub_sch_025",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "easy",
+      "question_text": "Meera had 65 seashells from her beach trip. She gave 28 seashells to her friends. How many seashells does she have left?",
+      "options": [
+        "35",
+        "39",
+        "38",
+        "37"
+      ],
+      "correct_answer": "37",
+      "explanation_hint": "65 - 28 = 37 seashells."
     },
     {
       "id": "sub_sch_006",
       "topic": "subtraction",
       "track": "school",
       "difficulty": "medium",
-      "question_text": "A shop had 320 pens. They sold 145 of them. How many pens are left?",
-      "options": ["165", "174", "175", "185"],
+      "question_text": "A shop had 320 pens in stock at the start of the week. They sold 145 pens during a school-supplies sale. How many pens are left in the shop?",
+      "options": [
+        "175",
+        "174",
+        "176",
+        "185"
+      ],
       "correct_answer": "175",
       "explanation_hint": "320 - 145 = 175 pens."
     },
@@ -68,7 +248,12 @@
       "track": "school",
       "difficulty": "medium",
       "question_text": "286 - 137 = ?",
-      "options": ["139", "148", "149", "159"],
+      "options": [
+        "148",
+        "150",
+        "139",
+        "149"
+      ],
       "correct_answer": "149",
       "explanation_hint": "286 - 137 = 149."
     },
@@ -77,8 +262,13 @@
       "topic": "subtraction",
       "track": "school",
       "difficulty": "medium",
-      "question_text": "A theatre had 275 seats booked. 118 people cancelled their booking. How many seats are still booked?",
-      "options": ["147", "156", "157", "167"],
+      "question_text": "A theatre had 275 seats booked for the weekend show. 118 people cancelled their booking before the show. How many seats are still booked?",
+      "options": [
+        "156",
+        "159",
+        "157",
+        "158"
+      ],
       "correct_answer": "157",
       "explanation_hint": "275 - 118 = 157 seats."
     },
@@ -88,7 +278,12 @@
       "track": "school",
       "difficulty": "medium",
       "question_text": "354 - 176 = ?",
-      "options": ["168", "177", "178", "188"],
+      "options": [
+        "179",
+        "178",
+        "176",
+        "177"
+      ],
       "correct_answer": "178",
       "explanation_hint": "354 - 176 = 178."
     },
@@ -97,18 +292,178 @@
       "topic": "subtraction",
       "track": "school",
       "difficulty": "medium",
-      "question_text": "A farmer had 246 sacks of rice. He sold 168 sacks. How many sacks does he have left?",
-      "options": ["68", "77", "78", "88"],
+      "question_text": "A farmer had 246 sacks of rice stored in his barn. He sold 168 sacks at the Sunday market. How many sacks does he have left?",
+      "options": [
+        "77",
+        "78",
+        "79",
+        "80"
+      ],
       "correct_answer": "78",
       "explanation_hint": "246 - 168 = 78 sacks."
+    },
+    {
+      "id": "sub_sch_026",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "During the winter fair, a stall had 260 cups of hot chocolate ready. It sold 118 cups by the end of the day. How many cups were left unsold?",
+      "options": [
+        "144",
+        "140",
+        "142",
+        "141"
+      ],
+      "correct_answer": "142",
+      "explanation_hint": "260 - 118 = 142 cups."
+    },
+    {
+      "id": "sub_sch_027",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "298 - 175 = ?",
+      "options": [
+        "124",
+        "123",
+        "125",
+        "121"
+      ],
+      "correct_answer": "123",
+      "explanation_hint": "298 - 175 = 123."
+    },
+    {
+      "id": "sub_sch_028",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A charity clothes drive received 313 jackets. It distributed 148 jackets to one shelter. How many jackets are left to distribute?",
+      "options": [
+        "165",
+        "164",
+        "163",
+        "166"
+      ],
+      "correct_answer": "165",
+      "explanation_hint": "313 - 148 = 165 jackets."
+    },
+    {
+      "id": "sub_sch_029",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "At the science exhibition, 266 visitors came on the first day. 139 of them left before the closing ceremony. How many visitors stayed for the closing ceremony?",
+      "options": [
+        "128",
+        "125",
+        "129",
+        "127"
+      ],
+      "correct_answer": "127",
+      "explanation_hint": "266 - 139 = 127 visitors."
+    },
+    {
+      "id": "sub_sch_030",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "341 - 157 = ?",
+      "options": [
+        "182",
+        "185",
+        "183",
+        "184"
+      ],
+      "correct_answer": "184",
+      "explanation_hint": "341 - 157 = 184."
+    },
+    {
+      "id": "sub_sch_031",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A dairy farm had 414 litres of milk collected for the day. It supplied 198 litres to the local dairy. How many litres of milk are left?",
+      "options": [
+        "217",
+        "219",
+        "216",
+        "215"
+      ],
+      "correct_answer": "216",
+      "explanation_hint": "414 - 198 = 216 litres."
+    },
+    {
+      "id": "sub_sch_032",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "For the annual concert, the school printed 322 tickets. It sold 149 balcony tickets and kept the rest as ground-floor tickets. How many ground-floor tickets are left?",
+      "options": [
+        "172",
+        "173",
+        "175",
+        "174"
+      ],
+      "correct_answer": "173",
+      "explanation_hint": "322 - 149 = 173 tickets."
+    },
+    {
+      "id": "sub_sch_033",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "393 - 168 = ?",
+      "options": [
+        "225",
+        "222",
+        "226",
+        "224"
+      ],
+      "correct_answer": "225",
+      "explanation_hint": "393 - 168 = 225."
+    },
+    {
+      "id": "sub_sch_034",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A recycling drive collected 334 kilograms of paper in total. 176 kilograms came from the senior wing, and the rest came from the junior wing. How many kilograms came from the junior wing?",
+      "options": [
+        "159",
+        "161",
+        "156",
+        "158"
+      ],
+      "correct_answer": "158",
+      "explanation_hint": "334 - 176 = 158 kilograms."
+    },
+    {
+      "id": "sub_sch_035",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "medium",
+      "question_text": "A toy factory packed 406 dolls for the export order. It has already shipped 187 dolls. How many dolls are still waiting to be shipped?",
+      "options": [
+        "221",
+        "220",
+        "219",
+        "217"
+      ],
+      "correct_answer": "219",
+      "explanation_hint": "406 - 187 = 219 dolls."
     },
     {
       "id": "sub_sch_011",
       "topic": "subtraction",
       "track": "school",
       "difficulty": "hard",
-      "question_text": "A stadium had 528 people watching a match. By half-time, 259 people had left. How many people were still watching?",
-      "options": ["259", "268", "269", "279"],
+      "question_text": "A stadium had 528 people watching a football match. By half-time, 259 people had left to beat the traffic. How many people were still watching the match?",
+      "options": [
+        "269",
+        "268",
+        "270",
+        "279"
+      ],
       "correct_answer": "269",
       "explanation_hint": "528 - 259 = 269 people."
     },
@@ -118,7 +473,12 @@
       "track": "school",
       "difficulty": "hard",
       "question_text": "612 - 347 = ?",
-      "options": ["255", "264", "265", "275"],
+      "options": [
+        "264",
+        "266",
+        "255",
+        "265"
+      ],
       "correct_answer": "265",
       "explanation_hint": "612 - 347 = 265."
     },
@@ -127,1380 +487,645 @@
       "topic": "subtraction",
       "track": "school",
       "difficulty": "hard",
-      "question_text": "A library had 745 books. They gave away 359 books to a school. How many books are left in the library?",
-      "options": ["376", "385", "386", "396"],
-      "correct_answer": "386",
-      "explanation_hint": "745 - 359 = 386 books."
+      "question_text": "A toy factory made 743 toy cars last month. It sold 468 of them to shops across the city. How many toy cars are still in the factory's storeroom?",
+      "options": [
+        "274",
+        "277",
+        "275",
+        "276"
+      ],
+      "correct_answer": "275",
+      "explanation_hint": "743 - 468 = 275 toy cars."
     },
     {
       "id": "sub_sch_014",
       "topic": "subtraction",
       "track": "school",
       "difficulty": "hard",
-      "question_text": "In a fair, 850 tickets were printed. 493 tickets were sold. How many tickets remain unsold?",
-      "options": ["347", "356", "357", "367"],
-      "correct_answer": "357",
-      "explanation_hint": "850 - 493 = 357 tickets."
+      "question_text": "A school collected 815 rupees for a charity drive. It spent 549 rupees on blankets for a flood-relief camp. How much money is left with the school?",
+      "options": [
+        "267",
+        "266",
+        "264",
+        "265"
+      ],
+      "correct_answer": "266",
+      "explanation_hint": "815 - 549 = 266 rupees."
     },
     {
       "id": "sub_sch_015",
       "topic": "subtraction",
       "track": "school",
       "difficulty": "hard",
-      "question_text": "723 - 456 = ?",
-      "options": ["257", "266", "267", "277"],
-      "correct_answer": "267",
-      "explanation_hint": "723 - 456 = 267."
+      "question_text": "926 - 458 = ?",
+      "options": [
+        "468",
+        "469",
+        "470",
+        "467"
+      ],
+      "correct_answer": "468",
+      "explanation_hint": "926 - 458 = 468."
+    },
+    {
+      "id": "sub_sch_036",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "During the flood-relief drive, volunteers had 843 ration kits prepared at the main centre. They dispatched 375 ration kits to the affected villages on the first day. How many ration kits are left at the centre?",
+      "options": [
+        "466",
+        "468",
+        "467",
+        "470"
+      ],
+      "correct_answer": "468",
+      "explanation_hint": "843 - 375 = 468 ration kits."
+    },
+    {
+      "id": "sub_sch_037",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "923 - 397 = ?",
+      "options": [
+        "526",
+        "528",
+        "524",
+        "527"
+      ],
+      "correct_answer": "526",
+      "explanation_hint": "923 - 397 = 526."
+    },
+    {
+      "id": "sub_sch_038",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A cricket stadium had 936 tickets printed for the weekend matches. 349 tickets were sold for the evening match, and the rest were sold for the morning match. How many tickets were sold for the morning match?",
+      "options": [
+        "586",
+        "585",
+        "588",
+        "587"
+      ],
+      "correct_answer": "587",
+      "explanation_hint": "936 - 349 = 587 tickets."
+    },
+    {
+      "id": "sub_sch_039",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "At the state-level art competition, 680 paintings were submitted in total. 268 of them came from college students, and the rest came from school students. How many paintings came from school students?",
+      "options": [
+        "410",
+        "414",
+        "412",
+        "413"
+      ],
+      "correct_answer": "412",
+      "explanation_hint": "680 - 268 = 412 paintings."
+    },
+    {
+      "id": "sub_sch_040",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "934 - 286 = ?",
+      "options": [
+        "649",
+        "647",
+        "648",
+        "646"
+      ],
+      "correct_answer": "648",
+      "explanation_hint": "934 - 286 = 648."
+    },
+    {
+      "id": "sub_sch_041",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A shipping company had 862 crates of mangoes ready for export. It loaded 289 crates onto one truck and the rest onto a second truck. How many crates were loaded onto the second truck?",
+      "options": [
+        "576",
+        "573",
+        "572",
+        "574"
+      ],
+      "correct_answer": "573",
+      "explanation_hint": "862 - 289 = 573 crates."
+    },
+    {
+      "id": "sub_sch_042",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "905 - 186 = ?",
+      "options": [
+        "719",
+        "721",
+        "720",
+        "718"
+      ],
+      "correct_answer": "719",
+      "explanation_hint": "905 - 186 = 719."
+    },
+    {
+      "id": "sub_sch_043",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "For the inter-school marathon, 834 runners registered in total before the final deadline. 378 of them came from the rural zone, and the rest came from the city zone. How many runners came from the city zone?",
+      "options": [
+        "453",
+        "457",
+        "455",
+        "456"
+      ],
+      "correct_answer": "456",
+      "explanation_hint": "834 - 378 = 456 runners."
+    },
+    {
+      "id": "sub_sch_044",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "931 - 549 = ?",
+      "options": [
+        "385",
+        "380",
+        "382",
+        "383"
+      ],
+      "correct_answer": "382",
+      "explanation_hint": "931 - 549 = 382."
+    },
+    {
+      "id": "sub_sch_045",
+      "topic": "subtraction",
+      "track": "school",
+      "difficulty": "hard",
+      "question_text": "A textile mill wove 915 metres of cotton cloth across two shifts. It wove 298 metres in the second shift. How many metres were woven in the first shift?",
+      "options": [
+        "618",
+        "617",
+        "615",
+        "619"
+      ],
+      "correct_answer": "617",
+      "explanation_hint": "915 - 298 = 617 metres."
     },
     {
       "id": "sub_oly_001",
       "topic": "subtraction",
       "track": "olympiad",
       "difficulty": "super_hard",
-      "question_text": "Find the missing number: 340 - __ = 185",
-      "options": ["145", "154", "155", "165"],
-      "correct_answer": "155",
-      "explanation_hint": "340 - 185 = 155."
+      "question_text": "A vendor had 610 apples in his cart. He sold 235 apples in the morning and 187 more apples in the afternoon. How many apples does he have left?",
+      "options": [
+        "187",
+        "190",
+        "186",
+        "188"
+      ],
+      "correct_answer": "188",
+      "explanation_hint": "610 - 235 = 375. 375 - 187 = 188 apples."
     },
     {
       "id": "sub_oly_002",
       "topic": "subtraction",
       "track": "olympiad",
       "difficulty": "super_hard",
-      "question_text": "Which subtraction gives the smallest answer? (a) 500-120 (b) 500-380 (c) 500-260 (d) 500-90",
-      "options": ["a", "b", "c", "d"],
-      "correct_answer": "b",
-      "explanation_hint": "500-380=120, which is the smallest among all options."
+      "question_text": "Find the missing number: 715 - __ = 348",
+      "options": [
+        "365",
+        "368",
+        "367",
+        "369"
+      ],
+      "correct_answer": "367",
+      "explanation_hint": "715 - 348 = 367."
     },
     {
       "id": "sub_oly_003",
       "topic": "subtraction",
       "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "Aditya had some marbles. He lost 85 marbles and gave away 46 more, and now has 69 left. How many marbles did he have at the start?",
-      "options": ["190", "199", "200", "210"],
-      "correct_answer": "200",
-      "explanation_hint": "Total lost = 85+46=131. Start = 131+69=200 marbles."
+      "difficulty": "super_hard",
+      "question_text": "Two numbers have a difference of 356. The larger number is 812. What is the smaller number?",
+      "options": [
+        "457",
+        "456",
+        "455",
+        "454"
+      ],
+      "correct_answer": "456",
+      "explanation_hint": "812 - 356 = 456."
     },
     {
       "id": "sub_oly_004",
       "topic": "subtraction",
       "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A number minus 245 equals 380. What is the number?",
-      "options": ["615", "624", "625", "635"],
-      "correct_answer": "625",
-      "explanation_hint": "380 + 245 = 625, so the number is 625."
+      "difficulty": "super_hard",
+      "question_text": "A library had 940 books. It gave away 275 books to a nearby school, and then 168 more books to a village library. How many books does the library have left?",
+      "options": [
+        "497",
+        "498",
+        "495",
+        "499"
+      ],
+      "correct_answer": "497",
+      "explanation_hint": "940 - 275 = 665. 665 - 168 = 497 books."
     },
     {
       "id": "sub_oly_005",
       "topic": "subtraction",
       "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "Look at the pattern: 900-200=700, 800-200=600, 700-200=500, 600-200=__?",
-      "options": ["300", "350", "400", "450"],
-      "correct_answer": "400",
-      "explanation_hint": "The pattern subtracts 200 each time: 600 - 200 = 400."
-    },
-    {
-      "id": "sub_oly_006",
-      "topic": "subtraction",
-      "track": "olympiad",
       "difficulty": "super_hard",
-      "question_text": "Find the missing number: 295 - __ = 118",
-      "options": ["167", "176", "177", "187"],
-      "correct_answer": "177",
-      "explanation_hint": "295 - 118 = 177."
-    },
-    {
-      "id": "sub_oly_007",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "Karan had ₹450. He spent ₹128 on a toy and ₹95 on a book. How much money does he have left?",
-      "options": ["217", "226", "227", "237"],
-      "correct_answer": "227",
-      "explanation_hint": "450 - 128 - 95 = 227 rupees."
-    },
-    {
-      "id": "sub_oly_008",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "The difference between two numbers is 236. If the larger number is 512, what is the smaller number?",
-      "options": ["266", "275", "276", "286"],
-      "correct_answer": "276",
-      "explanation_hint": "512 - 236 = 276."
-    },
-    {
-      "id": "sub_oly_009",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "Which of these equals 150? (a) 400-260 (b) 400-250 (c) 400-240 (d) 400-230",
-      "options": ["a", "b", "c", "d"],
-      "correct_answer": "b",
-      "explanation_hint": "400-250=150, so option (b) is correct."
-    },
-    {
-      "id": "sub_oly_010",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A tank had 640 litres of water. Every hour, 80 litres leaks out. How much water will be left after 3 hours?",
-      "options": ["380", "400", "410", "420"],
-      "correct_answer": "400",
-      "explanation_hint": "Water lost in 3 hours = 80x3=240. Left = 640-240=400 litres."
-    },
-    {
-      "id": "sub_sch_016",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "Ravi had 52 marbles. He lost 17. How many marbles does he have left?",
-      "options": ["35", "36", "37", "38"],
-      "correct_answer": "35",
-      "explanation_hint": "52 - 17 = 35"
-    },
-    {
-      "id": "sub_sch_017",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "There are 43 apples in a basket. 19 were taken away. How many apples are left?",
-      "options": ["24", "25", "26", "27"],
-      "correct_answer": "24",
-      "explanation_hint": "43 - 19 = 24"
-    },
-    {
-      "id": "sub_sch_018",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "A bag had 67 stickers. 23 were used. How many stickers are left?",
-      "options": ["44", "45", "46", "47"],
-      "correct_answer": "44",
-      "explanation_hint": "67 - 23 = 44"
-    },
-    {
-      "id": "sub_sch_019",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "Lila had 76 pencils. She used 32. How many pencils does she have left?",
-      "options": ["44", "45", "46", "47"],
-      "correct_answer": "44",
-      "explanation_hint": "76 - 32 = 44"
-    },
-    {
-      "id": "sub_sch_020",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "There are 59 candies in a jar. 18 were taken out. How many candies are left?",
-      "options": ["41", "42", "43", "44"],
-      "correct_answer": "41",
-      "explanation_hint": "59 - 18 = 41"
-    },
-    {
-      "id": "sub_sch_021",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "Ravi had 53 candies. He ate 17. How many candies does he have left?",
-      "options": ["36", "37", "38", "39"],
-      "correct_answer": "36",
-      "explanation_hint": "53 - 17 = 36"
-    },
-    {
-      "id": "sub_sch_022",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "There are 62 pencils. 25 were used. How many pencils are left?",
-      "options": ["37", "38", "39", "40"],
-      "correct_answer": "37",
-      "explanation_hint": "62 - 25 = 37"
-    },
-    {
-      "id": "sub_sch_023",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "A bag had 74 stickers. 28 were used. How many stickers are left?",
-      "options": ["46", "47", "48", "49"],
-      "correct_answer": "46",
-      "explanation_hint": "74 - 28 = 46"
-    },
-    {
-      "id": "sub_sch_024",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "Lila had 89 marbles. She lost 13. How many marbles does she have now?",
-      "options": ["76", "77", "78", "79"],
-      "correct_answer": "76",
-      "explanation_hint": "89 - 13 = 76"
-    },
-    {
-      "id": "sub_sch_025",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "A box had 96 chocolates. 39 were eaten. How many chocolates are left?",
-      "options": ["57", "58", "59", "60"],
-      "correct_answer": "57",
-      "explanation_hint": "96 - 39 = 57"
-    },
-    {
-      "id": "sub_sch_026",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "There are 34 apples. 12 were taken away. How many apples are left?",
-      "options": ["22", "16", "46", "50"],
-      "correct_answer": "22",
-      "explanation_hint": "34 - 12 = 22"
-    },
-    {
-      "id": "sub_sch_027",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "A basket had 47 candies. 15 were eaten. How many candies are left?",
-      "options": ["32", "62", "30", "52"],
-      "correct_answer": "32",
-      "explanation_hint": "47 - 15 = 32"
-    },
-    {
-      "id": "sub_sch_028",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "There are 29 marbles. 14 were taken away. How many marbles are left?",
-      "options": ["15", "11", "43", "8"],
-      "correct_answer": "15",
-      "explanation_hint": "29 - 14 = 15"
-    },
-    {
-      "id": "sub_sch_029",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "A box had 58 chocolates. 23 were eaten. How many chocolates are left?",
-      "options": ["35", "71", "34", "81"],
-      "correct_answer": "35",
-      "explanation_hint": "58 - 23 = 35"
-    },
-    {
-      "id": "sub_sch_030",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "There are 63 notebooks. 26 were used. How many notebooks are left?",
-      "options": ["37", "89", "31", "63"],
-      "correct_answer": "37",
-      "explanation_hint": "63 - 26 = 37"
-    },
-    {
-      "id": "sub_sch_031",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "There are 45 apples. 18 were eaten. How many apples are left?",
-      "options": ["27", "29", "33", "35"],
-      "correct_answer": "27",
-      "explanation_hint": "45 - 18 = 27"
-    },
-    {
-      "id": "sub_sch_032",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "A bag had 63 candies. 27 were taken out. How many candies are left?",
-      "options": ["36", "38", "45", "47"],
-      "correct_answer": "36",
-      "explanation_hint": "63 - 27 = 36"
-    },
-    {
-      "id": "sub_sch_033",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "There are 52 marbles. 15 were lost. How many marbles are left?",
-      "options": ["37", "39", "42", "45"],
-      "correct_answer": "37",
-      "explanation_hint": "52 - 15 = 37"
-    },
-    {
-      "id": "sub_sch_034",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "A box had 76 stickers. 34 were used. How many stickers are left?",
-      "options": ["42", "44", "46", "48"],
-      "correct_answer": "42",
-      "explanation_hint": "76 - 34 = 42"
-    },
-    {
-      "id": "sub_sch_035",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "Lila had 93 candies. She ate 47. How many candies does she have left?",
-      "options": ["46", "48", "50", "52"],
-      "correct_answer": "46",
-      "explanation_hint": "93 - 47 = 46"
-    },
-    {
-      "id": "sub_sch_036",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "There are 52 pencils. 15 were taken away. How many pencils are left?",
-      "options": ["37", "38", "47", "46"],
-      "correct_answer": "37",
-      "explanation_hint": "52 minus 15 is 37."
-    },
-    {
-      "id": "sub_sch_037",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "A box had 33 candies. 17 were eaten. How many candies are left?",
-      "options": ["16", "17", "15", "18"],
-      "correct_answer": "16",
-      "explanation_hint": "33 minus 17 is 16."
-    },
-    {
-      "id": "sub_sch_038",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "There are 49 books. 12 were taken away. How many books are left?",
-      "options": ["37", "38", "39", "36"],
-      "correct_answer": "37",
-      "explanation_hint": "49 minus 12 is 37."
-    },
-    {
-      "id": "sub_sch_039",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "A bag had 64 marbles. 28 were taken out. How many marbles are left?",
-      "options": ["36", "37", "38", "39"],
-      "correct_answer": "36",
-      "explanation_hint": "64 minus 28 is 36."
-    },
-    {
-      "id": "sub_sch_040",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "easy",
-      "question_text": "There are 56 pens. 24 were used. How many pens are left?",
-      "options": ["32", "33", "34", "35"],
-      "correct_answer": "32",
-      "explanation_hint": "56 minus 24 is 32."
-    },
-    {
-      "id": "sub_sch_041",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "A box had 290 marbles. 120 were taken out. How many marbles are left?",
-      "options": ["170", "120", "290", "110"],
-      "correct_answer": "170",
-      "explanation_hint": "290 - 120 = 170, which is an option."
-    },
-    {
-      "id": "sub_sch_042",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "A class had 345 pencils. 180 were used. How many pencils are left?",
-      "options": ["165", "180", "345", "105"],
-      "correct_answer": "165",
-      "explanation_hint": "345 - 180 = 165, which is an option."
-    },
-    {
-      "id": "sub_sch_043",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "A shop had 420 candies. 210 were given to a child. How many candies are left?",
-      "options": ["210", "230", "420", "110"],
-      "correct_answer": "210",
-      "explanation_hint": "420 - 210 = 210, which is an option."
-    },
-    {
-      "id": "sub_sch_044",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "There were 289 apples in a basket. 153 were eaten. How many apples are left?",
-      "options": ["136", "145", "124", "153"],
-      "correct_answer": "136",
-      "explanation_hint": "289 - 153 = 136"
-    },
-    {
-      "id": "sub_sch_045",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "A box had 345 marbles. 187 were taken out. How many marbles are left?",
-      "options": ["158", "167", "178", "187"],
-      "correct_answer": "158",
-      "explanation_hint": "345 - 187 = 158"
-    },
-    {
-      "id": "sub_sch_046",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "There were 289 apples in a basket. 135 were eaten. How many apples are left?",
-      "options": ["154", "144", "164", "174"],
-      "correct_answer": "154",
-      "explanation_hint": "289 - 135 = 154"
-    },
-    {
-      "id": "sub_sch_047",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "A class had 345 pencils. 170 were used. How many pencils are left?",
-      "options": ["175", "170", "176", "173"],
-      "correct_answer": "175",
-      "explanation_hint": "345 - 170 = 175"
-    },
-    {
-      "id": "sub_sch_048",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "There were 289 apples in a basket. 145 were eaten. How many apples are left?",
-      "options": ["144", "145", "146", "143"],
-      "correct_answer": "144",
-      "explanation_hint": "289 - 145 = 144"
-    },
-    {
-      "id": "sub_sch_049",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "There were 420 pencils. 150 were taken away. How many pencils are left?",
-      "options": ["270", "275", "280", "285"],
-      "correct_answer": "270",
-      "explanation_hint": "420 - 150 = 270"
-    },
-    {
-      "id": "sub_sch_050",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "A box had 345 candies. 120 were given away. How many candies are left?",
-      "options": ["225", "230", "220", "215"],
-      "correct_answer": "225",
-      "explanation_hint": "345 - 120 = 225"
-    },
-    {
-      "id": "sub_sch_051",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "There were 560 marbles. 280 were taken out. How many marbles are left?",
-      "options": ["280", "270", "260", "250"],
-      "correct_answer": "280",
-      "explanation_hint": "560 - 280 = 280"
-    },
-    {
-      "id": "sub_sch_052",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "A shop had 420 apples. 210 were given to a child. How many apples are left?",
-      "options": ["210", "200", "215", "205"],
-      "correct_answer": "210",
-      "explanation_hint": "420 - 210 = 210"
-    },
-    {
-      "id": "sub_sch_053",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "There were 423 pencils. 150 were used. How many pencils are left?",
-      "options": ["273", "274", "275", "276"],
-      "correct_answer": "273",
-      "explanation_hint": "423 - 150 = 273"
-    },
-    {
-      "id": "sub_sch_054",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "There were 320 pencils. 150 were taken away. How many pencils are left?",
-      "options": ["170", "160", "140", "180"],
-      "correct_answer": "170",
-      "explanation_hint": "320 - 150 = 170"
-    },
-    {
-      "id": "sub_sch_055",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "A bag had 275 candies. 120 were given away. How many candies are left?",
-      "options": ["155", "135", "145", "165"],
-      "correct_answer": "155",
-      "explanation_hint": "275 - 120 = 155"
-    },
-    {
-      "id": "sub_sch_056",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "There were 400 books. 180 were taken out. How many books are left?",
-      "options": ["220", "210", "230", "240"],
-      "correct_answer": "220",
-      "explanation_hint": "400 - 180 = 220"
-    },
-    {
-      "id": "sub_sch_057",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "A class had 360 notebooks. 140 were used. How many notebooks are left?",
-      "options": ["220", "210", "230", "240"],
-      "correct_answer": "220",
-      "explanation_hint": "360 - 140 = 220"
-    },
-    {
-      "id": "sub_sch_058",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "There were 290 apples. 130 were eaten. How many apples are left?",
-      "options": ["160", "170", "150", "180"],
-      "correct_answer": "160",
-      "explanation_hint": "290 - 130 = 160"
-    },
-    {
-      "id": "sub_sch_059",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "A box had 450 candies. 200 were given away. How many candies are left?",
-      "options": ["250", "260", "240", "270"],
-      "correct_answer": "250",
-      "explanation_hint": "450 - 200 = 250"
-    },
-    {
-      "id": "sub_sch_060",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "There were 500 marbles. 250 were taken out. How many marbles are left?",
-      "options": ["250", "300", "200", "150"],
-      "correct_answer": "250",
-      "explanation_hint": "500 - 250 = 250"
-    },
-    {
-      "id": "sub_sch_061",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "A class had 480 notebooks. 180 were used. How many notebooks are left?",
-      "options": ["300", "320", "240", "260"],
-      "correct_answer": "300",
-      "explanation_hint": "480 - 180 = 300"
-    },
-    {
-      "id": "sub_sch_062",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "There were 300 apples. 120 were eaten. How many apples are left?",
-      "options": ["180", "160", "140", "120"],
-      "correct_answer": "180",
-      "explanation_hint": "300 - 120 = 180"
-    },
-    {
-      "id": "sub_sch_063",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "There were 250 candies. 130 were eaten. How many candies are left?",
-      "options": ["120", "110", "130", "140"],
-      "correct_answer": "120",
-      "explanation_hint": "250 - 130 = 120"
-    },
-    {
-      "id": "sub_sch_064",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "There were 480 books. 220 were taken out. How many books are left?",
-      "options": ["260", "240", "280", "220"],
-      "correct_answer": "260",
-      "explanation_hint": "480 - 220 = 260"
-    },
-    {
-      "id": "sub_sch_065",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "medium",
-      "question_text": "There were 280 marbles. 120 were taken away. How many marbles are left?",
-      "options": ["160", "150", "170", "180"],
-      "correct_answer": "160",
-      "explanation_hint": "280 - 120 = 160"
-    },
-    {
-      "id": "sub_sch_066",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A box had 627 candies. 289 were eaten. How many candies are left?",
-      "options": ["338", "348", "358", "368"],
-      "correct_answer": "338",
-      "explanation_hint": "627 - 289 = 338. The correct answer is 338, which is not the result of the subtraction."
-    },
-    {
-      "id": "sub_sch_067",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A shop had 945 pens. 563 were sold. How many pens are left?",
-      "options": ["382", "372", "362", "352"],
-      "correct_answer": "382",
-      "explanation_hint": "945 - 563 = 382. The correct answer is 382, which is not the result of the subtraction."
-    },
-    {
-      "id": "sub_sch_068",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A car had 732 liters of fuel. 398 liters were used. How much fuel is left?",
-      "options": ["334", "344", "354", "364"],
-      "correct_answer": "334",
-      "explanation_hint": "732 - 398 = 334. The correct answer is 334, which is not the result of the subtraction."
-    },
-    {
-      "id": "sub_sch_069",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A farmer had 568 chickens. 295 were sold. How many chickens are left?",
-      "options": ["273", "283", "293", "303"],
-      "correct_answer": "273",
-      "explanation_hint": "568 - 295 = 273. The correct answer is 273, which is not the result of the subtraction."
-    },
-    {
-      "id": "sub_sch_070",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A class had 623 pencils. 187 were used. How many pencils are left?",
-      "options": ["436", "446", "456", "466"],
-      "correct_answer": "436",
-      "explanation_hint": "623 - 187 = 436. The correct answer is 436, not 446 or 456."
-    },
-    {
-      "id": "sub_sch_071",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A shop had 715 apples. 298 were sold. How many apples are left?",
-      "options": ["417", "427", "437", "447"],
-      "correct_answer": "417",
-      "explanation_hint": "715 - 298 = 417. The correct answer is 417, not 427 or 437."
-    },
-    {
-      "id": "sub_sch_072",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A child had 567 stickers. 389 were used. How many stickers are left?",
-      "options": ["178", "188", "198", "208"],
-      "correct_answer": "178",
-      "explanation_hint": "567 - 389 = 178. The correct answer is 178, not 188 or 198."
-    },
-    {
-      "id": "sub_sch_073",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A class had 432 pencils. 178 were taken away. How many pencils are left?",
-      "options": ["254", "264", "274", "284"],
-      "correct_answer": "254",
-      "explanation_hint": "432 - 178 = 254. The correct answer is 254, not 264 or 274."
-    },
-    {
-      "id": "sub_sch_074",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "There were 984 marbles in a box. 397 were taken away. How many marbles are left?",
-      "options": ["587", "591", "583", "589"],
-      "correct_answer": "587",
-      "explanation_hint": "984 - 397 = 587"
-    },
-    {
-      "id": "sub_sch_075",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "There were 745 notebooks. 289 were borrowed. How many notebooks are left?",
-      "options": ["456", "466", "454", "464"],
-      "correct_answer": "456",
-      "explanation_hint": "745 - 289 = 456"
-    },
-    {
-      "id": "sub_sch_076",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A shop had 632 pens. 198 were sold. How many pens are left?",
-      "options": ["434", "444", "436", "446"],
-      "correct_answer": "434",
-      "explanation_hint": "632 - 198 = 434"
-    },
-    {
-      "id": "sub_sch_077",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A class had 567 books. 289 were taken away. How many books are left?",
-      "options": ["278", "288", "279", "289"],
-      "correct_answer": "278",
-      "explanation_hint": "567 - 289 = 278"
-    },
-    {
-      "id": "sub_sch_078",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "There were 913 books in a library. 487 were borrowed. How many books are left?",
-      "options": ["426", "436", "416", "386"],
-      "correct_answer": "426",
-      "explanation_hint": "913 - 487 = 426, but the correct answer is 426 because the calculation requires borrowing."
-    },
-    {
-      "id": "sub_sch_079",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "There were 834 candies. 472 were eaten. How many candies are left?",
-      "options": ["362", "363", "364", "365"],
-      "correct_answer": "362",
-      "explanation_hint": "834 - 472 = 362"
-    },
-    {
-      "id": "sub_sch_080",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A bag had 729 marbles. 398 were taken out. How many marbles are left?",
-      "options": ["331", "332", "333", "334"],
-      "correct_answer": "331",
-      "explanation_hint": "729 - 398 = 331"
-    },
-    {
-      "id": "sub_sch_081",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A class had 658 notebooks. 289 were taken. How many notebooks are left?",
-      "options": ["369", "370", "371", "372"],
-      "correct_answer": "369",
-      "explanation_hint": "658 - 289 = 369"
-    },
-    {
-      "id": "sub_sch_082",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A shop had 543 pens. 198 were sold. How many pens are left?",
-      "options": ["345", "346", "347", "348"],
-      "correct_answer": "345",
-      "explanation_hint": "543 - 198 = 345"
-    },
-    {
-      "id": "sub_sch_083",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "There were 912 books. 487 were borrowed. How many books are left?",
-      "options": ["425", "426", "427", "428"],
-      "correct_answer": "425",
-      "explanation_hint": "912 - 487 = 425"
-    },
-    {
-      "id": "sub_sch_084",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "There were 843 apples. 398 were taken away. How many apples are left?",
-      "options": ["445", "455", "465", "475"],
-      "correct_answer": "445",
-      "explanation_hint": "843 - 398 = 445"
-    },
-    {
-      "id": "sub_sch_085",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A class had 745 books. 289 were taken away. How many books are left?",
-      "options": ["456", "457", "458", "459"],
-      "correct_answer": "456",
-      "explanation_hint": "Subtract 289 from 745: 745 - 289 = 456. The correct answer is 456."
-    },
-    {
-      "id": "sub_sch_086",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "There were 632 marbles. 198 were taken out. How many marbles are left?",
-      "options": ["434", "435", "436", "437"],
-      "correct_answer": "434",
-      "explanation_hint": "Subtract 198 from 632: 632 - 198 = 434. The correct answer is 434."
-    },
-    {
-      "id": "sub_sch_087",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A class had 467 toys. 289 were taken away. How many toys are left?",
-      "options": ["178", "179", "180", "181"],
-      "correct_answer": "178",
-      "explanation_hint": "Subtract 289 from 467: 467 - 289 = 178. The correct answer is 178."
-    },
-    {
-      "id": "sub_sch_088",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "There were 824 pencils. 398 were used. How many pencils are left?",
-      "options": ["426", "436", "386", "536"],
-      "correct_answer": "426",
-      "explanation_hint": "Subtract 398 from 824: 824 - 398 = 426"
-    },
-    {
-      "id": "sub_sch_089",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A box had 715 candies. 498 were eaten. How many candies are left?",
-      "options": ["217", "225", "237", "117"],
-      "correct_answer": "217",
-      "explanation_hint": "Subtract 498 from 715: 715 - 498 = 217"
-    },
-    {
-      "id": "sub_sch_090",
-      "topic": "subtraction",
-      "track": "school",
-      "difficulty": "hard",
-      "question_text": "A jar had 642 marbles. 298 were taken out. How many marbles are left?",
-      "options": ["344", "354", "334", "444"],
-      "correct_answer": "344",
-      "explanation_hint": "Subtract 298 from 642: 642 - 298 = 344"
+      "question_text": "Look at the pattern: 500-150=350, 480-150=330, 460-150=310. Following the same pattern, what does 440-150 equal?",
+      "options": [
+        "288",
+        "291",
+        "289",
+        "290"
+      ],
+      "correct_answer": "290",
+      "explanation_hint": "440 - 150 = 290."
     },
     {
       "id": "sub_oly_011",
       "topic": "subtraction",
       "track": "olympiad",
       "difficulty": "super_hard",
-      "question_text": "From 800, subtract 390. What is the result?",
-      "options": ["410", "420", "400", "390"],
-      "correct_answer": "410",
-      "explanation_hint": "800 - 390 = 410"
+      "question_text": "A vendor had 715 apples in his cart. He sold 235 apples in the morning and 198 more apples in the afternoon. How many apples does he have left?",
+      "options": [
+        "283",
+        "285",
+        "282",
+        "281"
+      ],
+      "correct_answer": "282",
+      "explanation_hint": "715 - 235 = 480. 480 - 198 = 282 apples."
     },
     {
       "id": "sub_oly_012",
       "topic": "subtraction",
       "track": "olympiad",
       "difficulty": "super_hard",
-      "question_text": "If 600 - 270 = ?",
-      "options": ["330", "340", "350", "360"],
-      "correct_answer": "330",
-      "explanation_hint": "600 - 270 = 330"
+      "question_text": "Find the missing number: 812 - __ = 356",
+      "options": [
+        "455",
+        "456",
+        "458",
+        "457"
+      ],
+      "correct_answer": "456",
+      "explanation_hint": "812 - 356 = 456."
     },
     {
       "id": "sub_oly_013",
       "topic": "subtraction",
       "track": "olympiad",
       "difficulty": "super_hard",
-      "question_text": "What is 900 - 480?",
-      "options": ["420", "430", "440", "450"],
-      "correct_answer": "420",
-      "explanation_hint": "900 - 480 = 420"
+      "question_text": "Two numbers have a difference of 428. The larger number is 903. What is the smaller number?",
+      "options": [
+        "475",
+        "472",
+        "476",
+        "474"
+      ],
+      "correct_answer": "475",
+      "explanation_hint": "903 - 428 = 475."
     },
     {
       "id": "sub_oly_014",
       "topic": "subtraction",
       "track": "olympiad",
       "difficulty": "super_hard",
-      "question_text": "Calculate 700 - 360.",
-      "options": ["340", "350", "360", "370"],
-      "correct_answer": "340",
-      "explanation_hint": "700 - 360 = 340"
+      "question_text": "A library had 860 books. It gave away 245 books to a nearby school, and then 187 more books to a village library. How many books does the library have left?",
+      "options": [
+        "429",
+        "431",
+        "426",
+        "428"
+      ],
+      "correct_answer": "428",
+      "explanation_hint": "860 - 245 = 615. 615 - 187 = 428 books."
     },
     {
       "id": "sub_oly_015",
       "topic": "subtraction",
       "track": "olympiad",
       "difficulty": "super_hard",
-      "question_text": "What is 500 - 185?",
-      "options": ["315", "325", "335", "345"],
-      "correct_answer": "315",
-      "explanation_hint": "500 - 185 = 315"
+      "question_text": "Look at the pattern: 600-180=420, 570-180=390, 540-180=360. Following the same pattern, what does 510-180 equal?",
+      "options": [
+        "332",
+        "331",
+        "330",
+        "328"
+      ],
+      "correct_answer": "330",
+      "explanation_hint": "510 - 180 = 330."
     },
     {
       "id": "sub_oly_016",
       "topic": "subtraction",
       "track": "olympiad",
       "difficulty": "super_hard",
-      "question_text": "From 900, subtract 480. What is the result?",
-      "options": ["420", "430", "440", "450"],
-      "correct_answer": "420",
-      "explanation_hint": "900 - 480 = 420"
+      "question_text": "A vendor had 645 oranges in his cart. He sold 218 oranges in the morning and 156 more oranges in the afternoon. How many oranges does he have left?",
+      "options": [
+        "273",
+        "271",
+        "272",
+        "268"
+      ],
+      "correct_answer": "271",
+      "explanation_hint": "645 - 218 = 427. 427 - 156 = 271 oranges."
     },
     {
       "id": "sub_oly_017",
       "topic": "subtraction",
       "track": "olympiad",
       "difficulty": "super_hard",
-      "question_text": "If 700 - 360 = ?",
-      "options": ["340", "350", "360", "370"],
-      "correct_answer": "340",
-      "explanation_hint": "700 - 360 = 340"
+      "question_text": "Find the missing number: 730 - __ = 284",
+      "options": [
+        "446",
+        "445",
+        "449",
+        "444"
+      ],
+      "correct_answer": "446",
+      "explanation_hint": "730 - 284 = 446."
     },
     {
       "id": "sub_oly_018",
       "topic": "subtraction",
       "track": "olympiad",
       "difficulty": "super_hard",
-      "question_text": "What is 600 - 270?",
-      "options": ["330", "340", "350", "360"],
-      "correct_answer": "330",
-      "explanation_hint": "600 - 270 = 330"
+      "question_text": "Two numbers have a difference of 367. The larger number is 852. What is the smaller number?",
+      "options": [
+        "487",
+        "484",
+        "483",
+        "485"
+      ],
+      "correct_answer": "485",
+      "explanation_hint": "852 - 367 = 485."
     },
     {
       "id": "sub_oly_019",
       "topic": "subtraction",
       "track": "olympiad",
       "difficulty": "super_hard",
-      "question_text": "What is 800 - 390?",
-      "options": ["410", "420", "430", "440"],
-      "correct_answer": "410",
-      "explanation_hint": "800 - 390 = 410"
+      "question_text": "A library had 725 books. It gave away 198 books to a nearby school, and then 143 more books to a reading club. How many books does the library have left?",
+      "options": [
+        "383",
+        "386",
+        "384",
+        "382"
+      ],
+      "correct_answer": "384",
+      "explanation_hint": "725 - 198 = 527. 527 - 143 = 384 books."
     },
     {
       "id": "sub_oly_020",
       "topic": "subtraction",
       "track": "olympiad",
       "difficulty": "super_hard",
-      "question_text": "From 500, subtract 185. What is the result?",
-      "options": ["315", "325", "335", "345"],
-      "correct_answer": "315",
-      "explanation_hint": "500 - 185 = 315"
+      "question_text": "Look at the pattern: 500-120=380, 470-120=350, 440-120=320. Following the same pattern, what does 410-120 equal?",
+      "options": [
+        "288",
+        "291",
+        "290",
+        "293"
+      ],
+      "correct_answer": "290",
+      "explanation_hint": "410 - 120 = 290."
+    },
+    {
+      "id": "sub_oly_006",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "A cinema had 950 tickets to sell for a weekend festival. On Friday it sold 320 tickets, and on Saturday it sold 275 more tickets than on Friday. How many tickets were left unsold after Saturday?",
+      "options": [
+        "36",
+        "45",
+        "35",
+        "34"
+      ],
+      "correct_answer": "35",
+      "explanation_hint": "320 + 275 = 595. 320 + 595 = 915. 950 - 915 = 35 tickets."
+    },
+    {
+      "id": "sub_oly_007",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "Two numbers have a difference of 468. The smaller number is 275. What is the larger number?",
+      "options": [
+        "733",
+        "743",
+        "742",
+        "744"
+      ],
+      "correct_answer": "743",
+      "explanation_hint": "468 + 275 = 743."
+    },
+    {
+      "id": "sub_oly_008",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "A farmer had a certain number of mangoes. After selling 384 mangoes, he had 256 mangoes left. How many mangoes did he have at first?",
+      "options": [
+        "640",
+        "641",
+        "639",
+        "642"
+      ],
+      "correct_answer": "640",
+      "explanation_hint": "384 + 256 = 640."
+    },
+    {
+      "id": "sub_oly_009",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "A school had 860 notebooks in stock. It distributed 275 notebooks to Class 3 and 198 notebooks to Class 4. How many notebooks are left in stock?",
+      "options": [
+        "385",
+        "386",
+        "388",
+        "387"
+      ],
+      "correct_answer": "387",
+      "explanation_hint": "275 + 198 = 473. 860 - 473 = 387 notebooks."
+    },
+    {
+      "id": "sub_oly_010",
+      "topic": "subtraction",
+      "track": "olympiad",
+      "difficulty": "pro",
+      "question_text": "Find the missing number in the pattern: 900-200=700, 800-200=600, 700-200=500, 600-200=__?",
+      "options": [
+        "401",
+        "402",
+        "399",
+        "400"
+      ],
+      "correct_answer": "400",
+      "explanation_hint": "600 - 200 = 400."
     },
     {
       "id": "sub_oly_021",
       "topic": "subtraction",
       "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "From 980, subtract 470. What is the result?",
-      "options": ["510", "500", "490", "480"],
-      "correct_answer": "510",
-      "explanation_hint": "980 - 470 = 510"
+      "difficulty": "pro",
+      "question_text": "A cinema had 920 tickets to sell for a music festival. On Friday it sold 280 tickets, and on Saturday it sold 245 more tickets than on Friday. How many tickets were left unsold after Saturday?",
+      "options": [
+        "113",
+        "115",
+        "114",
+        "117"
+      ],
+      "correct_answer": "115",
+      "explanation_hint": "280 + 245 = 525. 280 + 525 = 805. 920 - 805 = 115 tickets."
     },
     {
       "id": "sub_oly_022",
       "topic": "subtraction",
       "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "What is 870 - 360?",
-      "options": ["510", "500", "490", "480"],
-      "correct_answer": "510",
-      "explanation_hint": "870 - 360 = 510"
+      "difficulty": "pro",
+      "question_text": "Two numbers have a difference of 512. The smaller number is 298. What is the larger number?",
+      "options": [
+        "810",
+        "812",
+        "808",
+        "811"
+      ],
+      "correct_answer": "810",
+      "explanation_hint": "512 + 298 = 810."
     },
     {
       "id": "sub_oly_023",
       "topic": "subtraction",
       "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "From 750, subtract 280. What is the result?",
-      "options": ["470", "460", "450", "440"],
-      "correct_answer": "470",
-      "explanation_hint": "750 - 280 = 470"
+      "difficulty": "pro",
+      "question_text": "A farmer had a certain number of coconuts. After selling 356 coconuts, he had 289 coconuts left. How many coconuts did he have at first?",
+      "options": [
+        "644",
+        "643",
+        "646",
+        "645"
+      ],
+      "correct_answer": "645",
+      "explanation_hint": "356 + 289 = 645."
     },
     {
       "id": "sub_oly_024",
       "topic": "subtraction",
       "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "What is 640 - 190?",
-      "options": ["450", "460", "470", "480"],
-      "correct_answer": "450",
-      "explanation_hint": "640 - 190 = 450"
+      "difficulty": "pro",
+      "question_text": "A school had 790 notebooks in stock. It distributed 245 notebooks to the junior wing and 168 notebooks to the senior wing. How many notebooks are left in stock?",
+      "options": [
+        "375",
+        "379",
+        "377",
+        "378"
+      ],
+      "correct_answer": "377",
+      "explanation_hint": "245 + 168 = 413. 790 - 413 = 377 notebooks."
     },
     {
       "id": "sub_oly_025",
       "topic": "subtraction",
       "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "From 520, subtract 170. What is the result?",
-      "options": ["350", "360", "370", "380"],
-      "correct_answer": "350",
-      "explanation_hint": "520 - 170 = 350"
+      "difficulty": "pro",
+      "question_text": "Find the missing number in the pattern: 800-150=650, 750-150=600, 700-150=550, 650-150=__?",
+      "options": [
+        "499",
+        "500",
+        "498",
+        "501"
+      ],
+      "correct_answer": "500",
+      "explanation_hint": "650 - 150 = 500."
     },
     {
       "id": "sub_oly_026",
       "topic": "subtraction",
       "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "What is 720 - 485?",
-      "options": ["235", "245", "255", "265"],
-      "correct_answer": "235",
-      "explanation_hint": "Subtract 400 from 720 to get 320, then subtract 85 to get 235."
+      "difficulty": "pro",
+      "question_text": "A cinema had 860 tickets to sell for a music festival. On Friday it sold 260 tickets, and on Saturday it sold 215 more tickets than on Friday. How many tickets were left unsold after Saturday?",
+      "options": [
+        "125",
+        "124",
+        "126",
+        "128"
+      ],
+      "correct_answer": "125",
+      "explanation_hint": "260 + 215 = 475. 260 + 475 = 735. 860 - 735 = 125 tickets."
     },
     {
       "id": "sub_oly_027",
       "topic": "subtraction",
       "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "What is 630 - 298?",
-      "options": ["332", "333", "334", "335"],
-      "correct_answer": "332",
-      "explanation_hint": "Subtract 300 from 630 to get 330, then subtract 2 to get 328."
+      "difficulty": "pro",
+      "question_text": "Two numbers have a difference of 486. The smaller number is 235. What is the larger number?",
+      "options": [
+        "723",
+        "722",
+        "720",
+        "721"
+      ],
+      "correct_answer": "721",
+      "explanation_hint": "486 + 235 = 721."
     },
     {
       "id": "sub_oly_028",
       "topic": "subtraction",
       "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "What is 510 - 387?",
-      "options": ["123", "124", "125", "126"],
-      "correct_answer": "123",
-      "explanation_hint": "Subtract 300 from 510 to get 210, then subtract 87 to get 123."
+      "difficulty": "pro",
+      "question_text": "A farmer had a certain number of watermelons. After selling 298 watermelons, he had 167 watermelons left. How many watermelons did he have at first?",
+      "options": [
+        "466",
+        "464",
+        "465",
+        "462"
+      ],
+      "correct_answer": "465",
+      "explanation_hint": "298 + 167 = 465."
     },
     {
       "id": "sub_oly_029",
       "topic": "subtraction",
       "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "What is 490 - 176?",
-      "options": ["314", "315", "316", "317"],
-      "correct_answer": "314",
-      "explanation_hint": "Subtract 100 from 490 to get 390, then subtract 76 to get 314."
+      "difficulty": "pro",
+      "question_text": "A school had 825 pencils in stock. It distributed 264 pencils to the junior wing and 197 pencils to the senior wing. How many pencils are left in stock?",
+      "options": [
+        "362",
+        "364",
+        "365",
+        "367"
+      ],
+      "correct_answer": "364",
+      "explanation_hint": "264 + 197 = 461. 825 - 461 = 364 pencils."
     },
     {
       "id": "sub_oly_030",
       "topic": "subtraction",
       "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "What is 820 - 593?",
-      "options": ["227", "228", "229", "230"],
-      "correct_answer": "227",
-      "explanation_hint": "Subtract 500 from 820 to get 320, then subtract 93 to get 227."
-    },
-    {
-      "id": "sub_oly_031",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "What is 930 - 487?",
-      "options": ["443", "453", "463", "473"],
-      "correct_answer": "443",
-      "explanation_hint": "Subtract 400 from 930 to get 530, then subtract 80 to get 450, then subtract 7 to get 443."
-    },
-    {
-      "id": "sub_oly_032",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "What is 860 - 395?",
-      "options": ["465", "455", "475", "485"],
-      "correct_answer": "465",
-      "explanation_hint": "Subtract 400 from 860 to get 460, then subtract 90 to get 370, then subtract 5 to get 465."
-    },
-    {
-      "id": "sub_oly_033",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "What is 740 - 298?",
-      "options": ["442", "432", "452", "462"],
-      "correct_answer": "442",
-      "explanation_hint": "Subtract 300 from 740 to get 440, then subtract 2 to get 438, then add 4 to get 442."
-    },
-    {
-      "id": "sub_oly_034",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "What is 620 - 189?",
-      "options": ["431", "421", "411", "401"],
-      "correct_answer": "421",
-      "explanation_hint": "Subtract 200 from 620 to get 420, then subtract 19 to get 401, then add 1 to get 402."
-    },
-    {
-      "id": "sub_oly_035",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "What is 590 - 273?",
-      "options": ["317", "307", "297", "287"],
-      "correct_answer": "317",
-      "explanation_hint": "Subtract 300 from 590 to get 290, then subtract 70 to get 220, then subtract 3 to get 217, then add 10 to get 227."
-    },
-    {
-      "id": "sub_oly_036",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "super_hard",
-      "question_text": "A shopkeeper has 845 apples. He sells 327 of them. How many apples are left?",
-      "options": ["518", "528", "508", "488"],
-      "correct_answer": "518",
-      "explanation_hint": "Subtract 327 from 845: 845 - 327 = 518"
-    },
-    {
-      "id": "sub_oly_037",
-      "topic": "subtraction",
-      "track": "olympiad",
       "difficulty": "pro",
-      "question_text": "A number is subtracted by 25 and the result is 138. What is the original number?",
-      "options": ["163", "153", "143", "133"],
-      "correct_answer": "163",
-      "explanation_hint": "Let the original number be x. x - 25 = 138. So x = 138 + 25 = 163."
-    },
-    {
-      "id": "sub_oly_038",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "There are 480 apples in a basket. 120 apples are taken out. How many apples are left?",
-      "options": ["360", "240", "300", "280"],
-      "correct_answer": "360",
-      "explanation_hint": "480 - 120 = 360."
-    },
-    {
-      "id": "sub_oly_039",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A boy has 72 marbles. He gives away 28 marbles. How many marbles does he have left?",
-      "options": ["44", "46", "48", "50"],
-      "correct_answer": "44",
-      "explanation_hint": "72 - 28 = 44."
-    },
-    {
-      "id": "sub_oly_040",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "There are 234 apples in a basket. 87 apples are taken away. How many apples are left?",
-      "options": ["147", "148", "149", "150"],
-      "correct_answer": "147",
-      "explanation_hint": "234 - 87 = 147"
-    },
-    {
-      "id": "sub_oly_041",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A boy has 560 marbles. He gives away 280 marbles. How many marbles does he have left?",
-      "options": ["280", "281", "282", "283"],
-      "correct_answer": "280",
-      "explanation_hint": "560 - 280 = 280"
-    },
-    {
-      "id": "sub_oly_042",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A boy has 630 marbles. He gives away 320 marbles. How many marbles does he have left?",
-      "options": ["310", "300", "320", "330"],
-      "correct_answer": "310",
-      "explanation_hint": "Subtract 320 from 630: 630 - 320 = 310. But the correct answer is 310 because the question says 'how many marbles does he have left', so 630 - 320 = 310."
-    },
-    {
-      "id": "sub_oly_043",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "There are 789 books in a library. 234 books are taken out. How many books are left?",
-      "options": ["555", "455", "355", "255"],
-      "correct_answer": "555",
-      "explanation_hint": "789 - 234 = 555"
-    },
-    {
-      "id": "sub_oly_044",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A boy has 632 marbles. He gives away 189 marbles. How many marbles does he have left?",
-      "options": ["443", "453", "463", "473"],
-      "correct_answer": "443",
-      "explanation_hint": "632 - 189 = 443"
-    },
-    {
-      "id": "sub_oly_045",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A shop has 825 notebooks. 378 are sold. How many notebooks are left?",
-      "options": ["447", "457", "467", "477"],
-      "correct_answer": "447",
-      "explanation_hint": "825 - 378 = 447"
-    },
-    {
-      "id": "sub_oly_046",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A car has 987 liters of fuel. 423 liters are used. How much fuel is left?",
-      "options": ["564", "574", "584", "594"],
-      "correct_answer": "564",
-      "explanation_hint": "987 - 423 = 564"
-    },
-    {
-      "id": "sub_oly_047",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "There are 125 books in a library. 47 books are taken out. How many books are left?",
-      "options": ["27", "78", "168", "30"],
-      "correct_answer": "78",
-      "explanation_hint": "125 - 47 = 78"
-    },
-    {
-      "id": "sub_oly_048",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A boy has 84 marbles. He gives away 39 marbles. How many marbles does he have left?",
-      "options": ["45", "46", "47", "48"],
-      "correct_answer": "45",
-      "explanation_hint": "84 - 39 = 45"
-    },
-    {
-      "id": "sub_oly_049",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A girl has 32 candies. She eats 17 candies. How many candies are left?",
-      "options": ["15", "16", "17", "18"],
-      "correct_answer": "15",
-      "explanation_hint": "32 - 17 = 15"
-    },
-    {
-      "id": "sub_oly_050",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A basket has 56 apples. 28 apples are taken out. How many apples are left?",
-      "options": ["28", "38", "14", "24"],
-      "correct_answer": "28",
-      "explanation_hint": "56 - 28 = 28"
-    },
-    {
-      "id": "sub_oly_051",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A boy has 73 marbles. He gives away 49 marbles. How many marbles does he have left?",
-      "options": ["24", "25", "26", "27"],
-      "correct_answer": "24",
-      "explanation_hint": "73 - 49 = 24"
-    },
-    {
-      "id": "sub_oly_052",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "There are 984 apples in a basket. 572 are taken out. How many apples are left?",
-      "options": ["412", "413", "414", "415"],
-      "correct_answer": "412",
-      "explanation_hint": "Subtract 572 from 984: 984 - 572 = 412"
-    },
-    {
-      "id": "sub_oly_053",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A boy has 873 marbles. He gives away 498 marbles. How many marbles does he have left?",
-      "options": ["375", "376", "377", "378"],
-      "correct_answer": "375",
-      "explanation_hint": "Subtract 498 from 873: 873 - 498 = 375"
-    },
-    {
-      "id": "sub_oly_054",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A shop has 765 notebooks. 389 are sold. How many notebooks are left?",
-      "options": ["376", "377", "378", "379"],
-      "correct_answer": "376",
-      "explanation_hint": "Subtract 389 from 765: 765 - 389 = 376"
-    },
-    {
-      "id": "sub_oly_055",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A boy has 642 marbles. He gives away 279 marbles. How many marbles does he have left?",
-      "options": ["363", "364", "365", "366"],
-      "correct_answer": "363",
-      "explanation_hint": "Subtract 279 from 642: 642 - 279 = 363"
-    },
-    {
-      "id": "sub_oly_056",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A girl has 534 candies. She eats 287 candies. How many candies are left?",
-      "options": ["247", "248", "249", "250"],
-      "correct_answer": "247",
-      "explanation_hint": "Subtract 287 from 534: 534 - 287 = 247"
-    },
-    {
-      "id": "sub_oly_057",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "There are 123 apples in a basket. 49 apples are taken out. How many apples are left?",
-      "options": ["74", "75", "76", "77"],
-      "correct_answer": "74",
-      "explanation_hint": "123 - 49 = 74"
-    },
-    {
-      "id": "sub_oly_058",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A boy has 62 marbles. He gives away 28 marbles. How many marbles does he have left?",
-      "options": ["34", "35", "36", "37"],
-      "correct_answer": "34",
-      "explanation_hint": "62 - 28 = 34"
-    },
-    {
-      "id": "sub_oly_059",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A girl has 45 candies. She eats 18 candies. How many candies are left?",
-      "options": ["27", "28", "29", "30"],
-      "correct_answer": "27",
-      "explanation_hint": "45 - 18 = 27"
-    },
-    {
-      "id": "sub_oly_060",
-      "topic": "subtraction",
-      "track": "olympiad",
-      "difficulty": "pro",
-      "question_text": "A basket has 345 oranges. 180 oranges are taken out. How many oranges are left?",
-      "options": ["165", "166", "167", "168"],
-      "correct_answer": "165",
-      "explanation_hint": "345 - 180 = 165"
+      "question_text": "Find the missing number in the pattern: 950-300=650, 900-300=600, 850-300=550, 800-300=__?",
+      "options": [
+        "501",
+        "500",
+        "498",
+        "502"
+      ],
+      "correct_answer": "500",
+      "explanation_hint": "800 - 300 = 500."
     }
   ]
 }

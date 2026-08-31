@@ -18,6 +18,7 @@ from .config import (
     OLLAMA_BASE_URL,
     OLLAMA_MODEL,
     OLLAMA_REVIEW_MODEL,
+    OLLAMA_REVIEW_THINK,
     OLLAMA_TIMEOUT_SECONDS,
     PROMPTS_DIR,
     REVIEW_ENABLED,
@@ -93,7 +94,7 @@ class QwenProvider:
 _anthropic_provider = AnthropicProvider()
 _qwen_provider = QwenProvider()
 _anthropic_review_provider = AnthropicProvider(model=ANTHROPIC_REVIEW_MODEL)
-_qwen_review_provider = QwenProvider(model=OLLAMA_REVIEW_MODEL, think=True)
+_qwen_review_provider = QwenProvider(model=OLLAMA_REVIEW_MODEL, think=OLLAMA_REVIEW_THINK)
 
 
 def get_provider() -> Provider:
